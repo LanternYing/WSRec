@@ -15,9 +15,9 @@ logger(sprintf('Load data: %s', dataPath));
 dataMatrix = load(dataPath);
 
 % * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-% config area density = [0.01 : 0.01 : 0.05, 0.1 : 0.05 : 0.5];
+% config area 
 rounds = 20;
-density = [0.35 : 0.05 : 0.5];
+density = 0.1 : 0.05 : 0.3;
 saveTimeInfo = false; % whether to keep track of the running time
 % * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
