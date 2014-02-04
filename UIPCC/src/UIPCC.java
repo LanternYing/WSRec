@@ -20,8 +20,8 @@ public class UIPCC {
 		// for testing
 		if (debugMode) {
 			configPara = new String[]{
-					"D:\\experiment\\data\\rawData\\rtMatrix.txt",
-					"D:\\experiment\\data\\generatedData\\RT\\density_0.20\\",
+					"D:\\experiment\\data\\dataset#1\\rawData\\rtMatrix.txt",
+					"D:\\experiment\\data\\dataset#1\\generatedData\\RT\\density_0.20\\",
 					"resultFolder\\rtResult_0.20.txt",
 					"339",
 					"5825",

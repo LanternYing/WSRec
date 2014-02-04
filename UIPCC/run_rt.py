@@ -8,12 +8,12 @@ import numpy as np
 
 # ************************** config area **************************
 memoryAlloc = "1024m" 
-rawdataPath = "..\\data\\rawData\\rtMatrix.txt"
-dataFolder = "..\\data\\generatedData\\RT\\density_"
+rawdataPath = "..\\data\\dataset#1\\rawData\\rtMatrix.txt"
+dataFolder = "..\\data\\dataset#1\\generatedData\\RT\\density_"
 outputPath = "resultFolder\\rtResult_"
 userNum = 339
 serviceNum = 5825
-densitySet = list(np.arange(0.01, 0.06, 0.01)) + list(np.arange(0.10, 0.51, 0.05))
+densitySet = list(np.arange(0.10, 0.31, 0.05))
 rounds = 20
 saveTimeInfo = "false";
 # *****************************************************************
