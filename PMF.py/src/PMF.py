@@ -45,7 +45,8 @@ def PMF(removedMatrix, paraStruct):
     if paraStruct['debugMode']:
         plt.show()
     logger.info('Converged after %d iterations'%(iter - 1))
-    return U, S
+    predMatrix = np.dot(U.T, S)
+    return predMatrix
 #########################################################
 
 

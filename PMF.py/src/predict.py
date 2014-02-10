@@ -40,8 +40,7 @@ def predict(matrix, density, paraStruct):
 
 		# gradient descent
 		iterStartTime = time.clock() # to record the running time for one round             
-		[U, S] = gradDescent(trainMatrix, paraStruct)  # gradient descent 
-		predictedMatrix = np.dot(U.T, S)
+		predictedMatrix = gradDescent(trainMatrix, paraStruct)  # gradient descent 		
 		timeResults[k] = time.clock() - iterStartTime
 
 		# calculate the prediction error
