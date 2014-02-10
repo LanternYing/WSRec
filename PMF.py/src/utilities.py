@@ -87,6 +87,6 @@ def saveResult(outfile, result, timeinfo, para):
         fileID.write('Std:\t%.4f\n'%np.std(timeinfo))
         fileID.write('\n==========================================\n')
         fileID.write('Detailed results for %d rounds:\n'%timeinfo.shape[0])
-        np.savetxt(fileID, timeinfo, fmt='%.4f')
+        np.savetxt(fileID, np.matrix(timeinfo), fmt='%.4f')
         fileID.close()
 ########################################################

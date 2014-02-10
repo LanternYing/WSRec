@@ -11,7 +11,7 @@ import numpy as np
 import os, sys, time
 sys.path.append('src')
 from utilities import *
-from PMF import *
+from predict import *
  
 
 #########################################################
@@ -30,7 +30,7 @@ para = {'dataPath': '..\\data\\dataset#1\\rawData\\rtMatrix.txt',
 		'lambda': 30, # regularization parameter
 		'maxIter': 500, # the max iterations
 		'saveTimeInfo': False, # whether to keep track of the running time
-		'saveLog': False, # whether to save log into file
+		'saveLog': True, # whether to save log into file
 		'debugMode': False # whether to record the debug info
 		}
 
@@ -45,7 +45,7 @@ dataPath = np.loadtxt(para['dataPath'])
 
 # run for each density
 for density in para['density']:
-    PMF(dataPath, density, para)
+    predict(dataPath, density, para)
 
 logger.info(time.strftime('All done. Total running time: %d-th day - %Hhour - %Mmin - %Ssec.',
          time.gmtime(time.clock() - startTime)))
