@@ -17,4 +17,4 @@ Note:
 Reference paper:
 [1] Zibin Zheng, Hao Ma, Michael R. Lyu, and Irwin King, "WSRec: A Collaborative Filtering Based Web Service Recommender System", IEEE International Conference on Web Services, pp.437-444, 2009.
 
-[2] Zibin Zheng, Hao Ma, Michael R. Lyu, and Irwin King, ?°„QoS-Aware Web Service Recommendation by Collaborative Filtering?°¿, IEEE Transactions on Service Computing , vol.4, no.2, pp.140-152, 2011.
+[2] Zibin Zheng, Hao Ma, Michael R. Lyu, and Irwin King, "QoS-Aware Web Service Recommendation by Collaborative Filtering", IEEE Transactions on Service Computing , vol.4, no.2, pp.140-152, 2011.
