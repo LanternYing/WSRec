@@ -8,9 +8,9 @@ import numpy as np
 
 # ************************** config area **************************
 memoryAlloc = "1024m" 
-rawdataPath = "..\\data\\dataset#1\\rawData\\tpMatrix.txt"
-dataFolder = "..\\data\\dataset#1\\generatedData\\TP\\density_"
-outputPath = "resultFolder\\tpResult_"
+rawdataPath = "..\\data\\dataset#1\\rawData\\rtMatrix.txt"
+dataFolder = "..\\data\\dataset#1\\generatedData\\RT\\density_"
+outputPath = "result\\rtResult_"
 userNum = 339
 serviceNum = 5825
 densitySet = list(np.arange(0.10, 0.31, 0.05))
