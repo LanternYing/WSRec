@@ -4,7 +4,7 @@
 # Created: 2014/2/6
 # Last updated: 2014/2/6
 ########################################################
-import sys
+
 import numpy as np 
 from numpy import linalg as LA
 import time
