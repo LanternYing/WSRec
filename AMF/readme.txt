@@ -1,6 +1,6 @@
 This source code in "AMF_m/" directory is developed by jimzhu@GitHub, 2014/2/5.
 
-Probabilistic Matrix Factorization (PMF) approach is implemented with Matlab.
+Adaptive Matrix Factorization (AMF) approach is implemented with Matlab.
 
 The source code is provided under "src" folder. You can directly run the provided Matlab scripts "run_rt.m" and "run_tp.m".
 
