@@ -22,7 +22,7 @@ para = {'dataPath': '..\\data\\dataset#1\\rawData\\rtMatrix.txt',
 		'outPath': 'result\\rtResult_',
 		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate
 		# matrix density
-		'density': list(np.arange(0.01, 0.06, 0.01)) + list(np.arange(0.10, 0.51, 0.05)), 
+		'density': list(np.arange(0.01, 0.06, 0.01)) + list(np.arange(0.10, 0.31, 0.05)), 
 		'rounds': 50, # how many runs are performed at each matrix density
 		'topK': 10, # the parameter of TopK similar users or services, the default value is
 					# topK = 10 as in the reference paper
