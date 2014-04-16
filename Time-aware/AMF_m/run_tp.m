@@ -10,7 +10,7 @@ if exist('resultFolder', 'dir')==0
     system('mkdir resultFolder');
 end
 
-for k = 1 : 64
+for k = 1
     tic;
     % import the dataset
     filepath = strcat('tpTimeSlot', num2str(k), '.txt');
@@ -19,6 +19,7 @@ for k = 1 : 64
     
     % preprocessing
     dataMatrix(dataMatrix == 0) = -1;
+%     dataMatrix(dataMatrix >= 1000) = -1;
     
     % normalization
     normalDataMatrix = dataMatrix;
@@ -29,9 +30,9 @@ for k = 1 : 64
     normalDataMatrix(normalDataMatrix ~= -1) = boxcox(alpha, normalDataMatrix(normalDataMatrix ~= -1));
     normalDataMatrix(normalDataMatrix ~= -1) = (normalDataMatrix(normalDataMatrix ~= -1) - minValue) / (maxValue - minValue);
    
-    for density = 0.05: 0.05 : 0.5
+    for density = 0.45: 0.05 : 0.5
         outPath = sprintf('resultFolder/%d_tpResult_%.2f.txt', k, density);
-        AMF( dataMatrix, normalDataMatrix, alpha, minValue, maxValue, outPath, 20, density, 0.8, 0.001, 500, 1, 5e-3, 0.3)
+        AMF( dataMatrix, normalDataMatrix, alpha, minValue, maxValue, outPath, 10, density, 0.8, 0.001, 500, 1, 5e-3, 0.3 )  %lambda = 0.001
     end
     
     logger('=========================================');

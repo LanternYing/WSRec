@@ -1,16 +1,15 @@
 clc; close all; clear;
-global DEBUG;
-DEBUG = ['debug1', 'debug2', 'plotConvergFig'];
 
-addpath('src', '../../data/LatencyData');
+addpath('src', '../../data/rtData');
 logger('=========================================');
 logger('AMF on latency dataset: online-mode gradient descent.');
 logger('=========================================');
-if exist('resultFolder', 'dir')==0
-    system('mkdir resultFolder');
+
+if exist('result', 'dir')==0
+    system('mkdir result');
 end
 
-for k = 1 : 64
+for k = 1
     fileStartTime = tic;
     % import the dataset
     filepath = strcat('rtTimeSlot', num2str(k), '.txt');
@@ -30,9 +29,12 @@ for k = 1 : 64
     normalDataMatrix(normalDataMatrix ~= -1) = boxcox(alpha, normalDataMatrix(normalDataMatrix ~= -1));
     normalDataMatrix(normalDataMatrix ~= -1) = (normalDataMatrix(normalDataMatrix ~= -1) - minValue) / (maxValue - minValue);
     
-    for density = 0.05 : 0.05 : 0.5
+    for density = 0.5% : 0.05 : 0.5
         outPath = sprintf('resultFolder/%d_rtResult_%.2f.txt', k, density);
-        AMF( dataMatrix, normalDataMatrix, alpha, minValue, maxValue, outPath, 20, density, 0.8, 0.001, 500, 1, 5e-3, 0.3)
+        % Case: defalut parameters for rt:  0.002
+        AMF( dataMatrix, normalDataMatrix, alpha, minValue, maxValue, outPath, 10, density, 0.000008, 5, 500, 1, 5e-3, 0.3) %lambda = 0.001 learningrate = 0.8
+        % Case: alpha = 1
+        %AMF( dataMatrix, normalDataMatrix, alpha, minValue, maxValue, outPath, 10, density, 0.01, 0.2, 500, 1, 5e-3, 0.25 )    
     end
     
     logger('=========================================');
@@ -40,9 +42,10 @@ for k = 1 : 64
     logger(sprintf('File: rtTimeSlot%d.txt done.', k));  
     logger('=========================================');
 end
+
 logger('All done.');
 logger('=========================================');
-rmpath('src', '../../data/LatencyData');
+rmpath('src', '../../data/rtData');
 
 
 
