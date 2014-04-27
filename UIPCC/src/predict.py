@@ -1,6 +1,6 @@
 ########################################################
 # predict.py
-# Developer: Jieming Zhu <jmzhu@cse.cuhk.edu.hk>
+# Developer: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
 # Last updated: 2014/2/6
 ########################################################
@@ -8,6 +8,8 @@
 import numpy as np 
 from numpy import linalg as LA
 import time
+import random
+import math
 from utilities import *
 from UIPCC import *
 
@@ -32,26 +34,18 @@ def predict(matrix, density, para):
 		logger.info('%d-round starts.'%(k + 1))
 		logger.info('----------------------------------------------')
 
-		# load the training data, i.e., removed matrix
-		dataPath = '%s%.2f\\round_%02d_train.txt'\
-					%(para['dataFolder'], density, k + 1)
-		logger.info('Load training data: %s'%dataPath)
-		trainIndicatorMatrix = np.loadtxt(dataPath)
-		trainMatrix = matrix * trainIndicatorMatrix
+		# remove the entries of data matrix to generate trainMatrix and testMatrix		
+		(trainMatrix, testMatrix) = removeEntries(matrix, density, k)
+		logger.info('Removing data entries done.')
+		(testVecX, testVecY) = np.where(testMatrix)		
+		testVec = testMatrix[testVecX, testVecY]
 
-		# load the testing data
-		dataPath = '%s%.2f\\round_%02d_test.txt'%(para['dataFolder'], density, k + 1)
-		logger.info('Load testing data: %s'%dataPath)
-		testIndicatorMatrix = np.loadtxt(dataPath)
-		(testVecX, testVecY) = np.where(testIndicatorMatrix)		
-		realVec = matrix[testVecX, testVecY]
-
-		## UMEAN
+        ## UMEAN
 		iterStartTime1 = time.clock()            
 		predMatrixUMEAN = UMEAN(trainMatrix) 	
 		timeResults[0, k] = time.clock() - iterStartTime1
 		predVecUMEAN = predMatrixUMEAN[testVecX, testVecY]       
-		evalResults[0, k, :] = errMetric(realVec, predVecUMEAN, para['metrics'])
+		evalResults[0, k, :] = errMetric(testVec, predVecUMEAN, para['metrics'])
 		logger.info('UMEAN done.')
 
 		## IMEAN
@@ -59,7 +53,7 @@ def predict(matrix, density, para):
 		predMatrixIMEAN = IMEAN(trainMatrix)  	
 		timeResults[1, k] = time.clock() - iterStartTime2
 		predVecIMEAN = predMatrixIMEAN[testVecX, testVecY]         
-		evalResults[1, k, :] = errMetric(realVec, predVecIMEAN, para['metrics'])
+		evalResults[1, k, :] = errMetric(testVec, predVecIMEAN, para['metrics'])
 		logger.info('IMEAN done.')
 
 		## UPCC
@@ -67,7 +61,7 @@ def predict(matrix, density, para):
 		predMatrixUPCC = UPCC(trainMatrix, predMatrixUMEAN, para)  
 		timeResults[2, k] = time.clock() - iterStartTime3 + timeResults[0, k]
 		predVecUPCC = predMatrixUPCC[testVecX, testVecY]   
-		evalResults[2, k, :] = errMetric(realVec, predVecUPCC, para['metrics'])
+		evalResults[2, k, :] = errMetric(testVec, predVecUPCC, para['metrics'])
 		logger.info('UPCC done.')
 		
 		## IPCC
@@ -75,7 +69,7 @@ def predict(matrix, density, para):
 		predMatrixIPCC = IPCC(trainMatrix, predMatrixIMEAN, para) 
 		timeResults[3, k] = time.clock() - iterStartTime4 + timeResults[1, k]
 		predVecIPCC = predMatrixIPCC[testVecX, testVecY]        
-		evalResults[3, k, :] = errMetric(realVec, predVecIPCC, para['metrics'])
+		evalResults[3, k, :] = errMetric(testVec, predVecIPCC, para['metrics'])
 		logger.info('IPCC done.')
 
 		## UIPCC
@@ -84,7 +78,7 @@ def predict(matrix, density, para):
 		timeResults[4, k] = time.clock() - iterStartTime5\
 				+ timeResults[2, k] + timeResults[3, k]
 		predVecUIPCC = predMatrixUIPCC[testVecX, testVecY]           
-		evalResults[4, k, :] = errMetric(realVec, predVecUIPCC, para['metrics'])
+		evalResults[4, k, :] = errMetric(testVec, predVecUIPCC, para['metrics'])
 		logger.info('UIPCC done.')
 
 		logger.info('%d-round done. Running time: %.2f sec'
@@ -100,24 +94,56 @@ def predict(matrix, density, para):
 
 
 ########################################################
+# Function to remove the entries of data matrix
+# Return the trainMatrix and the corresponding testing data
+#
+def removeEntries(matrix, density, seedID):
+	(vecX, vecY) = np.where(matrix > 0)
+	vecXY = np.c_[vecX, vecY]
+	numRecords = vecX.size
+	numAll = matrix.size
+	random.seed(seedID)
+	randomSequence = range(0, numRecords)
+	random.shuffle(randomSequence) # one random sequence per round
+	numTrain = int( numAll * density)
+	# by default, we set the remaining QoS records as testing data 		               
+	numTest = numRecords - numTrain
+	trainXY = vecXY[randomSequence[0 : numTrain], :]
+	testXY = vecXY[randomSequence[- numTest :], :]
+
+	trainMatrix = np.zeros(matrix.shape)
+	trainMatrix[trainXY[:, 0], trainXY[:, 1]] = matrix[trainXY[:, 0], trainXY[:, 1]]
+	testMatrix = np.zeros(matrix.shape)
+	testMatrix[testXY[:, 0], testXY[:, 1]] = matrix[testXY[:, 0], testXY[:, 1]]
+
+    # ignore invalid testing data
+	idxX = (np.sum(trainMatrix, axis=1) == 0)
+	testMatrix[idxX, :] = 0
+	idxY = (np.sum(trainMatrix, axis=0) == 0)
+	testMatrix[:, idxY] = 0    
+	return trainMatrix, testMatrix
+########################################################
+
+
+########################################################
 # Function to compute the evaluation metrics
 # Return an array of metric values
 #
-def errMetric(realVec, predVec, metrics):
+def errMetric(testVec, predVec, metrics):
     result = []
-    absError = np.absolute(predVec - realVec) 
+    absError = np.absolute(predVec - testVec) 
     mae = np.average(absError)
     for metric in metrics:
 	    if 'MAE' == metric:
 			result = np.append(result, mae)
 	    if 'NMAE' == metric:
-		    nmae = mae / np.average(realVec)
+		    nmae = mae / np.average(testVec)
 		    result = np.append(result, nmae)
 	    if 'RMSE' == metric:
 	    	rmse = LA.norm(absError) / np.sqrt(absError.size)
 	    	result = np.append(result, rmse)
 	    if 'MRE' == metric or 'NPRE' == metric:
-	        relativeError = absError / realVec
+	        relativeError = absError / testVec
 	        if 'MRE' == metric:
 		    	mre = np.percentile(relativeError, 50)
 		    	result = np.append(result, mre)

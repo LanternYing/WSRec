@@ -1,40 +1,15 @@
 #########################################################
-# UIPCC.py
-# Developer: Jieming Zhu <jmzhu@cse.cuhk.edu.hk>
-# Created: 2014/2/6
-# Last updated: 2014/2/6
+# Extended module for UIPCC.py
+# Developer: Jamie Zhu <jimzhu@GitHub>
+# Created: 2014/4/17
+# Last updated: 2014/4/17
 #########################################################
-import sys
+
 import time
 import numpy as np
 from numpy import linalg as LA
 import matplotlib.pyplot as plt
 from utilities import *
-
-
-#########################################################
-# Function to perform UMEAN
-# return the predicted matrix
-#
-def UMEAN(removedMatrix):  
-    predMatrix = IMEAN(removedMatrix.T).T
-    return predMatrix
-#########################################################
-
-
-#########################################################
-# Function to perform IMEAN
-# return the predicted matrix
-#
-def IMEAN(removedMatrix):  
-    numUser = removedMatrix.shape[0] 
-    idxMatrix = (removedMatrix > 0) 
-    columnSum = np.sum(idxMatrix, axis=0)   
-    imean = np.sum(removedMatrix, axis=0) / (columnSum
-            + np.spacing(1)) # avoid divide-by-zero
-    predMatrix = np.tile(imean, (numUser, 1))
-    return predMatrix
-#########################################################
 
 
 #########################################################
@@ -60,28 +35,6 @@ def UPCC(removedMatrix, predMatrixUMEAN, para):
                     / (np.sum(pcc[topKUsers, j]) + np.spacing(1)) # avoid divide-by-zero
             if predMatrix[i, j] < 0:
                 predMatrix[i, j] = predMatrixUMEAN[i, j]
-    return predMatrix
-#########################################################
-
-
-#########################################################
-# Function to perform IPCC
-# return the predicted matrix
-#
-def IPCC(removedMatrix, predMatrixIMEAN, para):  
-    predMatrix = UPCC(removedMatrix.T, predMatrixIMEAN.T, para)
-    predMatrix = predMatrix.T
-    return predMatrix
-#########################################################
-
-
-#########################################################
-# Function to perform UIPCC
-# return the predicted matrix
-#
-def UIPCC(removedMatrix, predMatrixUPCC, predMatrixIPCC, para)  :
-    lmd = para['lambda']
-    predMatrix = lmd * predMatrixUPCC + (1 - lmd) * predMatrixIPCC
     return predMatrix
 #########################################################
 
