@@ -1,6 +1,6 @@
 ########################################################
 # predict.py
-# Developer: Jamie Zhu <jimzhu@GitHub>
+# Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
 # Last updated: 2014/2/6
 ########################################################
@@ -58,7 +58,7 @@ def predict(matrix, density, para):
 
 		## UPCC
 		iterStartTime3 = time.clock()         
-		predMatrixUPCC = UPCC(trainMatrix, predMatrixUMEAN, para)  
+		predMatrixUPCC = UPCC(trainMatrix, predMatrixUMEAN[:, 0], para)  
 		timeResults[2, k] = time.clock() - iterStartTime3 + timeResults[0, k]
 		predVecUPCC = predMatrixUPCC[testVecX, testVecY]   
 		evalResults[2, k, :] = errMetric(testVec, predVecUPCC, para['metrics'])
@@ -66,7 +66,7 @@ def predict(matrix, density, para):
 		
 		## IPCC
 		iterStartTime4 = time.clock()         
-		predMatrixIPCC = IPCC(trainMatrix, predMatrixIMEAN, para) 
+		predMatrixIPCC = IPCC(trainMatrix, predMatrixIMEAN[0, :], para) 
 		timeResults[3, k] = time.clock() - iterStartTime4 + timeResults[1, k]
 		predVecIPCC = predMatrixIPCC[testVecX, testVecY]        
 		evalResults[3, k, :] = errMetric(testVec, predVecIPCC, para['metrics'])
