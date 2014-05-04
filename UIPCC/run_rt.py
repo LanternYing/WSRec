@@ -12,6 +12,7 @@ import numpy as np
 import os, sys, time
 
 sys.path.append('src')
+# Build external model
 if not os.path.isfile('src/UIPCC.so'):
 	print 'Please first build the cpp code into UIPCC.so: '
 	print 'python setup.py build_ext --inplace'
@@ -34,7 +35,7 @@ para = {'dataPath': '../data/dataset#1/rtMatrix.txt',
 					# topK = 10 as in the reference paper
 		'lambda': 0.1, # the combination coefficient of UPCC and IPCC, the default value is 
 					   # lambda = 0.1 as in the reference paper
-		'saveTimeInfo': True, # whether to keep track of the running time
+		'saveTimeInfo': False, # whether to keep track of the running time
 		'saveLog': False, # whether to save log into file
 		'debugMode': False # whether to record the debug info
 		}

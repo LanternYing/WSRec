@@ -17,25 +17,6 @@
 using namespace std;
 
 
-int main() {
-	cout << "hello";
-	map<int, double> pcMap;
-	pcMap[10] = 20.3;
-	pcMap[4] = 5.5;
-	pcMap[40] = 15.5;
-	vector<pair<int, double> > hello = sortMapByValue(pcMap);
-	map<int, double>::iterator it;
-	for(it = pcMap.begin(); it!=pcMap.end(); ++it) {
-     cout<<"key:"<<it->first
-         <<"value:"<<it->second<<endl;
-	}
-	int i;
-	for(i = 0; i < hello.size(); i++) {
-     cout<<"key: "<< hello[i].first
-         <<"value: "<<hello[i].second<<endl;
-	}
-}
-
 void UPCC_core(double *removedData, double *uMean, int numUser, int numService, 
 	int topK, double *predData)
 {	
