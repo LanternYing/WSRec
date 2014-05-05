@@ -1,13 +1,14 @@
 ########################################################
 # predict.py
-# Developer: Jieming Zhu <jmzhu@cse.cuhk.edu.hk>
+# Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
-# Last updated: 2014/2/6
+# Last updated: 2014/5/4
 ########################################################
 
 import numpy as np 
 from numpy import linalg as LA
 import time
+import random
 from PMF import *
 from utilities import *
 
@@ -31,28 +32,22 @@ def predict(matrix, density, paraStruct):
 		logger.info('%d-round starts.'%(k + 1))
 		logger.info('----------------------------------------------')
 
+		# remove the entries of data matrix to generate trainMatrix and testMatrix
+		# use k as random seed		
+		(trainMatrix, testMatrix) = removeEntries(matrix, density, k) 
+		logger.info('Removing data entries done.')
+		(testVecX, testVecY) = np.where(testMatrix)		
+		testVec = testMatrix[testVecX, testVecY]
 		# read the training data, i.e., removed matrix
-		dataPath = '%s%.2f\\round_%02d_train.txt'\
-					%(paraStruct['dataFolder'], density, k + 1)
-		logger.info('Load training data: %s'%dataPath)
-		trainIndicatorMatrix = np.loadtxt(dataPath)
-		trainMatrix = matrix * trainIndicatorMatrix
 
-		# gradient descent
+		# gradient descent in PMF
 		iterStartTime = time.clock() # to record the running time for one round             
-		predictedMatrix = gradDescent(trainMatrix, paraStruct)  # gradient descent 		
+		predictedMatrix = PMF(trainMatrix, paraStruct)  # gradient descent 		
 		timeResults[k] = time.clock() - iterStartTime
 
 		# calculate the prediction error
-		dataPath = '%s%.2f\\round_%02d_test.txt'%(paraStruct['dataFolder'], density, k + 1)
-		logger.info('Load testing data: %s'%dataPath)
-		testIndicatorMatrix = np.loadtxt(dataPath)
-		(testVecX, testVecY) = np.where(testIndicatorMatrix)		
-		realVec = matrix[testVecX, testVecY]
 		predVec = predictedMatrix[testVecX, testVecY]
-      
-        # Evaluation metrics caculation
-		evalResults[k, :] = errMetric(realVec, predVec, paraStruct['metrics'])
+		evalResults[k, :] = errMetric(testVec, predVec, paraStruct['metrics'])
 
 		logger.info('%d-round done. Running time: %.2f sec'%(k + 1, timeResults[k]))
 		logger.info('----------------------------------------------')
@@ -62,6 +57,38 @@ def predict(matrix, density, paraStruct):
     logger.info('Config density = %.2f done. Running time: %.2f sec'
 			%(density, time.clock() - startTime))
     logger.info('==============================================')
+########################################################
+
+
+########################################################
+# Function to remove the entries of data matrix
+# Return the trainMatrix and the corresponding testing data
+#
+def removeEntries(matrix, density, seedID):
+	(vecX, vecY) = np.where(matrix > 0)
+	vecXY = np.c_[vecX, vecY]
+	numRecords = vecX.size
+	numAll = matrix.size
+	random.seed(seedID)
+	randomSequence = range(0, numRecords)
+	random.shuffle(randomSequence) # one random sequence per round
+	numTrain = int( numAll * density)
+	# by default, we set the remaining QoS records as testing data 		               
+	numTest = numRecords - numTrain
+	trainXY = vecXY[randomSequence[0 : numTrain], :]
+	testXY = vecXY[randomSequence[- numTest :], :]
+
+	trainMatrix = np.zeros(matrix.shape)
+	trainMatrix[trainXY[:, 0], trainXY[:, 1]] = matrix[trainXY[:, 0], trainXY[:, 1]]
+	testMatrix = np.zeros(matrix.shape)
+	testMatrix[testXY[:, 0], testXY[:, 1]] = matrix[testXY[:, 0], testXY[:, 1]]
+
+    # ignore invalid testing data
+	idxX = (np.sum(trainMatrix, axis=1) == 0)
+	testMatrix[idxX, :] = 0
+	idxY = (np.sum(trainMatrix, axis=0) == 0)
+	testMatrix[:, idxY] = 0    
+	return trainMatrix, testMatrix
 ########################################################
 
 

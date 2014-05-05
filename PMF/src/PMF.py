@@ -1,8 +1,8 @@
 ########################################################
 # PMF.py
-# Developer: Jieming Zhu <jmzhu@cse.cuhk.edu.hk>
+# Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
-# Last updated: 2014/2/6
+# Last updated: 2014/5/4
 ########################################################
 
 import time
