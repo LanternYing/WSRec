@@ -5,9 +5,7 @@
 # Last updated: 2014/4/30
 #########################################################
 
-import time
 import numpy as np
-from numpy import linalg as LA
 from utilities import *
 cimport numpy as np # import C-API
 
