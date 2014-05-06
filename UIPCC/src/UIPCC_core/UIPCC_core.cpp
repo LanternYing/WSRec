@@ -24,11 +24,7 @@ void UPCC_core(double *removedData, double *uMean, int numUser, int numService,
     double **removedMatrix = vector2Matrix(removedData, numUser, numService);
     
     int i, j; 
-    double **pccMatrix = new double *[numUser];
-    for (i = 0; i < numUser; i++) {
-    	pccMatrix[i] = new double [numUser];
-    	memset(pccMatrix[i], 0, numUser * sizeof(double)); // Initialization
-    }
+    double **pccMatrix = createMatrix(numUser, numUser);
 
   	for (i = 0; i < numUser; i++) {
   		map<int, double> pccMap;
@@ -83,9 +79,9 @@ void UPCC_core(double *removedData, double *uMean, int numUser, int numService,
 		}
   	}
 
-  	delete2DPointer(pccMatrix);
-    delete2DPointer(predMatrix);
-    delete2DPointer(removedMatrix);
+  	delete2DMatrix(pccMatrix);
+    delete ((char*) predMatrix);
+    delete ((char*) removedMatrix);
 }
 
 
@@ -105,9 +101,20 @@ double **vector2Matrix(double *vector, int row, int col)
 }
 
 
-void delete2DPointer(double **ptr)  
-{
-	delete ((char*) ptr);
+double **createMatrix(int row, int col) {
+    double **matrix = new double *[row];
+    matrix[0] = new double[row * col];
+    memset(matrix[0], 0, row * col * sizeof(double)); // Initialization
+    int i;
+    for (i = 1; i < row; i++) {
+    	matrix[i] = matrix[i - 1] + col;
+    }
+    return matrix;
+}
+
+void delete2DMatrix(double **ptr) {
+	delete ptr[0];
+	delete ptr;
 }
 
 

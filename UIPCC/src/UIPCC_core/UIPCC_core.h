@@ -1,6 +1,5 @@
 /********************************************************
- * UIPCC_core.cpp
- * C++ implements on PCC and UPCC computations
+ * UIPCC_core.h: header file of UIPCC_core.cpp
  * Author: Jamie Zhu <jimzhu@GitHub>
  * Created: 2014/4/29
  * Last updated: 2014/4/29
@@ -17,8 +16,11 @@ void UPCC_core(double *removedData, double *uMean, int numUser, int numService,
 /* Transform a vector into a matrix */ 
 double **vector2Matrix(double *vector, int row, int col);
 
-/* Free a double *vector (vec of pointers) */ 
-void delete2DPointer(double **ptr); 
+/* Allocate memory for a 2D array */
+double **createMatrix(int row, int col);
+
+/* Free memory for a 2D array */ 
+void delete2DMatrix(double **ptr);
 
 /* Compute pcc value between two vectors */
 double getPCC(double *uA, double *uB, double meanA, double meanB, int numUser);
