@@ -14,7 +14,7 @@ import os, sys, time
 sys.path.append('src')
 # Build external model
 if not os.path.isfile('src/UIPCC.so'):
-	print 'Please first build the cpp code into UIPCC.so: '
+	print 'Lack of UIPCC.so. Please first build the cpp code into UIPCC.so: '
 	print 'python setup.py build_ext --inplace'
 	sys.exit()
 
