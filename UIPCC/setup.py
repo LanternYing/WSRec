@@ -8,14 +8,13 @@
 
 
 import sys
-sys.path.append('src')
-
 from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import shutil
 
-logger.info('Build extension modules...')
+print('Build extension modules...')
+print('==============================================')
 
 ext_modules = [Extension('UIPCC',
 				['src/UIPCC_core/UIPCC.pyx', 'src/UIPCC_core/UIPCC_core.cpp'],
@@ -29,7 +28,6 @@ setup(
 )
 
 shutil.move('UIPCC.so', 'src/UIPCC.so')
-
-logger.info('Build done.')
-sys.path.remove('src')
+print('==============================================')
+print('Build done.\n')
 
