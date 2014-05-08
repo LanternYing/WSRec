@@ -9,7 +9,14 @@
 
 import numpy as np
 import os, sys, time
+
 sys.path.append('src')
+# Build external model
+if not os.path.isfile('src/NMF.so'):
+	print 'Lack of NMF.so. Please first build the cpp code into NMF.so: '
+	print 'python setup.py build_ext --inplace'
+	sys.exit()
+
 from utilities import *
 from predict import *
  
