@@ -7,7 +7,7 @@ The source code is provided under "src" folder. You can directly run the provide
 For ease of evaluation, we provide the experimental results with five metrics (MAE, NMAE, RMSE, MRE, NPRE), under the "result/" folder, after running the above five QoS prediction approaches on "data/dataset#1". E.g., "result/rtResult_0.20.txt" records the evaluation results under matrix density = 20%. In particular, each experiment is run for 20 times and the average result is reported. These results can be directly used for your own research.
 
 In addition, we also provide the corresponding pure Python implementation on NMF for your reference:
-Python version: https://github.com/RMBLab/WSRec/tree/v0.4.1/NMF
+Python version: https://github.com/RMBLab/WSRec/tree/v0.4.2/NMF
 
 Reference paper:
 [1] Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "Exploring Latent Features for Memory-Based QoS Prediction in Cloud Computing," in Proc. of the 30th IEEE Symposium on Reliable Distributed Systems (SRDS'11), 2011, pp. 1-10.  
