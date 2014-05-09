@@ -55,7 +55,7 @@ def NMF(removedMatrix, paraStruct):
 # Function to compute the loss
 #
 def loss( U, S, removedMatrix, paraStruct ):
-    lmd = paraStruct['lmda'] # regularization parameter  
+    lmd = paraStruct['lambda'] # regularization parameter  
     # loss value computation
     I = np.not_equal(removedMatrix, 0)
     cost = 0.5 * (LA.norm(I * (removedMatrix - np.dot(U, S.T)), 'fro') ** 2)
