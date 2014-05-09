@@ -25,11 +25,16 @@ readme.txt    - descriptions of the dataset.
 Reference paper
 ----------------------------------------------------------------------------
 
-This detailed description of this data set can be refereed to this paper:
+Please refer to the following papers for the detailed descriptions of this 
+dataset:
 
-Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Investigating QoS of Real-World 
-Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, pp.32-39, 
-2014.
+- Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Investigating QoS of Real-
+  World Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, 
+  pp.32-39, 2014.
+  
+- Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Distributed QoS Evaluation 
+  for Real-World Web Services,” in Proc. of the 8th International Conference 
+  on Web Services (ICWS'10), Miami, Florida, USA, July 5-10, 2010, pp.83-90.
 
 IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
 THANKS!

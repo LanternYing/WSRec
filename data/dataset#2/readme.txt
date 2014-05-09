@@ -25,11 +25,12 @@ readme.txt  - descriptions of the dataset.
 Reference paper
 ----------------------------------------------------------------------------
 
-This detailed description of this data set can be refereed to this paper:
+Please refer to the following paper for the detailed descriptions of this 
+dataset:
 
-Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware 
-Personalized QoS Prediction Framework for Web Services", in Proceedings of 
-the 22th IEEE Symposium on Software Reliability Engineering (ISSRE 2011).
+- Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware 
+  Personalized QoS Prediction Framework for Web Services", in Proceedings of 
+  the 22th IEEE Symposium on Software Reliability Engineering (ISSRE 2011).
 
 IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
 THANKS!
