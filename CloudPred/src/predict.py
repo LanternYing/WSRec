@@ -40,7 +40,7 @@ def predict(matrix, density, paraStruct):
 		testVec = testMatrix[testVecX, testVecY]
 		# read the training data, i.e., removed matrix
 
-		# gradient descent in PMF
+		# invocation to the prediction function
 		iterStartTime = time.clock() # to record the running time for one round             
 		predictedMatrix = CloudPred(trainMatrix, paraStruct)  # gradient descent 		
 		timeResults[k] = time.clock() - iterStartTime

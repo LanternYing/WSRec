@@ -14,7 +14,7 @@ from utilities import *
 
 
 ########################################################
-# Function to run the PMF method at each density
+# Function to run the prediction approach at each density
 # 
 def predict(matrix, density, paraStruct):
 
@@ -23,7 +23,7 @@ def predict(matrix, density, paraStruct):
     numUser = matrix.shape[0] 
     rounds = paraStruct['rounds']
     logger.info('Data matrix size: %d users * %d services'%(numUser, numService))
-    logger.info('Run PMF for %d rounds: matrix density = %.2f.'%(rounds, density))
+    logger.info('Run the algorithm for %d rounds: matrix density = %.2f.'%(rounds, density))
     evalResults = np.zeros((rounds, len(paraStruct['metrics']))) 
     timeResults = np.zeros((rounds, 1))
     	
@@ -40,7 +40,7 @@ def predict(matrix, density, paraStruct):
 		testVec = testMatrix[testVecX, testVecY]
 		# read the training data, i.e., removed matrix
 
-		# gradient descent in PMF
+		# invocation to the prediction function
 		iterStartTime = time.clock() # to record the running time for one round             
 		predictedMatrix = PMF(trainMatrix, paraStruct)  # gradient descent 		
 		timeResults[k] = time.clock() - iterStartTime
