@@ -1,5 +1,4 @@
-WSRec: Web Service Recommendation
-=====
+##WSRec: Web Service Recommendation
 
 This repository contains the implementations on most of the state-of-the-art approaches for Web service QoS Prediction, including:
 	UMEAN
