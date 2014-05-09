@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------
 README file for dataset description
 ----------------------------------------------------------------------------
 
@@ -19,14 +19,14 @@ http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset1.zip
 List of contents of the dataset
 ----------------------------------------------------------------------------
 
-userlist.txt	- information of 339 service users. Format: | User ID |  
-				  IP Address | Country | IP No. | AS | Latitude | Longitude |
-wslist.txt		- information of the 5,825 Web services. Format: | Service ID 
-				  | WSDL Address | Service Provider | IP Address | Country | 
-				  IP No. | AS | Latitude | Longitude |
-rtMatrix.txt	- 339 * 5825 user-item matrix of response-time. 
-tpMatrix.txt	- 339 * 5825 user-item matrix for throughput.
-readme.txt		- descriptions of the dataset. 
+userlist.txt  - information of 339 service users. Format: | User ID |  
+		IP Address | Country | IP No. | AS | Latitude | Longitude |
+wslist.txt    - information of the 5,825 Web services. Format: | Service ID |  
+                WSDL Address | Service Provider | IP Address | Country | 
+                IP No. | AS | Latitude | Longitude |
+rtMatrix.txt  - 339 * 5825 user-item matrix of response-time. 
+tpMatrix.txt  - 339 * 5825 user-item matrix for throughput.
+readme.txt    - descriptions of the dataset. 
 
 ----------------------------------------------------------------------------
 Reference paper
@@ -64,15 +64,15 @@ http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset2.zip
 List of contents of the dataset
 ----------------------------------------------------------------------------
 
-rtData		- response-time values of 4,500 Web services when invoked by 142 
-			  service users over 64 time slices. Data format:
-			  User ID | Service ID | Time Slice ID | Response Time (sec)
-			  e.g.: 98    4352    33    0.311
-tpData		- throughput values of 4,500 Web services when invoked by 142 
-			  service users in 64 time slices. Data format:
-			  User ID | Service ID | Time Slice ID | Throughput (kbps)
-			  e.g.: 91    1196    62    32.88
-readme.txt	- descriptions of the dataset.
+rtData      - response-time values of 4,500 Web services when invoked by 142 
+              service users over 64 time slices. Data format:
+              User ID | Service ID | Time Slice ID | Response Time (sec)
+              e.g.: 98    4352    33    0.311
+tpData      - throughput values of 4,500 Web services when invoked by 142 
+              service users in 64 time slices. Data format:
+              User ID | Service ID | Time Slice ID | Throughput (kbps)
+              e.g.: 91    1196    62    32.88
+readme.txt  - descriptions of the dataset.
 
 ----------------------------------------------------------------------------
 Reference paper
