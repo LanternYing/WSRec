@@ -1,0 +1,341 @@
+[User ID]	[IP Address]	[Country]	[IP No.]	[AS]	[Latitude]	[Longitude]
+=================================================================================						
+0	12.108.127.138	United States	208437130	AS7018 AT&T Services, Inc.	38	-97
+1	12.46.129.15	United States	204374287	AS7018 AT&T Services, Inc.	38.0464	-122.23
+2	122.1.115.91	Japan	2046915419	S4713 NTT Communications Corporation	35.685	139.7514
+3	128.10.19.52	United States	2148143924	S17 Purdue University	40.4249	-86.9162
+4	128.10.19.53	United States	2148143925	S17 Purdue University	40.4249	-86.9162
+5	128.111.52.61	United States	2154771517	AS131 University of California, Santa Barbara	34.4329	-119.8371
+6	128.111.52.63	United States	2154771519	AS131 University of California, Santa Barbara	34.4329	-119.8371
+7	128.111.52.64	United States	2154771520	AS131 University of California, Santa Barbara	34.4329	-119.8371
+8	128.112.139.2	United States	2154859266	S88 Princeton University	40.3756	-74.6597
+9	128.112.139.80	United States	2154859344	S88 Princeton University	40.3756	-74.6597
+10	128.114.63.16	United States	2154970896	AS5739 University of California, Santa Cruz	36.9899	-122.0603
+11	128.114.63.63	United States	2154970943	AS5739 University of California, Santa Cruz	36.9899	-122.0603
+12	128.114.63.64	United States	2154970944	AS5739 University of California, Santa Cruz	36.9899	-122.0603
+13	128.119.41.210	United States	2155293138	S1249 Five Colleges Network	42.3804	-72.5231
+14	128.119.41.211	United States	2155293139	S1249 Five Colleges Network	42.3804	-72.5231
+15	128.135.11.149	United States	2156333973	S160 University of Chicago	41.7804	-87.6027
+16	128.135.11.152	United States	2156333976	S160 University of Chicago	41.7804	-87.6027
+17	128.187.223.211	United States	2159796179	S6510 Brigham Young University	40.3563	-111.7325
+18	128.187.223.212	United States	2159796180	S6510 Brigham Young University	40.3563	-111.7325
+19	128.193.33.7	United States	2160140551	S4201 Oregon State University	44.5642	-123.279
+20	128.2.211.114	United States	2147668850	S9 Carnegie Mellon University	40.4439	-79.9561
+21	128.208.4.197	United States	2161116357	S73 University of Washington	47.6606	-122.2919
+22	128.208.4.198	United States	2161116358	S73 University of Washington	47.6606	-122.2919
+23	128.208.4.199	United States	2161116359	S73 University of Washington	47.6606	-122.2919
+24	128.208.4.99	United States	2161116259	S73 University of Washington	47.6606	-122.2919
+25	128.220.247.28	United States	2161964828	S5723 Johns Hopkins University	39.3288	-76.5967
+26	128.220.247.29	United States	2161964829	S5723 Johns Hopkins University	39.3288	-76.5967
+27	128.227.56.81	United States	2162374737	S6356 Northeast Regional Data Center	29.6516	-82.3248
+28	128.227.56.82	United States	2162374738	S6356 Northeast Regional Data Center	29.6516	-82.3248
+29	128.232.103.203	United Kingdom	2162714571	S786 The JANET IP Service	52.2	0.1167
+30	128.233.252.11	Canada	2162818059	S22950 University of Saskatchewan	52.1193	-106.6594
+31	128.233.252.12	Canada	2162818060	S22950 University of Saskatchewan	52.1193	-106.6594
+32	128.238.88.64	United States	2163103808	S23329 Open Access Inc.	40.6944	-73.9906
+33	128.252.19.20	United States	2164003604	S2552 Washington University	38.6657	-90.3231
+34	128.252.19.21	United States	2164003605	S2552 Washington University	38.6657	-90.3231
+35	128.252.19.22	United States	2164003606	S2552 Washington University	38.6657	-90.3231
+36	128.31.1.13	United States	2149515533	S3 Massachusetts Institute of Technology	42.3646	-71.1028
+37	128.42.142.41	United States	2150272553	S8 Rice University	29.7176	-95.4188
+38	128.42.142.42	United States	2150272554	S8 Rice University	29.7176	-95.4188
+39	128.59.20.226	United States	2151355618	S14 Columbia University	40.8006	-73.9653
+40	128.59.20.227	United States	2151355619	S14 Columbia University	40.8006	-73.9653
+41	128.59.20.228	United States	2151355620	S14 Columbia University	40.8006	-73.9653
+42	128.6.192.156	United States	2147926172	S46 Rutgers University	40.5516	-74.4637
+43	128.8.126.78	United States	2148040270	S27 University of Maryland at College Park	38.9827	-77.004
+44	128.8.126.79	United States	2148040271	S27 University of Maryland at College Park	38.9827	-77.004
+45	128.83.122.161	United States	2152954529	S18 University of Texas at Austin	30.2961	-97.7369
+46	128.83.122.162	United States	2152954530	S18 University of Texas at Austin	30.2961	-97.7369
+47	128.83.122.180	United States	2152954548	S18 University of Texas at Austin	30.2961	-97.7369
+48	128.83.122.181	United States	2152954549	S18 University of Texas at Austin	30.2961	-97.7369
+49	128.84.154.44	United States	2153028140	S26 Cornell University	42.4485	-76.4804
+50	128.84.154.49	United States	2153028145	S26 Cornell University	42.4485	-76.4804
+51	128.84.154.71	United States	2153028167	S26 Cornell University	42.4485	-76.4804
+52	129.10.120.193	United States	2164947137	S156 Northeastern University	42.3424	-71.0878
+53	129.10.120.194	United States	2164947138	S156 Northeastern University	42.3424	-71.0878
+54	129.105.15.37	United States	2171146021	S103 Northwestern University	42.0586	-87.6845
+55	129.107.35.131	United States	2171282307	S18515 University of Texas at Arlington	32.7714	-97.2915
+56	129.108.202.10	United States	2171390474	S16461 The University of Texas at El Paso	31.7832	-106.4976
+57	129.110.125.51	United States	2171501875	S20162 University of Texas at Dallas	32.9482	-96.7297
+58	129.110.125.52	United States	2171501876	S20162 University of Texas at Dallas	32.9482	-96.7297
+59	129.130.252.141	United States	2172845197	S2701 Kansas State University	39.1023	-96.5246
+60	129.137.253.253	United States	2173304317	S3112 OARnet	39.1668	-84.5382
+61	129.21.30.116	United States	2165644916	S4385 Rochester Institute of Technology	43.0899	-77.6376
+62	129.21.30.117	United States	2165644917	S4385 Rochester Institute of Technology	43.0899	-77.6376
+63	129.237.161.193	United States	2179834305	S2496 University of Kansas	38.9525	-95.2756
+64	129.237.161.194	United States	2179834306	S2496 University of Kansas	38.9525	-95.2756
+65	129.24.211.29	United States	2165887773	S3388 University of New Mexico	35.0443	-106.6729
+66	129.242.19.196	Norway	2180125636	AS224 UNINETT, The Norwegian University & Research Network	69.6667	18.9667
+67	129.242.19.197	Norway	2180125637	AS224 UNINETT, The Norwegian University & Research Network	69.6667	18.9667
+68	129.59.88.180	United States	2168150196	S7212 Vanderbilt University	36.1473	-86.777
+69	129.69.210.96	Germany	2168836704	S553 Landeshochschulnetz Baden-Wuerttemberg (BelWue)	48.7667	9.1833
+70	129.69.210.97	Germany	2168836705	S553 Landeshochschulnetz Baden-Wuerttemberg (BelWue)	48.7667	9.1833
+71	129.74.74.19	United States	2169129491	S693 University of Notre Dame	41.7007	-86.2501
+72	129.74.74.20	United States	2169129492	S693 University of Notre Dame	41.7007	-86.2501
+73	129.93.229.138	United States	2170414474	S7896 University of Nebraska-Lincoln	40.8	-96.667
+74	129.93.229.139	United States	2170414475	S7896 University of Nebraska-Lincoln	40.8	-96.667
+75	129.97.74.12	Canada	2170636812	S12093 University of Waterloo	43.4529	-80.5281
+76	129.97.74.14	Canada	2170636814	S12093 University of Waterloo	43.4529	-80.5281
+77	130.136.254.21	Italy	2190016021	S137 GARR Italian academic and research network	44.4833	11.3333
+78	130.149.49.136	Germany	2190815624	S680 service G-WiN	52.5167	13.4
+79	130.149.49.137	Germany	2190815625	S680 service G-WiN	52.5167	13.4
+80	130.192.86.30	Italy	2193643038	S137 GARR Italian academic and research network	45.05	7.6667
+81	130.206.158.140	Spain	2194579084	S766 RedIRIS Autonomous System	42.8141	-1.6412
+82	130.237.50.124	Sweden	2196583036	S1653 SUNET Swedish University Network	59.3333	18.05
+83	130.75.87.83	Germany	2185975635	S680 service G-WiN	52.3667	9.7167
+84	130.83.166.198	Germany	2186520262	S8365 Man-da.de GmbH	49.8706	8.6494
+85	130.83.166.199	Germany	2186520263	S8365 Man-da.de GmbH	49.8706	8.6494
+86	130.83.166.200	Germany	2186520264	S8365 Man-da.de GmbH	49.8706	8.6494
+87	130.92.70.252	Switzerland	2187085564	AS559 SWITCH, Swiss Education and Research Network	46.9167	7.4667
+88	130.92.70.253	Switzerland	2187085565	AS559 SWITCH, Swiss Education and Research Network	46.9167	7.4667
+89	131.130.32.153	Austria	2206343321	AS760 University of Vienna, Austria	48.2	16.3667
+90	131.130.32.154	Austria	2206343322	AS760 University of Vienna, Austria	48.2	16.3667
+91	131.175.17.10	Italy	2209288458	S137 GARR Italian academic and research network	42.8333	12.8333
+92	131.175.17.9	Italy	2209288457	S137 GARR Italian academic and research network	42.8333	12.8333
+93	131.179.50.70	United States	2209559110	AS52 University of California, Los Angeles	33.7866	-118.2987
+94	131.179.50.72	United States	2209559112	AS52 University of California, Los Angeles	33.7866	-118.2987
+95	131.215.45.71	United States	2211917127	S31 California Institute of Technology	33.7866	-118.2987
+96	131.215.45.72	United States	2211917128	S31 California Institute of Technology	33.7866	-118.2987
+97	131.246.19.201	Germany	2213942217	S680 service G-WiN	49.45	7.75
+98	131.246.191.41	Germany	2213986089	S680 service G-WiN	49.45	7.75
+99	131.246.191.42	Germany	2213986090	S680 service G-WiN	49.45	7.75
+100	131.247.2.241	United States	2214003441	S5661 USF - UNIVERSITY OF SOUTH FLORIDA	28.0631	-82.4128
+101	131.247.2.242	United States	2214003442	S5661 USF - UNIVERSITY OF SOUTH FLORIDA	28.0631	-82.4128
+102	131.247.2.245	United States	2214003445	S5661 USF - UNIVERSITY OF SOUTH FLORIDA	28.0631	-82.4128
+103	131.247.2.247	United States	2214003447	S5661 USF - UNIVERSITY OF SOUTH FLORIDA	28.0631	-82.4128
+104	131.254.208.10	France	2214514698	S1938 Irisa/Inria Rennes	48.112	-1.6743
+105	131.254.208.11	France	2214514699	S1938 Irisa/Inria Rennes	48.112	-1.6743
+106	132.170.3.32	United States	2225734432	S7939 University of Central Florida	28.5663	-81.2608
+107	132.170.3.33	United States	2225734433	S7939 University of Central Florida	28.5663	-81.2608
+108	132.239.17.225	United States	2230260193	S7377 University of California at San Diego	32.8807	-117.2359
+109	132.239.17.226	United States	2230260194	S7377 University of California at San Diego	32.8807	-117.2359
+110	132.65.240.100	Israel	2218913892	S378 ILAN	31.78	35.23
+111	132.65.240.102	Israel	2218913894	S378 ILAN	31.78	35.23
+112	133.1.74.162	Japan	2231454370	S4730 Osaka University	35.69	139.69
+113	133.11.240.57	Japan	2232152121	AS2501 The University of Tokyo, Information Technology Center	35.685	139.7514
+114	134.151.255.180	United Kingdom	2258108340	S786 The JANET IP Service	52.4667	-1.9167
+115	134.151.255.181	United Kingdom	2258108341	S786 The JANET IP Service	52.4667	-1.9167
+116	134.34.246.4	Germany	2250438148	S553 Landeshochschulnetz Baden-Wuerttemberg (BelWue)	47.6667	9.1833
+117	134.34.246.5	Germany	2250438149	S553 Landeshochschulnetz Baden-Wuerttemberg (BelWue)	47.6667	9.1833
+118	134.76.81.91	Germany	2253148507	S680 service G-WiN	51.5333	9.9333
+119	134.76.81.92	Germany	2253148508	S680 service G-WiN	51.5333	9.9333
+120	136.145.115.194	Puerto Rico	2291233730	S5786 University of Puerto Rico	18.25	-66.5
+121	136.145.115.196	Puerto Rico	2291233732	S5786 University of Puerto Rico	18.25	-66.5
+122	137.132.80.105	Singapore	2307149929	S7472 Computer Centre	1.2931	103.8558
+123	137.132.80.106	Singapore	2307149930	S7472 Computer Centre	1.2931	103.8558
+124	137.132.80.110	Singapore	2307149934	S7472 Computer Centre	1.2931	103.8558
+125	137.165.1.111	United States	2309292399	S11399 Williams College Center for Computing	42.6442	-73.2463
+126	137.165.1.112	United States	2309292400	S11399 Williams College Center for Computing	42.6442	-73.2463
+127	137.165.1.114	United States	2309292402	S11399 Williams College Center for Computing	42.6442	-73.2463
+128	137.165.1.115	United States	2309292403	S11399 Williams College Center for Computing	42.6442	-73.2463
+129	137.189.90.136	Hong Kong	2310888072	S3661 The Chinese University of Hong Kong	22.2833	114.15
+130	137.189.97.17	Hong Kong	2310889745	S3661 The Chinese University of Hong Kong	22.25	114.1667
+131	137.189.98.31	Hong Kong	2310890015	S3661 The Chinese University of Hong Kong	22.25	114.1667
+132	137.226.138.154	Germany	2313325210	S680 service G-WiN	50.7708	6.1053
+133	137.226.138.156	Germany	2313325212	S680 service G-WiN	50.7708	6.1053
+134	137.99.11.86	United States	2304969558	S22742 State of Connecticut Dept of InformationTechnology	41.808	-72.251
+135	138.100.12.148	Spain	2321812628	S766 RedIRIS Autonomous System	40.4086	-3.6922
+136	138.15.10.55	United States	2316241463	AS209 Qwest Communications Company, LLC	37.3688	-122.0363
+137	138.15.10.56	United States	2316241464	AS209 Qwest Communications Company, LLC	37.3688	-122.0363
+138	138.232.66.194	Austria	2330477250	S1110 University of Innsbruck	47.2667	11.4
+139	138.232.66.195	Austria	2330477251	S1110 University of Innsbruck	47.2667	11.4
+140	138.238.250.155	United States	2330917531	AS22925 Allied Telecom Group, LLC	38.8933	-77.0146
+141	138.238.250.157	United States	2330917533	AS22925 Allied Telecom Group, LLC	38.8933	-77.0146
+142	138.246.99.249	Germany	2331403257	S12816 Leibniz-Rechenzentrum Muenchen	48.15	11.5833
+143	138.246.99.250	Germany	2331403258	S12816 Leibniz-Rechenzentrum Muenchen	48.15	11.5833
+144	138.251.214.77	United Kingdom	2331760205	S786 The JANET IP Service	51.5	-0.13
+145	138.251.214.78	United Kingdom	2331760206	S786 The JANET IP Service	51.5	-0.13
+146	138.96.250.150	France	2321611414	S776 INRIA Sophia-Antipolis	43.6413	7.0057
+147	138.96.250.151	France	2321611415	S776 INRIA Sophia-Antipolis	43.6413	7.0057
+148	139.19.142.1	Germany	2333314561	S680 service G-WiN	49.2333	7
+149	139.19.142.2	Germany	2333314562	S680 service G-WiN	49.2333	7
+150	139.19.142.3	Germany	2333314563	S680 service G-WiN	49.2333	7
+151	139.19.142.4	Germany	2333314564	S680 service G-WiN	49.2333	7
+152	139.19.142.5	Germany	2333314565	S680 service G-WiN	49.2333	7
+153	139.19.142.6	Germany	2333314566	S680 service G-WiN	49.2333	7
+154	139.91.90.238	Greece	2338020078	S8522 FORTH Autonomous System	39	22
+155	139.91.90.239	Greece	2338020079	S8522 FORTH Autonomous System	39	22
+156	140.112.107.80	Taiwan	2356177744	S17716 National Taiwan University	25.0392	121.525
+157	140.112.42.158	Taiwan	2356161182	S17716 National Taiwan University	25.0392	121.525
+158	140.112.42.159	Taiwan	2356161183	S17716 National Taiwan University	25.0392	121.525
+159	140.114.79.231	Taiwan	2356301799	S18047 National Tsing-Hua University	25.0392	121.525
+160	140.119.164.84	Taiwan	2356651092	S1659 Tiawan Academic Network (TANet) Information Center	25.0392	121.525
+161	140.119.164.85	Taiwan	2356651093	S1659 Tiawan Academic Network (TANet) Information Center	25.0392	121.525
+162	140.192.249.204	United States	2361457100	S20130 Depaul University	41.8776	-87.6272
+163	141.149.218.208	United States	2375408336	S19262 Verizon Online LLC	43.0481	-76.1474
+164	141.149.218.209	United States	2375408337	S19262 Verizon Online LLC	43.0481	-76.1474
+165	141.161.20.32	United States	2376143904	S11318 Georgetown University	38.8933	-77.0146
+166	141.161.20.33	United States	2376143905	S11318 Georgetown University	38.8933	-77.0146
+167	141.20.103.210	Germany	2366924754	S680 service G-WiN	52.5167	13.4
+168	141.20.103.211	Germany	2366924755	S680 service G-WiN	52.5167	13.4
+169	141.212.113.178	United States	2379510194	S36375 University of Michigan	42.2923	-83.7145
+170	141.212.113.179	United States	2379510195	S36375 University of Michigan	42.2923	-83.7145
+171	141.213.4.201	United States	2379547849	S36375 University of Michigan	42.2923	-83.7145
+172	141.219.252.132	United States	2380004484	S237 Merit Network Inc.	47.1544	-88.6471
+173	141.219.252.133	United States	2380004485	S237 Merit Network Inc.	47.1544	-88.6471
+174	141.22.213.34	Germany	2367083810	S680 service G-WiN	53.55	10
+175	141.24.249.130	Germany	2367224194	S680 service G-WiN	50.6833	10.9
+176	141.76.45.17	Germany	2370579729	S680 service G-WiN	51.05	13.75
+177	141.76.45.18	Germany	2370579730	S680 service G-WiN	51.05	13.75
+178	142.104.21.241	Canada	2389186033	S16462 University of Victoria	48.4202	-123.3671
+179	142.150.238.12	Canada	2392256012	S239 University of Toronto	43.6619	-79.3952
+180	142.150.238.13	Canada	2392256013	S239 University of Toronto	43.6619	-79.3952
+181	142.150.3.78	Canada	2392195918	S239 University of Toronto	43.6619	-79.3952
+182	143.205.172.11	Austria	2412620811	S1111 University of Klagenfurt	46.6247	14.3053
+183	143.205.172.12	Austria	2412620812	S1111 University of Klagenfurt	46.6247	14.3053
+184	143.248.139.55	Korea, Republic of	2415430455	S1781 Korea Advanced Institute of Science and Technology	37.57	126.98
+185	146.57.249.98	United States	2453272930	S217 University of Minnesota	44.9733	-93.2323
+186	147.102.224.227	Greece	2472992995	S3323 National Technical University of Athens	37.9833	23.7333
+187	147.102.224.228	Greece	2472992996	S3323 National Technical University of Athens	37.9833	23.7333
+188	147.229.10.250	Czech Republic	2481261306	AS2852 CESNET, z.s.p.o.	49.2	16.6333
+189	147.83.30.166	Spain	2471698086	S13041 CESCA - Anella Cientifica RREN Autonomous System	41.3984	2.1741
+190	147.83.30.167	Spain	2471698087	S13041 CESCA - Anella Cientifica RREN Autonomous System	41.3984	2.1741
+191	149.169.227.131	United States	2510939011	S2900 Arizona Tri University Network	33.4148	-111.9093
+192	150.140.140.91	Greece	2525793371	AS5408 Greek Research & Technology Network, http://www.grnet.gr	38.2444	21.7344
+193	150.140.140.93	Greece	2525793373	AS5408 Greek Research & Technology Network, http://www.grnet.gr	38.2444	21.7344
+194	150.254.212.147	Poland	2533282963	S9112 POZMAN-EDU	52.4167	16.9667
+195	150.254.212.148	Poland	2533282964	S9112 POZMAN-EDU	52.4167	16.9667
+196	150.65.32.66	Japan	2520850498	S17932 Japan Advanced Institute of Science and Technology	35.69	139.69
+197	150.65.32.68	Japan	2520850500	S17932 Japan Advanced Institute of Science and Technology	35.69	139.69
+198	152.3.138.4	United States	2550368772	S13371 Duke University	35.9954	-78.9019
+199	152.3.138.5	United States	2550368773	S13371 Duke University	35.9954	-78.9019
+200	152.81.47.4	France	2555457284	S2200 Reseau National de telecommunications pour la Technologie	48.6921	6.1878
+201	152.81.47.5	France	2555457285	S2200 Reseau National de telecommunications pour la Technologie	48.6921	6.1878
+202	155.246.12.163	United States	2616593571	S16889 Stevens Institute of Technology	40.7458	-74.0321
+203	155.246.12.164	United States	2616593572	S16889 Stevens Institute of Technology	40.7458	-74.0321
+204	156.17.10.51	Poland	2618362419	AS8970 WROCMAN-EDU educational part of WASK network, Wroclaw, Poland	51.1	17.0333
+205	156.17.10.52	Poland	2618362420	AS8970 WROCMAN-EDU educational part of WASK network, Wroclaw, Poland	51.1	17.0333
+206	156.56.250.226	United States	2620979938	S87 Indiana University	38.862	-86.4711
+207	156.56.250.227	United States	2620979939	S87 Indiana University	38.862	-86.4711
+208	157.181.175.249	Hungary	2645929977	S2012 ELTENET ELTENET	47.5	19.0833
+209	158.130.6.253	United States	2659321597	S55 University of Pennsylvania	39.9597	-75.1968
+210	160.36.57.173	United States	2686728621	S3450 The University of Tennessee Health Science Center	35.9043	-83.8407
+211	163.117.253.4	Spain	2742418692	S766 RedIRIS Autonomous System	40.4086	-3.6922
+212	163.221.11.71	Japan	2749172551	S2500 WIDE Project	34.6853	135.8328
+213	163.221.11.72	Japan	2749172552	S2500 WIDE Project	34.6853	135.8328
+214	163.221.11.73	Japan	2749172553	S2500 WIDE Project	34.6853	135.8328
+215	163.221.11.74	Japan	2749172554	S2500 WIDE Project	34.6853	135.8328
+216	164.73.47.242	Uruguay	2756259826	S1797 Uruguay	-34.8581	-56.1708
+217	164.73.47.244	Uruguay	2756259828	S1797 Uruguay	-34.8581	-56.1708
+218	165.230.49.114	United States	2783326578	S46 Rutgers University	40.5032	-74.4289
+219	165.230.49.115	United States	2783326579	S46 Rutgers University	40.5032	-74.4289
+220	169.229.50.13	United States	2850370061	S25 University of California at Berkeley	37.8668	-122.2536
+221	169.229.50.14	United States	2850370062	S25 University of California at Berkeley	37.8668	-122.2536
+222	169.229.50.16	United States	2850370064	S25 University of California at Berkeley	37.8668	-122.2536
+223	169.229.50.5	United States	2850370053	S25 University of California at Berkeley	37.8668	-122.2536
+224	169.229.50.7	United States	2850370055	S25 University of California at Berkeley	37.8668	-122.2536
+225	169.229.50.9	United States	2850370057	S25 University of California at Berkeley	37.8668	-122.2536
+226	169.235.24.232	United States	2850756840	AS6106 University of California, Riverside	33.7529	-116.0556
+227	169.237.79.210	United States	2850901970	S6192 University of California at Davis	38.4829	-121.6398
+228	169.237.79.211	United States	2850901971	S6192 University of California at Davis	38.4829	-121.6398
+229	170.140.119.69	United States	2861332293	S3512 Emory University Systems of Health Care	33.7952	-84.3248
+230	170.140.119.70	United States	2861332294	S3512 Emory University Systems of Health Care	33.7952	-84.3248
+231	171.66.3.182	United States	2873230262	S32 Stanford University	37.4178	-122.172
+232	192.12.33.100	United States	3222020452	S264 SRI International	38	-97
+233	192.12.33.102	United States	3222020454	S264 SRI International	38	-97
+234	192.197.121.2	Canada	3234167042	S15318 McGill University	45.5078	-73.5804
+235	192.26.179.68	Germany	3222975300	S680 service G-WiN	51.7167	8.7667
+236	192.26.179.69	Germany	3222975301	S680 service G-WiN	51.7167	8.7667
+237	192.33.90.196	Switzerland	3223411396	AS559 SWITCH, Swiss Education and Research Network	47.3667	8.55
+238	192.33.90.66	Switzerland	3223411266	AS559 SWITCH, Swiss Education and Research Network	47.3667	8.55
+239	192.33.90.67	Switzerland	3223411267	AS559 SWITCH, Swiss Education and Research Network	47.3667	8.55
+240	192.33.90.68	Switzerland	3223411268	AS559 SWITCH, Swiss Education and Research Network	47.3667	8.55
+241	192.33.90.69	Switzerland	3223411269	AS559 SWITCH, Swiss Education and Research Network	47.3667	8.55
+242	192.41.135.219	Switzerland	3223947227	AS559 SWITCH, Swiss Education and Research Network	47.3667	8.55
+243	192.42.43.22	Switzerland	3223989014	AS559 SWITCH, Swiss Education and Research Network	46.9931	6.93
+244	192.42.83.250	United States	3223999482	S29825 Illinois Institute of Technology	41.8471	-87.6248
+245	192.42.83.253	United States	3223999485	S29825 Illinois Institute of Technology	41.8471	-87.6248
+246	192.6.10.50	United States	3221621298	S786 The JANET IP Service	51.45	-2.5833
+247	192.6.26.31	United States	3221625375	S71 Hewlett-Packard Company	37.3762	-122.1826
+248	192.6.26.32	United States	3221625376	S71 Hewlett-Packard Company	37.3762	-122.1826
+249	192.6.26.33	United States	3221625377	S71 Hewlett-Packard Company	37.3762	-122.1826
+250	193.1.170.135	Ireland	3238111879	S1213 HEAnet Limited	53.3331	-6.2489
+251	193.1.170.136	Ireland	3238111880	S1213 HEAnet Limited	53.3331	-6.2489
+252	193.136.166.54	Portugal	3246958134	S1930 Rede Ciencia Tecnologia e Sociedade (RCTS)	38.7167	-9.1333
+253	193.136.166.56	Portugal	3246958136	S1930 Rede Ciencia Tecnologia e Sociedade (RCTS)	38.7167	-9.1333
+254	193.136.191.25	Portugal	3246964505	S1930 Rede Ciencia Tecnologia e Sociedade (RCTS)	39.5	-8
+255	193.144.21.130	Spain	3247445378	S766 RedIRIS Autonomous System	41.1167	1.25
+256	193.157.115.250	Norway	3248321530	AS224 UNINETT, The Norwegian University & Research Network	59.9167	10.75
+257	193.157.115.251	Norway	3248321531	AS224 UNINETT, The Norwegian University & Research Network	59.9167	10.75
+258	193.167.187.185	Finland	3248995257	S1741 FUNET autonomous system	60.1756	24.9342
+259	193.167.187.186	Finland	3248995258	S1741 FUNET autonomous system	60.1756	24.9342
+260	193.167.187.188	Finland	3248995260	S1741 FUNET autonomous system	60.1756	24.9342
+261	193.174.155.27	Germany	3249445659	S680 service G-WiN	52.5167	13.4
+262	193.174.67.186	Germany	3249423290	S680 service G-WiN	52.5167	13.4
+263	193.174.67.187	Germany	3249423291	S680 service G-WiN	52.5167	13.4
+264	193.196.39.9	Germany	3250857737	S553 Landeshochschulnetz Baden-Wuerttemberg (BelWue)	49.0047	8.3858
+265	193.54.192.42	France	3241590826	S2200 Reseau National de telecommunications pour la Technologie	48.112	-1.6743
+266	193.55.112.40	France	3241635880	S2200 Reseau National de telecommunications pour la Technologie	48.86	2.35
+267	193.55.112.41	France	3241635881	S2200 Reseau National de telecommunications pour la Technologie	48.86	2.35
+268	193.6.20.5	Hungary	3238401029	S1955 HUNGARNET	47.5	19.0833
+269	193.63.58.70	United Kingdom	3242146374	S786 The JANET IP Service	51.5	-0.13
+270	194.29.178.13	Poland	3256726029	S12464 WARSAW U-TECH Campus Network	52	20
+271	194.29.178.14	Poland	3256726030	S12464 WARSAW U-TECH Campus Network	52	20
+272	194.36.10.154	United Kingdom	3257141914	S786 The JANET IP Service	51.5142	-0.0931
+273	194.36.10.156	United Kingdom	3257141916	S786 The JANET IP Service	51.5142	-0.0931
+274	194.42.17.123	Cyprus	3257536891	S3268 CYNET	35.1667	33.3667
+275	194.42.17.124	Cyprus	3257536892	S3268 CYNET	35.1667	33.3667
+276	195.113.161.82	Czech Republic	3279003986	AS2852 CESNET, z.s.p.o.	49.75	15.5
+277	195.113.161.83	Czech Republic	3279003987	AS2852 CESNET, z.s.p.o.	49.75	15.5
+278	195.116.53.22	Poland	3279172886	S5617 Telekomunikacja Polska S.A.	52.5931	19.0894
+279	195.116.53.23	Poland	3279172887	S5617 Telekomunikacja Polska S.A.	52.5931	19.0894
+280	195.116.53.25	Poland	3279172889	S5617 Telekomunikacja Polska S.A.	52.5931	19.0894
+281	195.116.60.212	Poland	3279174868	S5617 Telekomunikacja Polska S.A.	52.5931	19.0894
+282	195.116.60.67	Poland	3279174723	S5617 Telekomunikacja Polska S.A.	52.5931	19.0894
+283	195.116.60.97	Poland	3279174753	S5617 Telekomunikacja Polska S.A.	52.5931	19.0894
+284	195.37.16.101	Germany	3273986149	S680 service G-WiN	49.015	12.0956
+285	195.37.16.97	Germany	3273986145	S680 service G-WiN	49.015	12.0956
+286	198.128.56.11	United States	3330291723	S292 ESnet	37.8668	-122.2536
+287	198.128.56.12	United States	3330291724	S292 ESnet	37.8668	-122.2536
+288	198.133.224.145	United States	3330662545	S59 University of Wisconsin Madison	43.0761	-89.4104
+289	198.133.224.146	United States	3330662546	S59 University of Wisconsin Madison	43.0761	-89.4104
+290	198.133.224.147	United States	3330662547	S59 University of Wisconsin Madison	43.0761	-89.4104
+291	198.163.152.229	Canada	3332610277	S10965 MRNet	49.8833	-97.1667
+292	198.163.152.230	Canada	3332610278	S10965 MRNet	49.8833	-97.1667
+293	198.175.112.107	United States	3333386347	S4983 Intel Corporation	38.6071	-121.4633
+294	198.175.112.108	United States	3333386348	S4983 Intel Corporation	38.6071	-121.4633
+295	198.7.242.42	United States	3322409514	S14325 Ocean State Higher Education and Administration Network	41.824	-71.4128
+296	200.133.215.141	Brazil	3364214669	S1916 Rede Nacional de Ensino e Pesquisa	-23.4733	-46.6658
+297	200.17.202.194	Brazil	3356609218	S10881 Universidade Federal do Parana	-25.4167	-49.25
+298	200.19.159.34	Brazil	3356729122	S1916 Rede Nacional de Ensino e Pesquisa	-10	-55
+299	200.19.159.35	Brazil	3356729123	S1916 Rede Nacional de Ensino e Pesquisa	-10	-55
+300	202.249.37.67	Japan	3405325635	S7660 Asia Pacific Advanced Network - Japan	35.69	139.69
+301	202.249.37.69	Japan	3405325637	S7660 Asia Pacific Advanced Network - Japan	35.69	139.69
+302	202.38.99.68	China	3391513412	S4538 China Education and Research Network Center	35	105
+303	203.178.133.10	Japan	3417474314	S2500 WIDE Project	35.69	139.69
+304	203.178.133.2	Japan	3417474306	S2500 WIDE Project	35.69	139.69
+305	203.178.133.3	Japan	3417474307	S2500 WIDE Project	35.69	139.69
+306	203.178.143.10	Japan	3417476874	S2500 WIDE Project	35.6345	139.5588
+307	203.178.143.28	Japan	3417476892	S2500 WIDE Project	35.6345	139.5588
+308	204.123.28.55	United States	3430620215	S33 Hewlett-Packard Company	37.4419	-122.143
+309	204.123.28.56	United States	3430620216	S33 Hewlett-Packard Company	37.4419	-122.143
+310	204.123.28.57	United States	3430620217	S33 Hewlett-Packard Company	37.4419	-122.143
+311	204.178.4.164	United States	3434218660	S6431 ATT LABS	40.6973	-74.4052
+312	204.56.0.137	United States	3426222217	S3390 University of Missouri - Kansas City	39.0344	-94.5722
+313	204.56.0.138	United States	3426222218	S3390 University of Missouri - Kansas City	39.0344	-94.5722
+314	204.8.155.226	United States	3423116258	S111 Boston University	42.3451	-71.0993
+315	204.8.155.227	United States	3423116259	S111 Boston University	42.3451	-71.0993
+316	205.211.183.2	Canada	3453204226	S32157 DURHAM COLLEGE OF APPLIED ARTS AND TECHNOLOGY	43.8973	-78.8641
+317	206.117.37.4	United States	3463783684	S4 University of Southern California	34.0522	-118.2437
+318	206.117.37.5	United States	3463783685	S4 University of Southern California	34.0522	-118.2437
+319	206.117.37.7	United States	3463783687	S4 University of Southern California	34.0522	-118.2437
+320	206.117.37.9	United States	3463783689	S4 University of Southern California	34.0522	-118.2437
+321	208.117.131.115	United States	3497362291	S36859 Texas Learning & Computation Center - University Of Houston	29.834	-95.4342
+322	208.117.131.116	United States	3497362292	S36859 Texas Learning & Computation Center - University Of Houston	29.834	-95.4342
+323	208.94.63.193	United States	3495837633	S46357 California Polytechnic State University	35.3471	-120.4553
+324	208.94.63.194	United States	3495837634	S46357 California Polytechnic State University	35.3471	-120.4553
+325	210.123.39.102	Korea, Republic of	3531286374	S18176 KOOKMIN UNIVERSITY	37.57	126.98
+326	210.123.39.103	Korea, Republic of	3531286375	S18176 KOOKMIN UNIVERSITY	37.57	126.98
+327	210.123.39.168	Korea, Republic of	3531286440	S18176 KOOKMIN UNIVERSITY	37.57	126.98
+328	212.201.44.81	Germany	3569953873	S680 service G-WiN	53.0833	8.8
+329	212.201.44.82	Germany	3569953874	S680 service G-WiN	53.0833	8.8
+330	212.235.189.114	Slovenia	3572219250	S2107 ARNES	46.0553	14.5144
+331	213.131.1.101	Russian Federation	3582132581	S12925 SINP MSU	60	100
+332	216.98.102.29	United States	3630327325	S2497 Internet Initiative Japan Inc.	37.3394	-121.895
+333	216.98.102.30	United States	3630327326	S2497 Internet Initiative Japan Inc.	37.3394	-121.895
+334	35.9.27.26	United States	587799322	S237 Merit Network Inc.	42.7283	-84.4882
+335	35.9.27.27	United States	587799323	S237 Merit Network Inc.	42.7283	-84.4882
+336	64.161.10.2	United States	1084295682	S7132 AT&T Internet Services	32.9722	-96.7376
+337	64.161.10.3	United States	1084295683	S7132 AT&T Internet Services	32.9722	-96.7376
+338	72.36.112.74	United States	1210347594	S38 University of Illinois	40.1095	-88.2123

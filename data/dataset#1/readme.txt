@@ -1,5 +1,54 @@
-The "rawData" folder contains the data files in dataset#1.
+----------------------------------------------------------------------------
+README file for 339 * 5825 Web service QoS dataset
+----------------------------------------------------------------------------
 
-Before running our provided QoS prediction approaches, you need to run "dataProcess_rt.m" and "dataProcess_tp.m" to generate the training data and testing data. You can run it under the default configurations, or modify the script by your own.
+This dataset describes real-world QoS evaluation results from 339 users on 
+5,825 Web services. Note that we have recently updated the location 
+information (e.g., IP, AS, Latitude, Longitude) of users and services into 
+the dataset. It is available for downloading at: 
+http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset1.zip
 
-You can download the entire dataset at: http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset1.zip
+----------------------------------------------------------------------------
+List of contents of the dataset
+----------------------------------------------------------------------------
+
+userlist.txt	- information of 339 service users. Format: | User ID |  
+				  IP Address | Country | IP No. | AS | Latitude | Longitude |
+wslist.txt		- information of the 5,825 Web services. Format: | Service ID 
+				  | WSDL Address | Service Provider | IP Address | Country | 
+				  IP No. | AS | Latitude | Longitude |
+rtMatrix.txt	- 339 * 5825 user-item matrix of response-time. 
+tpMatrix.txt	- 339 * 5825 user-item matrix for throughput.
+readme.txt		- descriptions of the dataset. 
+
+----------------------------------------------------------------------------
+Reference paper
+----------------------------------------------------------------------------
+
+This detailed description of this data set can be refereed to this paper:
+
+Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Investigating QoS of Real-World 
+Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, pp.32-39, 
+2014.
+
+IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
+THANKS!
+
+----------------------------------------------------------------------------
+Acknowledgements
+----------------------------------------------------------------------------
+
+We would like to thank PlanetLab (http://www.planet-lab.org/) for collecting 
+the dataset, and IPLocation (http://www.iplocation.net/) for collecting the 
+location information. We also thank Prof. Mingdong Tang (HNUST) for 
+contributing the AS information of the users and services. 
+
+----------------------------------------------------------------------------
+Disclaimer
+----------------------------------------------------------------------------
+
+Our datasets are freely available for research purposes. Downloading and 
+using the dataset will indicate your acceptance to enter into a GNU General 
+Public License agreement. Redistribution of this dataset to any other third 
+party or over the Web is not permitted.
+

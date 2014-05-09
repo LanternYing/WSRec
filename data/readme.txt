@@ -1,47 +1,99 @@
-This data folder provides two datasets:
+----------------------------------------------------------------------------
+README file for dataset description
+----------------------------------------------------------------------------
 
-dataset#1:
-------------------------------------------------------
-339 * 5825 Web service QoS dataset
-You can download the entire dataset at: http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset1.zip
+This is a archive of the public datasets for QoS prediction. Currently, this 
+data folder provides two datasets:
 
-This dataset describes real-world QoS evaluation results from 339 users on 5,825 Web services, which includes five files:
+============================================================================
+dataset#1: 339 * 5825 Web service QoS dataset
+============================================================================
 
-"readme.txt": descriptions of the dataset.
+This dataset describes real-world QoS evaluation results from 339 users on 
+5,825 Web services. Note that we have recently updated the location 
+information (e.g., IP, AS, Latitude, Longitude) of users and services into 
+the dataset. It is available for downloading at: 
+http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset1.zip
 
-"userlist.txt": information of 339 service users. 
-	Format: | User ID | IP address of user | country | longitude | latitude |
-	
-"wslist.txt": information of the 5,825 Web services. 
-	Format: | WS ID | WSDL address | provider name | country name |
-	
-"rtMatrix.txt": 339 * 5825 user-item matrix of response-time. 
+----------------------------------------------------------------------------
+List of contents of the dataset
+----------------------------------------------------------------------------
 
-"tpMatrix.txt": 339 * 5825 user-item matrix for throughput. 
+userlist.txt	- information of 339 service users. Format: | User ID |  
+				  IP Address | Country | IP No. | AS | Latitude | Longitude |
+wslist.txt		- information of the 5,825 Web services. Format: | Service ID 
+				  | WSDL Address | Service Provider | IP Address | Country | 
+				  IP No. | AS | Latitude | Longitude |
+rtMatrix.txt	- 339 * 5825 user-item matrix of response-time. 
+tpMatrix.txt	- 339 * 5825 user-item matrix for throughput.
+readme.txt		- descriptions of the dataset. 
 
-Reference paper:
-Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Distributed QoS Evaluation for Real-World Web Services,” in Proc. of the 8th International Conference on Web Services (ICWS2010), USA, 2010, pp.83-90.
+----------------------------------------------------------------------------
+Reference paper
+----------------------------------------------------------------------------
+
+This detailed description of this data set can be refereed to this paper:
+
+Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Investigating QoS of Real-World 
+Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, pp.32-39, 
+2014.
+
+IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
+THANKS!
+
+----------------------------------------------------------------------------
+Acknowledgements
+----------------------------------------------------------------------------
+
+We would like to thank PlanetLab (http://www.planet-lab.org/) for collecting 
+the dataset, and IPLocation (http://www.iplocation.net/) for collecting the 
+location information. We also thank Prof. Mingdong Tang (HNUST) for 
+contributing the AS information of the users and services.  
 
 
+============================================================================
+dataset#2: 142 * 4500 * 64 time-aware Web service QoS dataset
+============================================================================
 
-dataset#2:
-------------------------------------------------------
-142 * 4500 * 64 time-aware Web service QoS dataset
-You can download the entire dataset at: http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset2.zip
+This dataset describes real-world QoS evaluation results from 142 users on 
+4,500 Web services over 64 different time slices (at 15-minute interval). 
+The dataset is available for downloading at: 
+http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset2.zip
 
-This dataset describes real-world QoS evaluation results from 142 users on 4,500 Web services over 64 different time slices, which includes three files:
+----------------------------------------------------------------------------
+List of contents of the dataset
+----------------------------------------------------------------------------
 
-"rtData" (492 MB): response-time values of 4,500 Web services when invoked by 142 service users over 64 time slices. The data format is as follows:
-User ID | Service ID | Time Slice ID | Response Time (sec)
-e.g.: 98    4352    33    0.311
+rtData		- response-time values of 4,500 Web services when invoked by 142 
+			  service users over 64 time slices. Data format:
+			  User ID | Service ID | Time Slice ID | Response Time (sec)
+			  e.g.: 98    4352    33    0.311
+tpData		- throughput values of 4,500 Web services when invoked by 142 
+			  service users in 64 time slices. Data format:
+			  User ID | Service ID | Time Slice ID | Throughput (kbps)
+			  e.g.: 91    1196    62    32.88
+readme.txt	- descriptions of the dataset.
 
-"tpData" (585 MB): throughput values of 4,500 Web services when invoked by 142 service users in 64 time slices. The data format is as follows:
-User ID | Service ID | Time Slice ID | Throughput (kbps)
-e.g.: 91    1196    62    32.88
+----------------------------------------------------------------------------
+Reference paper
+----------------------------------------------------------------------------
 
-"readme.txt" (1 KB): descriptions of the dataset.
+This detailed description of this data set can be refereed to this paper:
 
-Reference paper:
-Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware Personalized QoS Prediction Framework for Web Services", in Proceedings of the 22th IEEE Symposium on Software Reliability Engineering (ISSRE 2011).
+Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware 
+Personalized QoS Prediction Framework for Web Services", in Proceedings of 
+the 22th IEEE Symposium on Software Reliability Engineering (ISSRE 2011).
+
+IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
+THANKS!
+
+----------------------------------------------------------------------------
+Disclaimer
+----------------------------------------------------------------------------
+
+Our datasets are freely available for research purposes. Downloading and 
+using the dataset will indicate your acceptance to enter into a GNU General 
+Public License agreement. Redistribution of this dataset to any other third 
+party or over the Web is not permitted.
 
 
