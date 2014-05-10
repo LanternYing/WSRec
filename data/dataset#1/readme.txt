@@ -36,8 +36,8 @@ dataset:
   for Real-World Web Services,” in Proc. of the 8th International Conference 
   on Web Services (ICWS'10), Miami, Florida, USA, July 5-10, 2010, pp.83-90.
 
-IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
-THANKS!
+IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE EITHER OF THE ABOVE 
+PAPERS. THANKS!
 
 ----------------------------------------------------------------------------
 Acknowledgements
@@ -49,7 +49,7 @@ location information. We also thank Prof. Mingdong Tang (HNUST) for
 contributing the AS information of the users and services. 
 
 ----------------------------------------------------------------------------
-Disclaimer
+Copyright
 ----------------------------------------------------------------------------
 
 Our datasets are freely available for research purposes. Downloading and 

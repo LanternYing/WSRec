@@ -116,7 +116,7 @@ addition, we will appreciate any contribution to refine and optimize this
 package.
 
 ----------------------------------------------------------------------------
-Disclaimer
+Copyright
 ----------------------------------------------------------------------------
 
 This software and data is provided as-is, and there are no guarantees

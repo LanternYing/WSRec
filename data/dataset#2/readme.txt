@@ -36,7 +36,7 @@ IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER.
 THANKS!
 
 ----------------------------------------------------------------------------
-Disclaimer
+Copyright
 ----------------------------------------------------------------------------
 
 Our datasets are freely available for research purposes. Downloading and 

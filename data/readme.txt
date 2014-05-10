@@ -32,19 +32,14 @@ readme.txt    - descriptions of the dataset.
 Reference paper
 ----------------------------------------------------------------------------
 
-Please refer to the following papers for the detailed descriptions of this 
-dataset:
+This detailed description of this data set can be refereed to this paper:
 
-- Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Investigating QoS of Real-
-  World Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, 
-  pp.32-39, 2014.
-  
-- Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Distributed QoS Evaluation 
-  for Real-World Web Services,” in Proc. of the 8th International Conference 
-  on Web Services (ICWS'10), Miami, Florida, USA, July 5-10, 2010, pp.83-90.
+Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Investigating QoS of Real-World 
+Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, pp.32-39, 
+2014.
 
-IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE EITHER OF THE ABOVE 
-PAPERS. THANKS!
+IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
+THANKS!
 
 ----------------------------------------------------------------------------
 Acknowledgements
@@ -83,18 +78,17 @@ readme.txt  - descriptions of the dataset.
 Reference paper
 ----------------------------------------------------------------------------
 
-Please refer to the following paper for the detailed descriptions of this 
-dataset:
+This detailed description of this data set can be refereed to this paper:
 
-- Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware 
-  Personalized QoS Prediction Framework for Web Services", in Proceedings of 
-  the 22th IEEE Symposium on Software Reliability Engineering (ISSRE 2011).
+Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware 
+Personalized QoS Prediction Framework for Web Services", in Proceedings of 
+the 22th IEEE Symposium on Software Reliability Engineering (ISSRE 2011).
 
 IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
 THANKS!
 
 ----------------------------------------------------------------------------
-Disclaimer
+Copyright
 ----------------------------------------------------------------------------
 
 Our datasets are freely available for research purposes. Downloading and 
