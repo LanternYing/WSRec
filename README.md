@@ -1,4 +1,4 @@
-##WSRec: Web Service Recommendation
+##WS-DREAM
 
 This repository contains the implementations on most of the state-of-the-art approaches for Web service QoS Prediction, including:
 	UMEAN
