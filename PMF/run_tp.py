@@ -10,6 +10,11 @@
 import numpy as np
 import os, sys, time
 sys.path.append('src')
+# Build external model
+if not os.path.isfile('src/PMF.so'):
+	print 'Lack of PMF.so. Please first build the cpp code into PMF.so: '
+	print 'python setup.py build_ext --inplace'
+	sys.exit()
 from utilities import *
 from predict import *
  
@@ -21,7 +26,8 @@ para = {'dataPath': '../data/dataset#1/tpMatrix.txt',
 		'outPath': 'result/tpResult_',
 		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate
 		# matrix density
-		'density': list(np.arange(0.01, 0.06, 0.01)) + list(np.arange(0.10, 0.31, 0.05)), 
+		'density': list(np.arange(0.01, 0.06, 0.01)) 
+					+ list(np.arange(0.10, 0.31, 0.05)), 
 		'rounds': 20, # how many runs are performed at each matrix density
 		'dimension': 10, # dimenisionality of the latent factors
 		'etaInit': 0.001, # inital learning rate. We use line search

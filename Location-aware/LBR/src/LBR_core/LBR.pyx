@@ -42,7 +42,7 @@ def LBR(removedMatrix, locSim, paraStruct):
     
     logger.info('Iterating...')
 
-    # Wrap the NMF_core.cpp
+    # Wrap the LBR_core.cpp
     LBR_core(
         <double *> (<np.ndarray[double, ndim=2, mode='c']> removedMatrix).data,
         <double *> (<np.ndarray[double, ndim=2, mode='c']> locSim).data,
