@@ -1,0 +1,26 @@
+
+To Do List:
+
+- EMF
+
+- NIMF
+
+- NRCF
+
+- ReginKNN
+
+- TPDS'13
+
+- LACF
+
+- TF
+
+- WSPred
+
+- NTF
+
+- NC
+
+- 2013-[ICWS] - Geographic Location-Based Network-aware QoS Prediction for Service Composition
+
+- FSE'13
