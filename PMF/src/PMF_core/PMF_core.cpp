@@ -55,7 +55,7 @@ void PMF_core(double *removedData, int numUser, int numService, int dim,
 
 		// update loss value
 		lossValue = loss(U, S, removedMatrix, lmda, numUser, numService, dim);
-		cout << lossValue << endl;
+		//cout << lossValue << endl;
     }
 
     delete2DMatrix(gradU);
