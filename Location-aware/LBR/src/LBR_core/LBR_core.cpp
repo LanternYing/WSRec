@@ -136,8 +136,10 @@ double loss(double **U, double **S, double **removedMatrix, double **locSim,
 	for (i = 0; i < numUser; i++) {
 		for (g = 0; g < numUser; g++) {
 			if (locSim[i][g] > 0) {
-				double tmp = (U[i][k] - U[g][k]);
-				loss += 0.5 * alpha * locSim[i][g] * tmp * tmp;
+				for (k = 0; k < dim; k++) {
+					double tmp = (U[i][k] - U[g][k]);
+					loss += 0.5 * alpha * locSim[i][g] * tmp * tmp;
+				}
 			}
 		}
 	}
