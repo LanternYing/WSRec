@@ -84,6 +84,6 @@ def getLocSim(paraStruct):
         numLine,
         theta
         )
-    print locSim[0,232], locSim[0,233], locSim[299,298]
+
     return locSim
 #########################################################
