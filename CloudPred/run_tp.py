@@ -28,13 +28,14 @@ para = {'dataPath': '../data/dataset#1/tpMatrix.txt',
 		'outPath': 'result/tpResult_',
 		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate
 		# matrix density
-		'density': list(np.arange(0.01, 0.06, 0.01)) + list(np.arange(0.10, 0.31, 0.05)), 
+		'density': list(np.arange(0.01, 0.06, 0.01)) 
+					+ list(np.arange(0.10, 0.31, 0.05)), 
 		'rounds': 20, # how many runs are performed at each matrix density
 		'dimension': 20, # dimenisionality of the latent factors
 		'lambda': 800, # regularization parameter
 		'topK': 10, # the parameter of TopK similar users or services, the default value is
 					# topK = 10 as in the reference paper
-		'weight': 0.5, # the combination weight of UPCC and IPCC, the default value is 
+		'weight': 0.9, # the combination weight of UPCC and IPCC, the default value is 
 		   				# weight = 0.5 as in the reference paper
 		'maxIter': 300, # the max iterations
 		'saveTimeInfo': False, # whether to keep track of the running time
