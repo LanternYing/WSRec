@@ -50,6 +50,7 @@ vector<vector<pair<int, double> > > getPCCMatrix(double **removedMatrix,
   			if (j > i) {			
 				pccValue = getPCC(removedMatrix[i], removedMatrix[j], 
 					uMean[i], uMean[j], numService);
+				pccMatrix[i][j] = pccValue;
 				pccMatrix[j][i] = pccValue;
   			}
   			else if (j < i) {

@@ -35,6 +35,7 @@ void UPCC_core(double *removedData, double *UData, double *uMean, int numUser, i
   			double pccValue = 0;
   			if (j > i) {			
 				pccValue = getPCC(U[i], U[j], dim);
+				pccMatrix[i][j] = pccValue;
 				pccMatrix[j][i] = pccValue;
   			}
   			else if (j < i) {
