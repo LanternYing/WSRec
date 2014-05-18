@@ -80,11 +80,12 @@ the follow command. Note that the current version only works on Linux.
 Implementations in other programming languages
 ----------------------------------------------------------------------------
 
-If you want to try the other version of implementation written in pure Python, 
-you can download the package below. This implementation can also work on Windows, 
-but runs much slower.
+If you want to try the other versions of implementation written in either pure 
+Python or Matlab, you can download the package below. These implementations 
+can also work on Windows, but run much slower.
 
 Python version: https://github.com/WS-DREAM/WSRec/tree/v0.4.3/PMF
+Matlab version: https://github.com/WS-DREAM/WSRec/tree/v0.4.0/PMF_m
 
 ----------------------------------------------------------------------------
 Reference paper

@@ -1,7 +1,7 @@
 
 To Do List:
 
-- EMF
+- HMF
 
 - NIMF
 
@@ -10,8 +10,6 @@ To Do List:
 - ReginKNN
 
 - TPDS'13
-
-- LACF
 
 - TF
 

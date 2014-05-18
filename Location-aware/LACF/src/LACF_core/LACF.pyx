@@ -80,8 +80,8 @@ def getLocGroup(paraStruct):
                 userAS_i = userAS[i].split(" ", 1)[0]
                 userAS_j = userAS[j].split(" ", 1)[0]
                 if (userAS_i == userAS_j) and \
-                    not (userAS_i == 'null') and \
-                    not (userAS_j == 'null'):
+                    (userAS_i != 'null') and \
+                    (userAS_j != 'null'):
                     userGroupByAS[i, j] = 1
                     userGroupByAS[j, i] = 1
                 if userCountry[i] == userCountry[j]:
@@ -103,8 +103,8 @@ def getLocGroup(paraStruct):
                 wsAS_i = wsAS[i].split(" ", 1)[0]
                 wsAS_j = wsAS[j].split(" ", 1)[0]
                 if (wsAS_i == wsAS_j) and \
-                    not (wsAS_i == 'null') and \
-                    not (wsAS_j == 'null'):
+                    (wsAS_i != 'null') and \
+                    (wsAS_j != 'null'):
                     wsGroupByAS[i, j] = 1
                     wsGroupByAS[j, i] = 1
                 elif wsCountry[i] == wsCountry[j]:

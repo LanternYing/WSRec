@@ -2,7 +2,7 @@
 # run_rt.py 
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
-# Last updated: 2014/5/114
+# Last updated: 2014/5/14
 # Implemented approaches: EMF [Lo et al., SCC'12]
 # Evaluation metrics: MAE, NMAE, RMSE, MRE, NPRE
 #########################################################
