@@ -1,9 +1,7 @@
 
 To Do List:
 
-- HMF
-
-- NIMF
+- Re-run CloudPred with dim  = 10
 
 - NRCF
 
