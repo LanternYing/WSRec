@@ -35,7 +35,7 @@ para = {'dataPath': '../data/dataset#1/tpMatrix.txt',
 		'lambda': 800, # regularization parameter
 		'topK': 10, # the parameter of TopK similar users or services, the default value is
 					# topK = 10 as in the reference paper
-		'weight': 0.9, # the combination weight of UPCC and IPCC, the default value is 
+		'weight': 0.5, # the combination weight of UPCC and IPCC, the default value is 
 		   				# weight = 0.5 as in the reference paper
 		'maxIter': 300, # the max iterations
 		'saveTimeInfo': False, # whether to keep track of the running time

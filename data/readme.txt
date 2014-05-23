@@ -20,10 +20,11 @@ List of contents of the dataset
 ----------------------------------------------------------------------------
 
 userlist.txt  - information of 339 service users. Format: | User ID |  
-		IP Address | Country | IP No. | AS | Latitude | Longitude |
+                IP Address | Country | Continent | AS | Latitude | Longitude |
+                Region | City |
 wslist.txt    - information of the 5,825 Web services. Format: | Service ID |  
                 WSDL Address | Service Provider | IP Address | Country | 
-                IP No. | AS | Latitude | Longitude |
+                Continent | AS | Latitude | Longitude | Region | City |
 rtMatrix.txt  - 339 * 5825 user-item matrix of response-time. 
 tpMatrix.txt  - 339 * 5825 user-item matrix for throughput.
 readme.txt    - descriptions of the dataset. 
