@@ -18,7 +18,7 @@ using namespace std;
 
 
 /********************************************************
-* Udata and Sdata are the output values
+ * predData is the output variable
 ********************************************************/
 void LACF_core(double *removedData, double *userGroupByASData, double *userGroupByCountryData,
 	double *wsGroupByASData, double *wsGroupByCountryData, int numUser, int numService, 

@@ -95,7 +95,7 @@ Issues
 ----------------------------------------------------------------------------
 
 In case of questions or problems, please do not hesitate to report to our 
-issue page (https://github.com/RMBLab/WSRec/issues). We will help ASAP. In 
+issue page (https://github.com/WS-DREAM/WSRec/issues). We will help ASAP. In 
 addition, we will appreciate any contribution to refine and optimize this 
 package.
 

@@ -1,8 +1,6 @@
 
 To Do List:
 
-- Re-run CloudPred with dim  = 10
-
 - NRCF
 
 - ReginKNN
