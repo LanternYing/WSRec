@@ -4,7 +4,7 @@ README file for UIPCC
 
 Author: Jamie Zhu <jimzhu@GitHub>
 Author: Zibin Zheng, CUHK. For the initial Java implementation.
-Last updated: 2014/5/9.
+Last updated: 2014/6/16.
 
 This package implements five baseline QoS prediction approaches, including 
 UMEAN, IMEAN, UPCC, IPCC, UIPCC(a.k.a. WSRec). 
@@ -85,8 +85,8 @@ If you want to try the other versions, either implemented in pure Python or
 in Java, you can download the packages below. These implementations can work 
 on Windows, but are much slower (especially for UIPCC_py).
 
-Python version: https://github.com/RMBLab/WSRec/tree/v0.4.0/UIPCC_py
-Java version: https://github.com/RMBLab/WSRec/tree/v0.4.0/UIPCC_java
+Python version: https://github.com/WS-DREAM/WSRec/tree/v0.4.0/UIPCC_py
+Java version: https://github.com/WS-DREAM/WSRec/tree/v0.4.0/UIPCC_java
 
 ----------------------------------------------------------------------------
 Reference paper

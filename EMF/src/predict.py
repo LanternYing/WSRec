@@ -42,7 +42,7 @@ def predict(matrix, density, paraStruct):
 
 		# invocation to the prediction function
 		iterStartTime = time.clock() # to record the running time for one round             
-		predictedMatrix = EMF_wrapper(trainMatrix, paraStruct)  # gradient descent 		
+		predictedMatrix = EMF_wrapper(trainMatrix, paraStruct)  # EMF		
 		timeResults[k] = time.clock() - iterStartTime
 
 		# calculate the prediction error

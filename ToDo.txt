@@ -1,11 +1,6 @@
 
 To Do List:
-
 - NRCF
-
-- ReginKNN
-
-- TPDS'13
 
 - TF
 

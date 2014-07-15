@@ -1,4 +1,4 @@
-##WS-DREAM
+##WSRec
 
 This repository contains the implementations on most of the state-of-the-art approaches for Web service QoS Prediction, including:
 	UMEAN
@@ -16,7 +16,7 @@ You need to install Cython as follows:
 ```
 vi ~/.bash_profile
 export PYTHONPATH="$PYTHONPATH:/WSRec/external/Cython-0.20.1/"
-export PATH="PATH:/WSRec/external/Cython-0.20.1/bin/"
+export PATH="$PATH:/WSRec/external/Cython-0.20.1/bin/"
 ```
 
 ###How to Contribute
