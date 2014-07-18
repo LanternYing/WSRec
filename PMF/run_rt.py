@@ -9,6 +9,7 @@
 
 import numpy as np
 import os, sys, time
+import multiprocessing
 sys.path.append('src')
 # Build external model
 if not os.path.isfile('src/PMF.so'):
@@ -16,7 +17,7 @@ if not os.path.isfile('src/PMF.so'):
 	print 'python setup.py build_ext --inplace'
 	sys.exit()
 from utilities import *
-from predict import *
+import execute
  
 
 #########################################################
@@ -32,11 +33,12 @@ para = {'dataPath': '../data/dataset#1/rtMatrix.txt',
 		'dimension': 10, # dimenisionality of the latent factors
 		'etaInit': 0.01, # inital learning rate. We use line search
 						 # to find the best eta at each iteration
-		'lambda': 30, # regularization parameter
+		'lambda': 40, # regularization parameter
 		'maxIter': 300, # the max iterations
 		'saveTimeInfo': False, # whether to keep track of the running time
 		'saveLog': False, # whether to save log into file
-		'debugMode': False # whether to record the debug info
+		'debugMode': False, # whether to record the debug info
+        'parallelMode': False # whether to leverage multiprocessing for speedup
 		}
 
 initConfig(para)
@@ -50,8 +52,15 @@ logger.info('Load data: %s'%para['dataPath'])
 dataMatrix = np.loadtxt(para['dataPath']) 
 
 # run for each density
-for density in para['density']:
-    predict(dataMatrix, density, para)
+if para['parallelMode']: # run on multiple processes
+    pool = multiprocessing.Pool()
+    for density in para['density']:
+		pool.apply_async(execute.predict, (dataMatrix, density, para))
+    pool.close()
+    pool.join()
+else: # run on single processes
+	for density in para['density']:
+		execute.predict(dataMatrix, density, para)
 
 logger.info(time.strftime('All done. Total running time: %d-th day - %Hhour - %Mmin - %Ssec.',
          time.gmtime(time.clock() - startTime)))

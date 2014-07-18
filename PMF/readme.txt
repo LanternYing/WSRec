@@ -36,7 +36,7 @@ PMF/
   - readme.txt              - descriptions of this package 
   - src/                    - directory of the source files
       - utilities.py        - a script containing a bag of useful utilities
-      - predict.py          - control execution and results collection of the 
+      - execute.py          - control execution and results collection of the 
                               specific algorithm
       - PMF.so              - the external module built from C++ 
                               implementations from "PMF_core/"
@@ -66,7 +66,9 @@ is run for 20 times and the average result (including std value) is reported.
 These results can be directly used for your research work.
 
 On the other hand, if you want to reproduce our experiments, you can run the 
-program with our provided Python scripts "run_rt.py" and "run_tp.py".
+program with our provided Python scripts "run_rt.py" and "run_tp.py". You can
+also turn on the "parallelMode" in the config area for speedup if you use a 
+multi-core computer.
 
 >> python run_rt.py
 >> python run_tp.py
