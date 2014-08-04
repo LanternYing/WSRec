@@ -1,6 +1,6 @@
 /********************************************************
  * NRCF_core.h: header file of NRCF_core.cpp
- * Author: Yifei Lu <koplyf@gmail.com>, Jamie Zhu <jimzhu@GitHub>
+ * Author: Yifei Lu, Jamie Zhu <jimzhu@GitHub>
  * Created: 2014/4/29
  * Last updated: 2014/7/16
 ********************************************************/

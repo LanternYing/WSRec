@@ -1,6 +1,6 @@
 #########################################################
 # NRCF.pyx
-# Author: Yifei Lu <koplyf@gmail.com>, Jamie Zhu <jimzhu@GitHub>
+# Author: Yifei Lu, Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
 # Last updated: 2014/7/16
 #########################################################

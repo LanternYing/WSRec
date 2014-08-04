@@ -1,4 +1,4 @@
-##WSRec
+##A Benchmark Suite for QoS Prediction
 
 This repository contains the implementations on most of the state-of-the-art approaches for Web service QoS Prediction, including:
 	UMEAN
@@ -14,11 +14,24 @@ Meanwhile, to speed up, we make use of [Cython](http://cython.org/ "Cython's Web
 
 You need to install Cython as follows:
 ```
-vi ~/.bash_profile
+vim ~/.bash_profile
 export PYTHONPATH="$PYTHONPATH:/WSRec/external/Cython-0.20.1/"
 export PATH="$PATH:/WSRec/external/Cython-0.20.1/bin/"
 ```
+###Dependencies
 
-###How to Contribute
+
+###Usage
+
+
+###Contributing
+
+
+###Acknowledgement
+
+
+
+
+
 
 

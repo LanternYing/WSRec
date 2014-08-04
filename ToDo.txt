@@ -1,13 +1,5 @@
 
 To Do List:
-- NRCF
-
-- TF
-
-- WSPred
-
-- NTF
-
 - NC
 
 - 2013-[ICWS] - Geographic Location-Based Network-aware QoS Prediction for Service Composition
