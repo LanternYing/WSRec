@@ -14,7 +14,7 @@ cimport numpy as np # import C-API
 #########################################################
 # Make declarations on functions from cpp file
 #
-cdef extern from "PMF_core.h":
+cdef extern from "PMF.h":
     void PMF_core(double *removedData, int numUser, int numService, 
     	int dim, double lmda, int maxIter, double etaInit, 
         double *Udata, double *Sdata)

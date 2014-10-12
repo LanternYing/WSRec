@@ -1,5 +1,5 @@
 /********************************************************
- * PMF_core.h: header file of PMF_core.cpp
+ * PMF.h: header file of PMF.cpp
  * Author: Jamie Zhu <jimzhu@GitHub>
  * Created: 2014/5/6
  * Last updated: 2014/5/12

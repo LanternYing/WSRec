@@ -41,7 +41,7 @@ def initConfig(para):
     cmdhandler = logging.StreamHandler()  
     cmdhandler.setLevel(logging.DEBUG)       
     formatter = logging.Formatter(
-        '%(asctime)s: %(message)s')
+        '%(asctime)s (pid-%(process)d): %(message)s')
     cmdhandler.setFormatter(formatter)
     logger.addHandler(cmdhandler)   
     # log to file
