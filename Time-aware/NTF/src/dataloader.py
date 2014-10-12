@@ -22,7 +22,7 @@ def load(para):
 			dataTensor = dataMatrix
 		else:
 			dataTensor = np.dstack((dataTensor, dataMatrix))
-	# dataTensor = preprocess(dataTensor, para)
+	dataTensor = preprocess(dataTensor, para)
 	return dataTensor
 ########################################################
 
@@ -33,9 +33,9 @@ def load(para):
 # 
 def preprocess(matrix, para):
 	if para['dataType'] == 'rt':
-		np.where(matrix == 0, -1, matrix)
-		np.where(matrix >= 19.9, -1, matrix)
+		matrix = np.where(matrix == 0, -1, matrix)
+		matrix = np.where(matrix >= 19.9, -1, matrix)
 	elif para['dataType'] == 'tp':
-		np.where(matrix == 0, -1, matrix)
+		matrix = np.where(matrix == 0, -1, matrix)
 	return matrix
 ########################################################

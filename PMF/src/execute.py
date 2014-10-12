@@ -72,7 +72,7 @@ def removeEntries(matrix, density, seedID):
 	random.seed(seedID)
 	randomSequence = range(0, numRecords)
 	random.shuffle(randomSequence) # one random sequence per round
-	numTrain = int( numAll * density)
+	numTrain = int(numAll * density)
 	# by default, we set the remaining QoS records as testing data 		               
 	numTest = numRecords - numTrain
 	trainXY = vecXY[randomSequence[0 : numTrain], :]
