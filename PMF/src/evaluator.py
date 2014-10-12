@@ -1,5 +1,5 @@
 ########################################################
-# execute.py
+# evaluator.py
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
 # Last updated: 2014/10/12

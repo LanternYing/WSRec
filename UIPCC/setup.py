@@ -18,8 +18,8 @@ print('Build extension modules...')
 print('==============================================')
 
 ext_modules = [Extension('core',
-				['src/core/UIPCC.pyx', 
-				'src/core/UIPCC_core.cpp'],
+				['src/core/core.pyx', 
+				'src/core/UIPCC.cpp'],
 				language='c++',
                 include_dirs=[numpy.get_include()],
                 extra_compile_args=["-O2"]

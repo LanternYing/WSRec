@@ -1,5 +1,5 @@
 #########################################################
-# UIPCC.pyx
+# core.pyx
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
 # Last updated: 2014/4/30
@@ -13,7 +13,7 @@ cimport numpy as np # import C-API
 #########################################################
 # Make declarations on functions from cpp file
 #
-cdef extern from "UIPCC_core.h":
+cdef extern from "UIPCC.h":
     void UPCC_core(double *removedData, double *uMean, int numUser, 
     	int numService, int topK, double *predData)
 #########################################################
