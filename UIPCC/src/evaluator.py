@@ -85,7 +85,7 @@ def execute(matrix, density, para):
 				%(k + 1, time.clock() - iterStartTime1))
 		logger.info('----------------------------------------------')
 
-    outFile = '%s%.2f.txt'%(para['outPath'], density)
+    outFile = '%s%sResult_%.2f.txt'%(para['outPath'], para['dataType'], density)
     saveResult(outFile, evalResults, timeResults, para)
     logger.info('Config density = %.2f done. Running time: %.2f sec'
 			%(density, time.clock() - startTime))
