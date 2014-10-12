@@ -2,29 +2,28 @@
 # execute.py
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
-# Last updated: 2014/5/4
+# Last updated: 2014/10/12
 ########################################################
 
 import numpy as np 
 from numpy import linalg as LA
 import time
 import random
-from PMF import *
+import core
 from utilities import *
 
 
 ########################################################
 # Function to run the prediction approach at each density
 # 
-def predict(matrix, density, paraStruct):
-
+def execute(matrix, density, para):
     startTime = time.clock()
     numService = matrix.shape[1] 
     numUser = matrix.shape[0] 
-    rounds = paraStruct['rounds']
+    rounds = para['rounds']
     logger.info('Data matrix size: %d users * %d services'%(numUser, numService))
     logger.info('Run the algorithm for %d rounds: matrix density = %.2f.'%(rounds, density))
-    evalResults = np.zeros((rounds, len(paraStruct['metrics']))) 
+    evalResults = np.zeros((rounds, len(para['metrics']))) 
     timeResults = np.zeros((rounds, 1))
     	
     for k in range(rounds):
@@ -42,18 +41,18 @@ def predict(matrix, density, paraStruct):
 
 		# invocation to the prediction function
 		iterStartTime = time.clock() # to record the running time for one round             
-		predictedMatrix = PMF(trainMatrix, paraStruct)  # gradient descent 		
+		predictedMatrix = core.predict(trainMatrix, para) 		
 		timeResults[k] = time.clock() - iterStartTime
 
 		# calculate the prediction error
 		predVec = predictedMatrix[testVecX, testVecY]
-		evalResults[k, :] = errMetric(testVec, predVec, paraStruct['metrics'])
+		evalResults[k, :] = errMetric(testVec, predVec, para['metrics'])
 
 		logger.info('%d-round done. Running time: %.2f sec'%(k + 1, timeResults[k]))
 		logger.info('----------------------------------------------')
 
-    outFile = '%s%.2f.txt'%(paraStruct['outPath'], density)
-    saveResult(outFile, evalResults, timeResults, paraStruct)
+    outFile = '%s%sResult_%.2f.txt'%(para['outPath'], para['dataType'], density)
+    saveResult(outFile, evalResults, timeResults, para)
     logger.info('Config density = %.2f done. Running time: %.2f sec'
 			%(density, time.clock() - startTime))
     logger.info('==============================================')

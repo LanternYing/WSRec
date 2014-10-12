@@ -16,18 +16,18 @@ import shutil
 print('Build extension modules...')
 print('==============================================')
 
-ext_modules = [Extension('PMF',
-				['src/PMF_core/PMF.pyx', 'src/PMF_core/PMF_core.cpp'],
+ext_modules = [Extension('core',
+				['src/core/PMF.pyx', 'src/core/PMF_core.cpp'],
 				language='c++'
               )]
 
 setup(
-	name = 'Extended Cython module for PMF',
+	name = 'Extended Cython module',
 	cmdclass = {'build_ext': build_ext},
 	ext_modules = ext_modules
 )
 
-shutil.move('PMF.so', 'src/PMF.so')
+shutil.move('core.so', 'src/core.so')
 print('==============================================')
 print('Build done.\n')
 

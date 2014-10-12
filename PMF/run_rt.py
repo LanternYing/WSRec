@@ -2,7 +2,7 @@
 # run_rt.py 
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
-# Last updated: 2014/5/4
+# Last updated: 2014/10/12
 # Implemented approach: PMF
 # Evaluation metrics: MAE, NMAE, RMSE, MRE, NPRE
 ########################################################
@@ -12,23 +12,24 @@ import os, sys, time
 import multiprocessing
 sys.path.append('src')
 # Build external model
-if not os.path.isfile('src/PMF.so'):
-	print 'Lack of PMF.so. Please first build the cpp code into PMF.so: '
-	print 'python setup.py build_ext --inplace'
+if not os.path.isfile('src/core.so'):
+	print 'Lack of core.so (built from the C++ module).' 
+	print 'Please first build the C++ code into core.so by using: '
+	print '>> python setup.py build_ext --inplace'
 	sys.exit()
 from utilities import *
-import execute
+import evaluator
+import dataloader
  
 
 #########################################################
 # config area
 #
-para = {'dataPath': '../data/dataset#1/rtMatrix.txt',
-		'outPath': 'result/rtResult_',
-		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate
-		# matrix density
-		'density': list(np.arange(0.01, 0.06, 0.01)) 
-					+ list(np.arange(0.10, 0.31, 0.05)), 
+para = {'dataType': 'rt', # set the dataType as 'rt' or 'tp'
+		'dataPath': '../data/dataset#1/',
+		'outPath': 'result/',
+		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate		
+		'density': list(np.arange(0.05, 0.31, 0.05)), # matrix density
 		'rounds': 20, # how many runs are performed at each matrix density
 		'dimension': 10, # dimenisionality of the latent factors
 		'etaInit': 0.01, # inital learning rate. We use line search
@@ -38,7 +39,7 @@ para = {'dataPath': '../data/dataset#1/rtMatrix.txt',
 		'saveTimeInfo': False, # whether to keep track of the running time
 		'saveLog': False, # whether to save log into file
 		'debugMode': False, # whether to record the debug info
-        'parallelMode': False # whether to leverage multiprocessing for speedup
+        'parallelMode': True # whether to leverage multiprocessing for speedup
 		}
 
 initConfig(para)
@@ -48,19 +49,21 @@ initConfig(para)
 startTime = time.clock() # start timing
 logger.info('==============================================')
 logger.info('PMF: Probabilistic Matrix Factorization.')
-logger.info('Load data: %s'%para['dataPath'])
-dataMatrix = np.loadtxt(para['dataPath']) 
+
+# load the dataset
+dataMatrix = dataloader.load(para)
+logger.info('Loading data done.')
 
 # run for each density
 if para['parallelMode']: # run on multiple processes
     pool = multiprocessing.Pool()
     for density in para['density']:
-		pool.apply_async(execute.predict, (dataMatrix, density, para))
+		pool.apply_async(evaluator.execute, (dataMatrix, density, para))
     pool.close()
     pool.join()
 else: # run on single processes
 	for density in para['density']:
-		execute.predict(dataMatrix, density, para)
+		evaluator.execute(dataMatrix, density, para)
 
 logger.info(time.strftime('All done. Total running time: %d-th day - %Hhour - %Mmin - %Ssec.',
          time.gmtime(time.clock() - startTime)))

@@ -11,7 +11,7 @@ import time
 import random
 import math
 from utilities import *
-from UIPCC import *
+import core
 
 
 ########################################################
@@ -42,7 +42,7 @@ def execute(matrix, density, para):
 
         ## UMEAN
 		iterStartTime1 = time.clock()            
-		predMatrixUMEAN = UMEAN(trainMatrix) 	
+		predMatrixUMEAN = core.UMEAN(trainMatrix) 	
 		timeResults[0, k] = time.clock() - iterStartTime1
 		predVecUMEAN = predMatrixUMEAN[testVecX, testVecY]       
 		evalResults[0, k, :] = errMetric(testVec, predVecUMEAN, para['metrics'])
@@ -50,7 +50,7 @@ def execute(matrix, density, para):
 
 		## IMEAN
 		iterStartTime2 = time.clock()          
-		predMatrixIMEAN = IMEAN(trainMatrix)  	
+		predMatrixIMEAN = core.IMEAN(trainMatrix)  	
 		timeResults[1, k] = time.clock() - iterStartTime2
 		predVecIMEAN = predMatrixIMEAN[testVecX, testVecY]         
 		evalResults[1, k, :] = errMetric(testVec, predVecIMEAN, para['metrics'])
@@ -58,7 +58,7 @@ def execute(matrix, density, para):
 
 		## UPCC
 		iterStartTime3 = time.clock()         
-		predMatrixUPCC = UPCC(trainMatrix, predMatrixUMEAN[:, 0], para)  
+		predMatrixUPCC = core.UPCC(trainMatrix, predMatrixUMEAN[:, 0], para)  
 		timeResults[2, k] = time.clock() - iterStartTime3 + timeResults[0, k]
 		predVecUPCC = predMatrixUPCC[testVecX, testVecY]   
 		evalResults[2, k, :] = errMetric(testVec, predVecUPCC, para['metrics'])
@@ -66,7 +66,7 @@ def execute(matrix, density, para):
 		
 		## IPCC
 		iterStartTime4 = time.clock()         
-		predMatrixIPCC = IPCC(trainMatrix, predMatrixIMEAN[0, :], para) 
+		predMatrixIPCC = core.IPCC(trainMatrix, predMatrixIMEAN[0, :], para) 
 		timeResults[3, k] = time.clock() - iterStartTime4 + timeResults[1, k]
 		predVecIPCC = predMatrixIPCC[testVecX, testVecY]        
 		evalResults[3, k, :] = errMetric(testVec, predVecIPCC, para['metrics'])
@@ -74,7 +74,7 @@ def execute(matrix, density, para):
 
 		## UIPCC
 		iterStartTime5 = time.clock()       
-		predMatrixUIPCC = UIPCC(trainMatrix, predMatrixUPCC, predMatrixIPCC, para)  	
+		predMatrixUIPCC = core.UIPCC(trainMatrix, predMatrixUPCC, predMatrixIPCC, para)  	
 		timeResults[4, k] = time.clock() - iterStartTime5\
 				+ timeResults[2, k] + timeResults[3, k]
 		predVecUIPCC = predMatrixUIPCC[testVecX, testVecY]           

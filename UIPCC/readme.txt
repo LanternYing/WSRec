@@ -61,6 +61,7 @@ UIPCC/
   - setup.py                - setup script file for build c++ modules
   - readme.txt              - descriptions of this package 
   - src/                    - directory of the source files
+      - dataloader.py       - a function to load the dataset (with preprocessing)
       - utilities.py        - a script containing a bag of useful utilities
       - evaluator.py        - control execution and results collection of the 
                               specific algorithm
