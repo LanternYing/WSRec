@@ -1,9 +1,9 @@
 ########################################################
 # setup.py 
-# setup script to build extension model for UIPCC_core 
+# setup script to build extension model
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/4/20
-# Last updated: 2014/5/3
+# Last updated: 2014/7/15
 ########################################################
 
 
@@ -12,22 +12,26 @@ from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import shutil
+import numpy
 
 print('Build extension modules...')
 print('==============================================')
 
-ext_modules = [Extension('UIPCC',
-				['src/UIPCC_core/UIPCC.pyx', 'src/UIPCC_core/UIPCC_core.cpp'],
-				language='c++'
-              )]
+ext_modules = [Extension('core',
+				['src/core/UIPCC.pyx', 
+				'src/core/UIPCC_core.cpp'],
+				language='c++',
+                include_dirs=[numpy.get_include()],
+                extra_compile_args=["-O2"]
+               )]
 
 setup(
-	name = 'Extended Cython module for UIPCC',
+	name = 'Extended Cython module',
 	cmdclass = {'build_ext': build_ext},
 	ext_modules = ext_modules
 )
 
-shutil.move('UIPCC.so', 'src/UIPCC.so')
+shutil.move('core.so', 'src/core.so')
 print('==============================================')
 print('Build done.\n')
 
