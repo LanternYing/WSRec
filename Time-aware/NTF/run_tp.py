@@ -30,7 +30,6 @@ para = {'dataType': 'tp', # set the dataType as 'rt' or 'tp'
 		'outPath': 'result/',
 		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate		
 		'density': list(np.arange(0.05, 0.31, 0.05)), # matrix density
-		'timeSlice': 64, # number of time slices
 		'rounds': 20, # how many runs are performed at each matrix density
 		'dimension': 10, # dimenisionality of the latent factors
 		'lambda': 5000, # regularization parameter

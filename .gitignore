@@ -1,4 +1,14 @@
 # ignore all obj and bin folders (even in subdirectories)
 *.DS_Store
 *.pyc
-build/
+build
+data/dataset#2/rtdata.txt
+data/dataset#2/tpdata.txt
+rtResult_0.01.txt
+rtResult_0.02.txt
+rtResult_0.03.txt
+rtResult_0.04.txt
+tpResult_0.01.txt
+tpResult_0.02.txt
+tpResult_0.03.txt
+tpResult_0.04.txt

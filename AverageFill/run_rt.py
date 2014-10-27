@@ -9,23 +9,26 @@
 
 import numpy as np
 import os, sys, time
+import multiprocessing
 sys.path.append('src')
 from utilities import *
-import execute
+import evaluator
+import dataloader
  
 
 #########################################################
 # config area
 #
-para = {'dataPath': '../data/dataset#1/rtMatrix.txt',
-		'outPath': 'result/rtResult_',
-		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate
-		# matrix density
-		'density': list(np.arange(0.01, 0.06, 0.01)) + list(np.arange(0.10, 0.31, 0.05)), 
+para = {'dataType': 'rt', # set the dataType as 'rt' or 'tp'
+		'dataPath': '../data/dataset#1/',
+		'outPath': 'result/',
+		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate		
+		'density': list(np.arange(0.05, 0.31, 0.05)), # matrix density 
 		'rounds': 20, # how many runs are performed at each matrix density
 		'saveTimeInfo': False, # whether to keep track of the running time
 		'saveLog': False, # whether to save log into file
-		'debugMode': False # whether to record the debug info
+		'debugMode': False, # whether to record the debug info
+        'parallelMode': True # whether to leverage multiprocessing for speedup
 		}
 
 initConfig(para)
@@ -35,12 +38,21 @@ initConfig(para)
 startTime = time.clock() # start timing
 logger.info('==============================================')
 logger.info('Baseline approach: AverageFill.')
-logger.info('Load data: %s'%para['dataPath'])
-dataMatrix = np.loadtxt(para['dataPath']) 
+
+# load the dataset
+dataMatrix = dataloader.load(para)
+logger.info('Loading data done.')
 
 # run for each density
-for density in para['density']:
-    execute.predict(dataMatrix, density, para)
+if para['parallelMode']: # run on multiple processes
+    pool = multiprocessing.Pool()
+    for density in para['density']:
+		pool.apply_async(evaluator.execute, (dataMatrix, density, para))
+    pool.close()
+    pool.join()
+else: # run on single processes
+	for density in para['density']:
+		evaluator.execute(dataMatrix, density, para)
 
 logger.info(time.strftime('All done. Total running time: %d-th day - %Hhour - %Mmin - %Ssec.',
          time.gmtime(time.clock() - startTime)))

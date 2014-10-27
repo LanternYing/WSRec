@@ -9,33 +9,35 @@
 
 import numpy as np
 import os, sys, time
-
+import multiprocessing
 sys.path.append('src')
 # Build external model
-if not os.path.isfile('src/NMF.so'):
-	print 'Lack of NMF.so. Please first build the cpp code into NMF.so: '
-	print 'python setup.py build_ext --inplace'
+if not os.path.isfile('src/core.so'):
+	print 'Lack of core.so (built from the C++ module).' 
+	print 'Please first build the C++ code into core.so by using: '
+	print '>> python setup.py build_ext --inplace'
 	sys.exit()
-
 from utilities import *
-from predict import *
+import evaluator
+import dataloader
  
 
 #########################################################
 # config area
 #
-para = {'dataPath': '../data/dataset#1/tpMatrix.txt',
-		'outPath': 'result/tpResult_',
-		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate
-		# matrix density
-		'density': list(np.arange(0.01, 0.06, 0.01)) + list(np.arange(0.10, 0.31, 0.05)), 
+para = {'dataType': 'tp', # set the dataType as 'rt' or 'tp'
+		'dataPath': '../data/dataset#1/',
+		'outPath': 'result/',
+		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate		
+		'density': list(np.arange(0.05, 0.31, 0.05)), # matrix density
 		'rounds': 20, # how many runs are performed at each matrix density
 		'dimension': 10, # dimenisionality of the latent factors
 		'lambda': 800, # regularization parameter
 		'maxIter': 300, # the max iterations
 		'saveTimeInfo': False, # whether to keep track of the running time
 		'saveLog': False, # whether to save log into file
-		'debugMode': False # whether to record the debug info
+		'debugMode': False, # whether to record the debug info
+        'parallelMode': True # whether to leverage multiprocessing for speedup
 		}
 
 initConfig(para)
@@ -45,12 +47,21 @@ initConfig(para)
 startTime = time.clock() # start timing
 logger.info('==============================================')
 logger.info('NMF: Non-negative Matrix Factorization.')
-logger.info('Load data: %s'%para['dataPath'])
-dataMatrix = np.loadtxt(para['dataPath']) 
+
+# load the dataset
+dataMatrix = dataloader.load(para)
+logger.info('Loading data done.')
 
 # run for each density
-for density in para['density']:
-    predict(dataMatrix, density, para)
+if para['parallelMode']: # run on multiple processes
+    pool = multiprocessing.Pool()
+    for density in para['density']:
+		pool.apply_async(evaluator.execute, (dataMatrix, density, para))
+    pool.close()
+    pool.join()
+else: # run on single processes
+	for density in para['density']:
+		evaluator.execute(dataMatrix, density, para)
 
 logger.info(time.strftime('All done. Total running time: %d-th day - %Hhour - %Mmin - %Ssec.',
          time.gmtime(time.clock() - startTime)))

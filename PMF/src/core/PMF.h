@@ -7,7 +7,7 @@
 
 
 /* Perform the core approach of PMF */
-void PMF_core(double *removedData, int numUser, int numService, int dim, 
+void PMF(double *removedData, int numUser, int numService, int dim, 
 	double lmda, int maxIter, double etaInit, double *Udata, double *Sdata);
 
 /* Compute the loss value of PMF */

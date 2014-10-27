@@ -16,7 +16,7 @@ using namespace std;
 /********************************************************
 * Udata and Sdata are the output values
 ********************************************************/
-void PMF_core(double *removedData, int numUser, int numService, int dim, 
+void PMF(double *removedData, int numUser, int numService, int dim, 
 	double lmda, int maxIter, double etaInit, double *Udata, double *Sdata)
 {	
 	// --- transfer the 1D pointer to 2D array pointer

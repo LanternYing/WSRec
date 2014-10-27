@@ -2,7 +2,7 @@
 README file for PMF
 ----------------------------------------------------------------------------
 
-Author: Jamie Zhu <jimzhu@GitHub>
+Author: Jamie Zhu <jimzhu@GitHub><jmzhu AT cse.cuhk.edu.hk>
 Last updated: 2014/10/12.
 
 This package implements a QoS prediction approach, probabilistic matrix 
@@ -76,7 +76,7 @@ PMF/
                               for building core.so
   - result/                 - directory for storing evaluation results
                               available metrics: (MAE, NMAE, RMSE, MRE, NPRE)
-      - rtResult_0.05.txt   - E.g., the reponse-time prediction result under 
+      - rtResult_0.05.txt   - E.g., the response-time prediction result under 
                               matrix density = 5%
       - [...]               - many other results
 
@@ -86,9 +86,9 @@ Usage of this package
 
 For ease of reproducing and compare with other approaches, we provide the 
 detailed experimental results with five metrics (MAE, NMAE, RMSE, MRE, NPRE), 
-under the "result/" directory, after running the above five QoS prediction 
-approaches on "data/dataset#1". E.g.,"result/rtResult_0.20.txt" records the 
-evaluation results under matrix density = 20%. In particular, each experiment 
+under the "result/" directory, after running the above QoS prediction approach
+on the dataset: "data/dataset#1". E.g.,"result/rtResult_0.05.txt" records the 
+evaluation results under matrix density = 5%. In particular, each experiment 
 is run for 20 times and the average result (including std value) is reported. 
 These results can be directly used for your research work.
 
@@ -101,7 +101,8 @@ multi-core computer.
 >> python run_tp.py
 
 Make sure the external module "core.so" exists. If not, you can build it by 
-the follow command. Note that the current version has only been tested on Linux.
+the follow command. Note that whereas our code is executable to different 
+platforms, we has only tested the current version on Linux.
 
 >> python setup.py build_ext --inplace
 
@@ -137,5 +138,6 @@ this copyright notice is retained and prominently displayed, along with a
 note saying that the original programs are available from our web page 
 (https://wsdream.github.io). The program is provided as-is, and there are 
 no guarantees that it fits your purposes or that it is bug-free. All use 
-of these programs is entirely at the user's own risk.
+of these programs is entirely at the user's own risk. For any enquiries, 
+please feel free to contact Jamie Zhu <jmzhu AT cse.cuhk.edu.hk>.
 

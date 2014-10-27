@@ -15,7 +15,7 @@ cimport numpy as np # import C-API
 # Make declarations on functions from cpp file
 #
 cdef extern from "PMF.h":
-    void PMF_core(double *removedData, int numUser, int numService, 
+    void PMF(double *removedData, int numUser, int numService, 
     	int dim, double lmda, int maxIter, double etaInit, 
         double *Udata, double *Sdata)
 #########################################################
@@ -25,13 +25,13 @@ cdef extern from "PMF.h":
 # Function to perform the prediction algorithm
 # Wrap up the C++ implementation
 #
-def predict(removedMatrix, paraStruct):  
+def predict(removedMatrix, para):  
     cdef int numService = removedMatrix.shape[1] 
     cdef int numUser = removedMatrix.shape[0] 
-    cdef int dim = paraStruct['dimension']
-    cdef double lmda = paraStruct['lambda']
-    cdef int maxIter = paraStruct['maxIter']
-    cdef double etaInit = paraStruct['etaInit']
+    cdef int dim = para['dimension']
+    cdef double lmda = para['lambda']
+    cdef int maxIter = para['maxIter']
+    cdef double etaInit = para['etaInit']
 
     # initialization
     cdef np.ndarray[double, ndim=2, mode='c'] U = np.random.rand(numUser, dim)        
@@ -39,9 +39,8 @@ def predict(removedMatrix, paraStruct):
     
     logger.info('Iterating...')
 
-    # Wrap the PMF_core.cpp
-    PMF_core(
-        <double *> (<np.ndarray[double, ndim=2, mode='c']> removedMatrix).data,
+    # Wrap up PMF.cpp
+    PMF(<double *> (<np.ndarray[double, ndim=2, mode='c']> removedMatrix).data,
         numUser,
         numService,
         dim,

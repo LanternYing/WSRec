@@ -3,7 +3,7 @@
 # setup script to build extension model
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/4/20
-# Last updated: 2014/7/15
+# Last updated: 2014/5/3
 ########################################################
 
 
@@ -18,12 +18,12 @@ print('Build extension modules...')
 print('==============================================')
 
 ext_modules = [Extension('core',
-				['src/core/NTF.pyx', 
-				'src/core/NTF_core.cpp'],
+				['src/core/core.pyx', 
+				'src/core/NTF.cpp'],
 				language='c++',
-                include_dirs=[numpy.get_include()],
+				include_dirs=[numpy.get_include()],
                 extra_compile_args=["-O2"]
-               )]
+              )]
 
 setup(
 	name = 'Extended Cython module',

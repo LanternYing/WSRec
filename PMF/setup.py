@@ -1,6 +1,6 @@
 ########################################################
 # setup.py 
-# setup script to build extension model for PMF_core 
+# setup script to build extension model
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/4/20
 # Last updated: 2014/5/3
