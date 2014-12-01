@@ -19,7 +19,7 @@ import dataloader
 #########################################################
 # config area
 #
-para = {'dataType': 'tp', # set the dataType as 'rt' or 'tp'
+para = {'dataType': 'tp', # set 'tp' for throughput prediction
 		'dataPath': '../data/dataset#1/',
 		'outPath': 'result/',
 		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate		

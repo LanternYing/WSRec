@@ -29,79 +29,76 @@ void NTF(double *removedData, double *predData, int numUser, int numService,
     double **U = vector2Matrix(Udata, numUser, dim);
     double **S = vector2Matrix(Sdata, numService, dim);
     double **T = vector2Matrix(Tdata, numTimeSlice, dim);
- 
-	// --- create matricies and tensor
-    bool ***I = vector2Tensor(new bool[numUser * numService * numTimeSlice], numUser, 
-        numService, numTimeSlice);
-
-    // --- compute indicator matrix I
-    int i, j, k, l;
-    for (i = 0; i < numUser; i++) {
-        for (j = 0; j < numService; j++) {
-            for (k = 0; k < numTimeSlice; k++) {
-                I[i][j][k] = fabs(Y[i][j][k]) > eps;
-            }
-        }
-    }
-    
-    updateY_hat(Y_hat, U, S, T, numUser, numService, numTimeSlice, dim);
-  
+     
     // --- iterate by muplication rules
     double t1, t2;
     for (int iter = 1; iter <= maxIter; iter++) {
-        for (l = 0; l < dim; l++) {
-            // update U
-            for (i = 0; i < numUser; i++) {
+        // update Y_hat
+        updateY_hat(false, Y, Y_hat, U, S, T, numUser, numService, numTimeSlice, dim);
+
+        // log the debug info
+        cout.setf(ios::fixed);
+        if (debugMode) {
+            pdd loss = lossFunction(Y, Y_hat, U, S, T, numUser, numService, 
+                numTimeSlice, dim, lmda);
+            cout << currentDateTime() << ": ";
+            cout << "iter = " << iter << ", lossValue = " << loss.first + loss.second 
+                << ", cost = " << loss.first << ", reg = " << loss.second << endl;
+        }  
+
+        // update U
+        int i, j, k, l;
+        for (i = 0; i < numUser; i++) {          
+            for (l = 0; l < dim; l++) {
                 t1 = 0, t2 = 0;
                 for (j = 0; j < numService; j++) {
                     for (k = 0; k < numTimeSlice; k++) {
-                        t1 += I[i][j][k] * Y[i][j][k] * S[j][l] * T[k][l];
-                        t2 += I[i][j][k] * Y_hat[i][j][k] * S[j][l] * T[k][l];
+                        t1 += Y[i][j][k] * S[j][l] * T[k][l];
+                        t2 += Y_hat[i][j][k] * S[j][l] * T[k][l];
                     }
                 }
                 U[i][l] *= t1 / (t2 + lmda * U[i][l] + eps);
-            }           
-            updateY_hat(Y_hat, U, S, T, numUser, numService, numTimeSlice, dim);
+            } 
+        }   
 
-            // update S
-            for (j = 0; j < numService; j++) {
+        // update Y_hat
+        updateY_hat(false, Y, Y_hat, U, S, T, numUser, numService, numTimeSlice, dim);
+
+        // update S
+        for (j = 0; j < numService; j++) {
+            for (l = 0; l < dim; l++) {
                 t1 = 0, t2 = 0;
                 for (i = 0; i < numUser; i++) {
                     for (k = 0; k < numTimeSlice; k++) {
-                        t1 += I[i][j][k] * Y[i][j][k] * U[i][l] * T[k][l];
-                        t2 += I[i][j][k] * Y_hat[i][j][k] * U[i][l] * T[k][l];
+                        t1 += Y[i][j][k] * U[i][l] * T[k][l];
+                        t2 += Y_hat[i][j][k] * U[i][l] * T[k][l];
                     }
                 }
                 S[j][l] *= t1 / (t2 + lmda * S[j][l] + eps);
             }
-            updateY_hat(Y_hat, U, S, T, numUser, numService, numTimeSlice, dim);
+        }
+
+        // update Y_hat
+        updateY_hat(false, Y, Y_hat, U, S, T, numUser, numService, numTimeSlice, dim);
             
-            // update T
-            for (k = 0; k < numTimeSlice; k++) {
+        // update T
+        for (k = 0; k < numTimeSlice; k++) {
+            for (l = 0; l < dim; l++) {
                 t1 = 0, t2 = 0;
                 for (i = 0; i < numUser; i++) {
                     for (j = 0; j < numService; j++) {
-                        t1 += I[i][j][k] * Y[i][j][k] * U[i][l] * S[j][l];
-                        t2 += I[i][j][k] * Y_hat[i][j][k] * U[i][l] * S[j][l];
+                        t1 += Y[i][j][k] * U[i][l] * S[j][l];
+                        t2 += Y_hat[i][j][k] * U[i][l] * S[j][l];
                     }
                 }
                 T[k][l] *= t1 / (t2 + lmda * T[k][l] + eps);
             }
-            updateY_hat(Y_hat, U, S, T, numUser, numService, numTimeSlice, dim);
-        }
-
-        pdd loss = lossFunction(I, Y, Y_hat, U, S, T, numUser, numService, 
-            numTimeSlice, dim, lmda);
-        
-        // log the debug info
-        cout.setf(ios::fixed);
-        if (debugMode) {
-         	cout << currentDateTime() << ": ";
-            cout << "iter = " << iter << ", lossValue = " << loss.first + loss.second 
-            	<< ", cost = " << loss.first << ", reg = " << loss.second << endl;
-        }      
+        }  
     }
-      
+
+    // update Y_hat
+    updateY_hat(true, Y, Y_hat, U, S, T, numUser, numService, numTimeSlice, dim);
+  
     delete ((char*) U);
     delete ((char*) S);
     delete ((char*) T);
@@ -112,29 +109,30 @@ void NTF(double *removedData, double *predData, int numUser, int numService,
 
 inline double sqr(double x) {return x * x;}
 
-pdd lossFunction(bool ***I, double ***Y, double ***Y_hat, double **U, double **S, 
-    double **T, int m, int n, int c, int d, double lmda)
+pdd lossFunction(double ***Y, double ***Y_hat, double **U, double **S, double **T, 
+    int numUser, int numService, int numTimeSlice, int dim, double lmda)
 {
     double reg = 0, cost = 0;
     
-    for (int l = 0; l < d; l++) {
-        for (int i = 0; i < m; i++) {
+    for (int l = 0; l < dim; l++) {
+        for (int i = 0; i < numUser; i++) {
             reg += sqr(U[i][l]);
         }
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < numService; j++) {
             reg += sqr(S[j][l]);
         }
-        for (int k = 0; k < c; k++) {
+        for (int k = 0; k < numTimeSlice; k++) {
             reg += sqr(T[k][l]);
         }
     }
     reg *= lmda;
 
-    int i, j, k;
-    for (i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-            for (k = 0 ; k < c; k++) {
-                cost += sqr(I[i][j][k] * (Y[i][j][k] - Y_hat[i][j][k]));
+    for (int i = 0; i < numUser; i++) {
+        for (int j = 0; j < numService; j++) {
+            for (int k = 0 ; k < numTimeSlice; k++) {
+                if (Y[i][j][k] > 0) {
+                    cost += sqr(Y[i][j][k] - Y_hat[i][j][k]);
+                }
             }
         }
     }
@@ -143,15 +141,17 @@ pdd lossFunction(bool ***I, double ***Y, double ***Y_hat, double **U, double **S
 }
 
 
-double updateY_hat(double ***Y_hat, double **U, double **S, double **T, int m, int n, 
-    int c, int d)
+void updateY_hat(bool flag, double ***Y, double ***Y_hat, double **U, double **S, 
+    double **T, int numUser, int numService, int numTimeSlice, int dim)
 {
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            for (int k = 0; k < c; k++) {
-                Y_hat[i][j][k] = 0;
-                for (int l = 0; l < d; l++) {
-                    Y_hat[i][j][k] += U[i][l] * S[j][l] * T[k][l];
+    for (int i = 0; i < numUser; i++) {
+        for (int j = 0; j < numService; j++) {
+            for (int k = 0; k < numTimeSlice; k++) {
+                if (flag == true || Y[i][j][k] > 0) {
+                    Y_hat[i][j][k] = 0;
+                    for (int l = 0; l < dim; l++) {
+                        Y_hat[i][j][k] += U[i][l] * S[j][l] * T[k][l];
+                    }
                 }
             }
         }
@@ -197,50 +197,6 @@ double ***vector2Tensor(double *vector, int row, int col, int height)
 	}
 
 	return tensor;
-}
-
-
-bool ***vector2Tensor(bool *vector, int row, int col, int height)
-{
-    bool ***tensor = new bool **[row];
-    if (!tensor) {
-        cout << "Memory allocation failed in vector2Tensor." << endl;
-        return NULL;
-    }
-    
-    int i, j;
-    for (i = 0; i < row; i++) {
-        tensor[i] = new bool *[col];
-        if (!tensor[i]) {
-            cout << "Memory allocation failed in vector2Tensor." << endl;
-            return NULL;
-        }
-        
-        for (j = 0; j < col; j++) {
-            tensor[i][j] = vector + i * col * height + j * height;
-        }
-    }
-    
-    return tensor;
-}
-
-
-double **createMatrix(int row, int col) 
-{
-    double **matrix = new double *[row];
-    matrix[0] = new double[row * col];
-    memset(matrix[0], 0, row * col * sizeof(double)); // Initialization
-    int i;
-    for (i = 1; i < row; i++) {
-    	matrix[i] = matrix[i - 1] + col;
-    }
-    return matrix;
-}
-
-
-void delete2DMatrix(double **ptr) {
-	delete ptr[0];
-	delete ptr;
 }
 
 

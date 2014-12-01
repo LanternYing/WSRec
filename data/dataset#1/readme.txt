@@ -6,7 +6,7 @@ This dataset describes real-world QoS evaluation results from 339 users on
 5,825 Web services. Note that we have recently updated the location 
 information (e.g., IP, AS, Latitude, Longitude) of users and services into 
 the dataset. It is available for downloading at: 
-http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset1.zip
+http://wsdream.github.io/dataset/wsrec_dataset1
 
 ----------------------------------------------------------------------------
 List of contents of the dataset

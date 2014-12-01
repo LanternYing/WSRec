@@ -18,48 +18,44 @@ from utilities import *
 # 
 def execute(tensor, density, para):
     startTime = time.clock()
-    (numUser, numService, timeSlice) = tensor.shape
+    [numUser, numService, numTime] = tensor.shape
     rounds = para['rounds']
     logger.info('Data size: %d users * %d services * %d timeslices'\
-    	%(numUser, numService, timeSlice))
+    	%(numUser, numService, numTime))
     logger.info('Run the algorithm for %d rounds: density = %.2f.'%(rounds, density))
-    evalResults = np.zeros((rounds, len(para['metrics']), timeSlice)) 
+    evalResults = np.zeros((rounds, len(para['metrics']))) 
     timeResults = np.zeros((rounds, 1))
-    	
+    
     for k in range(rounds):
 		logger.info('----------------------------------------------')
 		logger.info('%d-round starts.'%(k + 1))
 		logger.info('----------------------------------------------')
 
 		# remove the entries of data to generate trainTensor and testTensor
-		# use k as random seed	
 		(trainTensor, testTensor) = removeTensor(tensor, density, k, para)
 		logger.info('Removing data entries done.')
 
 		# invocation to the prediction function
 		iterStartTime = time.clock() # to record the running time for one round             
-		predictedTensor = core.predict(trainTensor, para)  
+		predictedTensor = core.predict(trainTensor, para) 
 		timeResults[k] = time.clock() - iterStartTime
 
 		# calculate the prediction error
-		for i in range(timeSlice):
+		result = np.zeros((numTime, len(para['metrics'])))
+		for i in xrange(numTime):
 			testMatrix = testTensor[:, :, i]
 			predictedMatrix = predictedTensor[:, :, i]
-			(testVecX, testVecY) = np.where(testMatrix)		
+			(testVecX, testVecY) = np.where(testMatrix)
 			testVec = testMatrix[testVecX, testVecY]
 			predVec = predictedMatrix[testVecX, testVecY]
-			evalResults[k, :, i] = errMetric(testVec, predVec, para['metrics'])
+			result[i, :] = errMetric(testVec, predVec, para['metrics'])		
+		evalResults[k, :] = np.average(result, axis=0)
 
 		logger.info('%d-round done. Running time: %.2f sec'%(k + 1, timeResults[k]))
 		logger.info('----------------------------------------------')
-	
-    for i in range(timeSlice):
-    	outFile = '%s%02d_%sResult_%.2f.txt'\
-    		%(para['outPath'], i + 1, para['dataType'], density)
-        saveResult(outFile, evalResults[:, :, i], para)
-    if para['saveTimeInfo']:
-    	outFile = '%s%sResult_%.2f_time.txt'%(para['outPath'], para['dataType'], density)
-        saveTimeResult(outfile, timeResults)
+
+    outFile = '%savg_%sResult_%.2f.txt'%(para['outPath'], para['dataType'], density)
+    saveResult(outFile, evalResults, timeResults, para)
 
     logger.info('Density = %.2f done. Running time: %.2f sec'
 			%(density, time.clock() - startTime))
@@ -71,11 +67,12 @@ def execute(tensor, density, para):
 # Function to remove the entries of data tensor
 # Return the trainTensor and the corresponding testTensor
 #
-def removeTensor(tensor, density, seedID, para):
-	timeSlice = tensor.shape[2]
+def removeTensor(tensor, density, round, para):
+	numTime = tensor.shape[2]
 	trainTensor = np.zeros(tensor.shape)
 	testTensor = np.zeros(tensor.shape)
-	for i in range(timeSlice):
+	for i in range(numTime):
+		seedID = round + i * 1000
 		(trainMatrix, testMatrix) = removeEntries(tensor[:, :, i], density, seedID)
 		trainTensor[:, :, i] = trainMatrix
 		testTensor[:, :, i] = testMatrix

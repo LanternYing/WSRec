@@ -28,7 +28,6 @@ cdef extern from "NTF.h":
 # Wrap up the C++ implementation
 #
 def predict(removedTensor, para):
-   
     cdef int numService = removedTensor.shape[1] 
     cdef int numUser = removedTensor.shape[0]
     cdef int numTimeSlice = removedTensor.shape[2]
@@ -46,7 +45,7 @@ def predict(removedTensor, para):
     
     logger.info('Iterating...')
 		
-    # Wrap up NTF.cpp
+    # wrap up NTF.cpp
     NTF(<double *> (<np.ndarray[double, ndim=3, mode='c']> removedTensor).data,
         <double *> predTensor.data,
         numUser,

@@ -19,14 +19,14 @@ import dataloader
 #########################################################
 # config area
 #
-para = {'dataType': 'rt', # set the dataType as 'rt' or 'tp'
+para = {'dataType': 'rt', # set 'rt' for response-time prediction
 		'dataPath': '../data/dataset#1/',
 		'outPath': 'result/',
 		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate		
 		'density': list(np.arange(0.05, 0.31, 0.05)), # matrix density 
 		'rounds': 20, # how many runs are performed at each matrix density
 		'saveTimeInfo': False, # whether to keep track of the running time
-		'saveLog': False, # whether to save log into file
+		'saveLog': True, # whether to save log into file
 		'debugMode': False, # whether to record the debug info
         'parallelMode': True # whether to leverage multiprocessing for speedup
 		}

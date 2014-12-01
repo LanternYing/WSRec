@@ -5,8 +5,7 @@ README file for AverageFill
 Author: Jamie Zhu <jimzhu@GitHub><jmzhu AT cse.cuhk.edu.hk>
 Last updated: 2014/7/16.
 
-This package implements baseline approach for QoS prediction, AverageFill, 
-which has been proposed in the existing work [Pan et al., AAAI'10] 
+This package implements a baseline approach for QoS prediction, AverageFill.
 
 ----------------------------------------------------------------------------
 Reference and citation
@@ -15,9 +14,7 @@ Reference and citation
 Please refer to the following papers for the detailed descriptions of the 
 implemented algorithms:
 
-- Weike Pan, Evan Wei Xiang, Nathan Nan Liu, and Qiang Yang, "Transfer 
-  Learning in Collaborative Filtering for Sparsity Reduction," in Proc. of 
-  the 24th AAAI Conference on Artificial Intelligence, 2010. 
+- TBD
 
 IF YOU USE THIS PACKAGE IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPERS. 
 THANKS!

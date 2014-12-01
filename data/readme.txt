@@ -13,7 +13,7 @@ This dataset describes real-world QoS evaluation results from 339 users on
 5,825 Web services. Note that we have recently updated the location 
 information (e.g., IP, AS, Latitude, Longitude) of users and services into 
 the dataset. It is available for downloading at: 
-http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset1.zip
+http://wsdream.github.io/dataset/wsrec_dataset1
 
 ----------------------------------------------------------------------------
 List of contents of the dataset
@@ -35,9 +35,9 @@ Reference paper
 
 This detailed description of this data set can be refereed to this paper:
 
-Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Investigating QoS of Real-World 
-Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, pp.32-39, 
-2014.
+- Zibin Zheng, Yilei Zhang, and Michael R. Lyu, “Investigating QoS of Real-World 
+  Web Services”, IEEE Transactions on Services Computing , vol.7, no.1, pp.32-39, 
+  2014.
 
 IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
 THANKS!
@@ -59,7 +59,7 @@ dataset#2: 142 * 4500 * 64 time-aware Web service QoS dataset
 This dataset describes real-world QoS evaluation results from 142 users on 
 4,500 Web services over 64 different time slices (at 15-minute interval). 
 The dataset is available for downloading at: 
-http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset2.zip
+http://wsdream.github.io/dataset/wsrec_dataset2
 
 ----------------------------------------------------------------------------
 List of contents of the dataset
@@ -81,9 +81,9 @@ Reference paper
 
 This detailed description of this data set can be refereed to this paper:
 
-Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware 
-Personalized QoS Prediction Framework for Web Services", in Proceedings of 
-the 22th IEEE Symposium on Software Reliability Engineering (ISSRE 2011).
+- Yilei Zhang, Zibin Zheng, and Michael R. Lyu, "WSPred: A Time-Aware 
+  Personalized QoS Prediction Framework for Web Services", in Proceedings of 
+  the 22th IEEE Symposium on Software Reliability Engineering (ISSRE 2011).
 
 IF YOU USE THIS DATASET IN PUBLISHED RESEARCH, PLEASE CITE THE ABOVE PAPER. 
 THANKS!

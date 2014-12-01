@@ -5,7 +5,7 @@ README file for 142 * 4500 * 64 time-aware Web service QoS dataset
 This dataset describes real-world QoS evaluation results from 142 users on 
 4,500 Web services over 64 different time slices (at 15-minute interval). 
 The dataset is available for downloading at: 
-http://www.cse.cuhk.edu.hk/~jmzhu/dataset/wsrec_dataset2.zip
+http://wsdream.github.io/dataset/wsrec_dataset2
 
 ----------------------------------------------------------------------------
 List of contents of the dataset

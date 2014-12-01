@@ -27,12 +27,11 @@ void NMF(double *removedData, int numUser, int numService, int dim,
     // --- create a set of temporal matries
     double **predMatrix = createMatrix(numUser, numService);
 
-	// --- update predMatrix
-	U_dot_S(removedMatrix, U, S, numUser, numService, dim, predMatrix);
-
     // --- iterate by standard NMF algorithm
     int iter, i, j, k; 
     for (iter = 0; iter < maxIter; iter++) {
+    	// --- update predMatrix
+		U_dot_S(removedMatrix, U, S, numUser, numService, dim, predMatrix);
 
     	// update U
     	for (i = 0; i < numUser; i++) {
@@ -60,7 +59,7 @@ void NMF(double *removedData, int numUser, int numService, int dim,
     			double up = 0;
     			double down = 0;
     			for (i = 0; i < numUser; i++) {
-    				if (removedMatrix[i][j] != 0) {
+    				if (removedMatrix[i][j] > 0) {
 	    				up += removedMatrix[i][j] * U[i][k];
 	    				down += predMatrix[i][j] * U[i][k];
     				}
@@ -70,10 +69,7 @@ void NMF(double *removedData, int numUser, int numService, int dim,
 				S[j][k] = S[j][k] * up / down;
 	    	}
     	}
-
-    	// update predMatrix
-    	U_dot_S(removedMatrix, U, S, numUser, numService, dim, predMatrix);
-
+    	
     	// Uncomment this line for testing
     	// cout << "Loss: " << loss(U, S, removedMatrix, predMatrix, lmda, numUser, numService, dim) << endl;
     }
@@ -94,7 +90,7 @@ double loss(double **U, double **S, double **removedMatrix, double **predMatrix,
 	// cost
 	for (i = 0; i < numUser; i++) {
 		for (j = 0; j < numService; j++) {
-			if (removedMatrix[i][j] != 0) {
+			if (removedMatrix[i][j] > 0) {
 				loss += 0.5 * (removedMatrix[i][j] - predMatrix[i][j])
 							* (removedMatrix[i][j] - predMatrix[i][j]);	
 			}
@@ -121,7 +117,7 @@ void U_dot_S(double **removedMatrix, double **U, double **S, int numUser,
 	int i, j;
 	for (i = 0; i < numUser; i++) {
 		for (j = 0; j < numService; j++) {
-			if (removedMatrix[i][j] != 0) {
+			if (removedMatrix[i][j] > 0) {
 				predMatrix[i][j] = dotProduct(U[i], S[j], dim);  
 			}
 		}

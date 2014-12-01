@@ -29,8 +29,8 @@ def initConfig(para):
     if os.path.exists(config['logFile']):
         os.remove(config['logFile'])
     # add result folder
-    if not os.path.exists('result'):
-        os.mkdir('result')
+    if not os.path.exists(para['outPath']):
+        os.makedirs(para['outPath'])
 
     ## set up logger to record runtime info
     if para['debugMode']:  
