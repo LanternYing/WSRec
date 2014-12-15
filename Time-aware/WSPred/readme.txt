@@ -76,12 +76,9 @@ WSPred/
                                   different time slices
   - result/                     - directory for storing evaluation results
                                   available metrics: (MAE, NMAE, RMSE, MRE, NPRE)
-      - 01_rtResult_0.05.txt    - E.g., the response-time prediction result for time
-                                  slice = 1, under matrix density = 5%
+      - avg_rtResult_0.05.txt   - E.g., the reliability prediction result under 
+                                  matrix density = 5%
       - [...]                   - many other results
-      - average/
-          - avg_rtResult_0.05.txt   - the average result under matrix density = 5%
-		  - [...]                   - other results
 
 ----------------------------------------------------------------------------
 Usage of this package
@@ -90,10 +87,10 @@ Usage of this package
 For ease of reproducing and compare with other approaches, we provide the 
 detailed experimental results with five metrics (MAE, NMAE, RMSE, MRE, NPRE), 
 under the "result/" directory, after running the above QoS prediction approach 
-on the dataset: "data/dataset#2". E.g.,"result/01_rtResult_0.05.txt" records the 
-evaluation results for time slice = 1, under matrix density = 5%. In particular, 
-each experiment is run for 20 times and the average result (including std value) 
-is reported. These results can be directly used for your research work.
+on the dataset: "data/dataset#2". E.g.,"result/avg_rtResult_0.05.txt" records 
+the evaluation results under matrix density = 5%. In particular, each experiment 
+is run for 20 times and the average result (including std value) is reported. 
+These results can be directly used for your research work.
 
 On the other hand, if you want to reproduce our experiments, you can run the 
 program with our provided Python scripts "run_rt.py" and "run_tp.py". You can

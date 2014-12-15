@@ -17,8 +17,8 @@ from libcpp cimport bool
 #
 cdef extern from "WSPred.h":
     void WSPred(double *removedData, double *predData, int numUser, int numService, 
-		int numTimeSlice, int dim, double etaInit, double lmda, double alpha, int maxIter, 
-		bool debugMode,	double *Udata, double *Sdata, double *Tdata)
+		int numTimeSlice, int dim, double etaInit, double lmda, double alpha, 
+		int maxIter, bool debugMode,	double *Udata, double *Sdata, double *Tdata)
 #########################################################
 
 

@@ -29,8 +29,8 @@ def initConfig(para):
     if os.path.exists(config['logFile']):
         os.remove(config['logFile'])
     # add result folder
-    if not os.path.exists('result'):
-        os.mkdir('result')
+    if not os.path.exists(para['outPath']):
+        os.makedirs(para['outPath'])
 
     ## set up logger to record runtime info
     if para['debugMode']:  
@@ -62,7 +62,7 @@ def initConfig(para):
 ########################################################
 # Save the evaluation results into file
 #
-def saveResult(outfile, result, para):
+def saveResult(outfile, result, timeinfo, para):
     fileID = open(outfile, 'w')
     fileID.write('Metric: ')
     for metric in para['metrics']:
@@ -77,18 +77,13 @@ def saveResult(outfile, result, para):
     fileID.write('Detailed results for %d rounds:\n'%result.shape[0])
     np.savetxt(fileID, result, fmt='%.4f', delimiter='\t')     
     fileID.close()
-########################################################
 
-
-########################################################
-# Save the running time results into file
-#
-def saveTimeResult(outfile, result):
-    fileID = open(outfile, 'w')
-    fileID.write('Running time:\nAvg:\t%.4f\n'%np.average(timeinfo))
-    fileID.write('Std:\t%.4f\n'%np.std(timeinfo))
-    fileID.write('\n==========================================\n')
-    fileID.write('Detailed results for %d rounds:\n'%timeinfo.shape[0])
-    np.savetxt(fileID, np.matrix(timeinfo), fmt='%.4f')
-    fileID.close()
+    if para['saveTimeInfo']:
+        fileID = open(outfile + '_time.txt', 'w')
+        fileID.write('Running time:\nAvg:\t%.4f\n'%np.average(timeinfo))
+        fileID.write('Std:\t%.4f\n'%np.std(timeinfo))
+        fileID.write('\n==========================================\n')
+        fileID.write('Detailed results for %d rounds:\n'%timeinfo.shape[0])
+        np.savetxt(fileID, np.matrix(timeinfo), fmt='%.4f')
+        fileID.close()
 ########################################################

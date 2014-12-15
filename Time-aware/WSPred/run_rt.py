@@ -35,7 +35,7 @@ para = {'dataType': 'rt', # set the dataType as 'rt' or 'tp'
 		'etaInit': 8e-5, # inital learning rate. We use line search
 						 # to find the best eta at each iteration
 		'alpha': 1, # the weight to control the term of average QoS regularization
-		'lambda': 500, # regularization parameter
+		'lambda': 800, # regularization parameter
 		'maxIter': 300, # the max iterations
 		'saveTimeInfo': False, # whether to keep track of the running time
 		'saveLog': True, # whether to save log into file
