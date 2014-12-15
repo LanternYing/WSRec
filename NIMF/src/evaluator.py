@@ -23,7 +23,14 @@ def execute(matrix, density, para):
     rounds = para['rounds']
     logger.info('Data matrix size: %d users * %d services'%(numUser, numService))
     logger.info('Run the algorithm for %d rounds: matrix density = %.2f.'%(rounds, density))
-    evalResults = np.zeros((rounds, len(para['metrics']))) 
+    
+    numMetric = 0
+    for metric in para['metrics']:
+        if isinstance(metric, tuple):
+            numMetric += len(metric[1])
+        else:
+            numMetric += 1
+    evalResults = np.zeros((rounds, numMetric)) 
     timeResults = np.zeros((rounds, 1))
     	
     for k in range(rounds):
@@ -35,18 +42,15 @@ def execute(matrix, density, para):
 		# use k as random seed		
 		(trainMatrix, testMatrix) = removeEntries(matrix, density, k) 
 		logger.info('Removing data entries done.')
-		(testVecX, testVecY) = np.where(testMatrix)		
-		testVec = testMatrix[testVecX, testVecY]
-		# read the training data, i.e., removed matrix
 
 		# invocation to the prediction function
 		iterStartTime = time.clock() # to record the running time for one round             
-		predictedMatrix = core.predict(trainMatrix, para) 		
+		predictedMatrix = core.predict(trainMatrix, para)
+		predictedMatrix[trainMatrix > 0] = trainMatrix[trainMatrix > 0]
 		timeResults[k] = time.clock() - iterStartTime
 
 		# calculate the prediction error
-		predVec = predictedMatrix[testVecX, testVecY]
-		evalResults[k, :] = errMetric(testVec, predVec, para['metrics'])
+		evalResults[k, :] = errMetric(matrix, testMatrix, predictedMatrix, para['metrics'])
 
 		logger.info('%d-round done. Running time: %.2f sec'%(k + 1, timeResults[k]))
 		logger.info('----------------------------------------------')
@@ -93,28 +97,68 @@ def removeEntries(matrix, density, seedID):
 
 ########################################################
 # Function to compute the evaluation metrics
+# Return an array of metric values
 #
-def errMetric(realVec, predVec, metrics):
+def errMetric(matrix, testMatrix, predMatrix, metrics):
     result = []
-    absError = np.abs(predVec - realVec) 
-    mae = np.sum(absError)/absError.shape
+    (testVecX, testVecY) = np.where(testMatrix)		
+    testVec = testMatrix[testVecX, testVecY]
+    predVec = predMatrix[testVecX, testVecY]
+    absError = np.absolute(predVec - testVec) 
+    mae = np.average(absError)
     for metric in metrics:
-	    if 'MAE' == metric:
+        if isinstance(metric, tuple):
+            if 'NDCG' == metric[0]:
+                for topK in metric[1]:
+                    ndcg_k = getNDCG(matrix, predMatrix, topK)
+                    result = np.append(result, ndcg_k)
+        elif 'MAE' == metric:
 			result = np.append(result, mae)
-	    if 'NMAE' == metric:
-		    nmae = mae / (np.sum(realVec) / absError.shape)
+        elif 'NMAE' == metric:
+		    nmae = mae / np.average(testVec)
 		    result = np.append(result, nmae)
-	    if 'RMSE' == metric:
-		    rmse = LA.norm(absError) / np.sqrt(absError.shape)
-		    result = np.append(result, rmse)
-	    if 'MRE' == metric or 'NPRE' == metric:
-	        relativeError = absError / realVec
-	        relativeError = np.sort(relativeError)
+        elif 'RMSE' == metric:
+	    	rmse = LA.norm(absError) / np.sqrt(absError.size)
+	    	result = np.append(result, rmse)
+        elif 'MRE' == metric or 'NPRE' == metric:
+	        relativeError = absError / testVec
 	        if 'MRE' == metric:
-		    	mre = np.median(relativeError)
+		    	mre = np.percentile(relativeError, 50)
 		    	result = np.append(result, mre)
-	        if 'NPRE' == metric:
-		    	npre = relativeError[np.floor(0.9 * relativeError.shape[0])] 
+	        elif 'NPRE' == metric:
+		    	npre = np.percentile(relativeError, 90)
 		    	result = np.append(result, npre)
     return result
+########################################################
+
+
+########################################################
+# Function to compute the NDCG metric
+#
+def getNDCG(matrix, predMatrix, topK):
+	numUser = matrix.shape[0]
+	numService = matrix.shape[1]
+	ndcg = 0
+	for uid in range(numUser):
+		realVec = matrix[uid, :]
+		predictVec = predMatrix[uid, :]
+		predictVecIdx = np.argsort(-predictVec)
+		updatedPredictVec = realVec[predictVecIdx]
+		# filter out the invalid values (-1)
+		updatedPredictVec = updatedPredictVec[updatedPredictVec > 0]
+		updatedRealVec = realVec[realVec > 0]
+		updatedRealVec = sorted(updatedRealVec, reverse=True)
+		
+		dcg_k = 0
+		idcg_k = 0
+		for j in range(min(topK, len(updatedRealVec))):
+			if (j == 0):
+				dcg_k = dcg_k + updatedPredictVec[0]
+				idcg_k = idcg_k + updatedRealVec[0]
+			else:
+				dcg_k = dcg_k + updatedPredictVec[j] / np.log2(j + 1)
+				idcg_k = idcg_k + updatedRealVec[j] / np.log2(j + 1)
+		ndcg_k = dcg_k / idcg_k
+		ndcg = ndcg + ndcg_k
+	return ndcg / numUser
 ########################################################

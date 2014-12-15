@@ -35,7 +35,7 @@ para = {'dataType': 'rt', # set the dataType as 'rt' or 'tp'
         'topK': 10, # the parameter of TopK similar users, the default value is
 					# topK = 10 as in the reference paper
 		'saveTimeInfo': False, # whether to keep track of the running time
-		'saveLog': False, # whether to save log into file
+		'saveLog': True, # whether to save log into file
 		'debugMode': False, # whether to record the debug info
         'parallelMode': True # whether to leverage multiprocessing for speedup
 		}

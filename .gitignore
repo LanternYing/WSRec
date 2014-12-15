@@ -2,6 +2,10 @@
 *.DS_Store
 *.pyc
 build
+
+
+AverageFill
+tools
 data/dataset#2/rtdata.txt
 data/dataset#2/tpdata.txt
 rtResult_0.01.txt

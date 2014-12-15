@@ -17,9 +17,9 @@ from libcpp cimport bool
 #
 cdef extern from "TF.h":
     void TF(double *removedData, double *predData, int numUser, 
-        int numService, int numTimeSlice, int dim, double etaInit, double lmda, 
-        int maxIter, bool debugMode, double *Udata, double *Sdata, 
-        double *Tdata)
+        int numService, int numTimeSlice, int dim, double etaInit, 
+        double lmda, int maxIter, bool debugMode, double *Udata, 
+        double *Sdata, double *Tdata)
 #########################################################
 
 

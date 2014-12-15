@@ -19,14 +19,20 @@ import core
 # methods at each density
 # 
 def execute(matrix, density, para):
-
     startTime = time.clock()
     numService = matrix.shape[1] 
     numUser = matrix.shape[0] 
     rounds = para['rounds']
     logger.info('Data matrix size: %d users * %d services'%(numUser, numService))
     logger.info('Run for %d rounds: matrix density = %.2f.'%(rounds, density))
-    evalResults = np.zeros((5, rounds, len(para['metrics']))) 
+    
+    numMetric = 0
+    for metric in para['metrics']:
+        if isinstance(metric, tuple):
+            numMetric += len(metric[1])
+        else:
+            numMetric += 1
+    evalResults = np.zeros((5, rounds, numMetric)) 
     timeResults = np.zeros((5, rounds))
     	
     for k in range(rounds):
@@ -37,39 +43,37 @@ def execute(matrix, density, para):
 		# remove the entries of data matrix to generate trainMatrix and testMatrix		
 		(trainMatrix, testMatrix) = removeEntries(matrix, density, k)
 		logger.info('Removing data entries done.')
-		(testVecX, testVecY) = np.where(testMatrix)		
-		testVec = testMatrix[testVecX, testVecY]
 
         ## UMEAN
 		iterStartTime1 = time.clock()            
 		predMatrixUMEAN = core.UMEAN(trainMatrix) 	
 		timeResults[0, k] = time.clock() - iterStartTime1
-		predVecUMEAN = predMatrixUMEAN[testVecX, testVecY]       
-		evalResults[0, k, :] = errMetric(testVec, predVecUMEAN, para['metrics'])
+		predMatrixUMEAN[trainMatrix > 0] = trainMatrix[trainMatrix > 0]
+		evalResults[0, k, :] = errMetric(matrix, testMatrix, predMatrixUMEAN, para['metrics'])
 		logger.info('UMEAN done.')
 
 		## IMEAN
 		iterStartTime2 = time.clock()          
 		predMatrixIMEAN = core.IMEAN(trainMatrix)  	
 		timeResults[1, k] = time.clock() - iterStartTime2
-		predVecIMEAN = predMatrixIMEAN[testVecX, testVecY]         
-		evalResults[1, k, :] = errMetric(testVec, predVecIMEAN, para['metrics'])
+		predMatrixIMEAN[trainMatrix > 0] = trainMatrix[trainMatrix > 0]         
+		evalResults[1, k, :] = errMetric(matrix, testMatrix, predMatrixIMEAN, para['metrics'])
 		logger.info('IMEAN done.')
 
 		## UPCC
 		iterStartTime3 = time.clock()         
 		predMatrixUPCC = core.UPCC(trainMatrix, predMatrixUMEAN[:, 0], para)  
 		timeResults[2, k] = time.clock() - iterStartTime3 + timeResults[0, k]
-		predVecUPCC = predMatrixUPCC[testVecX, testVecY]   
-		evalResults[2, k, :] = errMetric(testVec, predVecUPCC, para['metrics'])
+		predMatrixUPCC[trainMatrix > 0] = trainMatrix[trainMatrix > 0]  
+		evalResults[2, k, :] = errMetric(matrix, testMatrix, predMatrixUPCC, para['metrics'])
 		logger.info('UPCC done.')
 		
 		## IPCC
 		iterStartTime4 = time.clock()         
 		predMatrixIPCC = core.IPCC(trainMatrix, predMatrixIMEAN[0, :], para) 
 		timeResults[3, k] = time.clock() - iterStartTime4 + timeResults[1, k]
-		predVecIPCC = predMatrixIPCC[testVecX, testVecY]        
-		evalResults[3, k, :] = errMetric(testVec, predVecIPCC, para['metrics'])
+		predMatrixIPCC[trainMatrix > 0] = trainMatrix[trainMatrix > 0]
+		evalResults[3, k, :] = errMetric(matrix, testMatrix, predMatrixIPCC, para['metrics'])
 		logger.info('IPCC done.')
 
 		## UIPCC
@@ -77,8 +81,8 @@ def execute(matrix, density, para):
 		predMatrixUIPCC = core.UIPCC(trainMatrix, predMatrixUPCC, predMatrixIPCC, para)  	
 		timeResults[4, k] = time.clock() - iterStartTime5\
 				+ timeResults[2, k] + timeResults[3, k]
-		predVecUIPCC = predMatrixUIPCC[testVecX, testVecY]           
-		evalResults[4, k, :] = errMetric(testVec, predVecUIPCC, para['metrics'])
+		predMatrixUIPCC[trainMatrix > 0] = trainMatrix[trainMatrix > 0]          
+		evalResults[4, k, :] = errMetric(matrix, testMatrix, predMatrixUIPCC, para['metrics'])
 		logger.info('UIPCC done.')
 
 		logger.info('%d-round done. Running time: %.2f sec'
@@ -129,26 +133,66 @@ def removeEntries(matrix, density, seedID):
 # Function to compute the evaluation metrics
 # Return an array of metric values
 #
-def errMetric(testVec, predVec, metrics):
+def errMetric(matrix, testMatrix, predMatrix, metrics):
     result = []
+    (testVecX, testVecY) = np.where(testMatrix)		
+    testVec = testMatrix[testVecX, testVecY]
+    predVec = predMatrix[testVecX, testVecY]
     absError = np.absolute(predVec - testVec) 
     mae = np.average(absError)
     for metric in metrics:
-	    if 'MAE' == metric:
+        if isinstance(metric, tuple):
+            if 'NDCG' == metric[0]:
+                for topK in metric[1]:
+                    ndcg_k = getNDCG(matrix, predMatrix, topK)
+                    result = np.append(result, ndcg_k)
+        elif 'MAE' == metric:
 			result = np.append(result, mae)
-	    if 'NMAE' == metric:
+        elif 'NMAE' == metric:
 		    nmae = mae / np.average(testVec)
 		    result = np.append(result, nmae)
-	    if 'RMSE' == metric:
+        elif 'RMSE' == metric:
 	    	rmse = LA.norm(absError) / np.sqrt(absError.size)
 	    	result = np.append(result, rmse)
-	    if 'MRE' == metric or 'NPRE' == metric:
+        elif 'MRE' == metric or 'NPRE' == metric:
 	        relativeError = absError / testVec
 	        if 'MRE' == metric:
 		    	mre = np.percentile(relativeError, 50)
 		    	result = np.append(result, mre)
-	        if 'NPRE' == metric:
+	        elif 'NPRE' == metric:
 		    	npre = np.percentile(relativeError, 90)
 		    	result = np.append(result, npre)
     return result
+########################################################
+
+
+########################################################
+# Function to compute the NDCG metric
+#
+def getNDCG(matrix, predMatrix, topK):
+	numUser = matrix.shape[0]
+	numService = matrix.shape[1]
+	ndcg = 0
+	for uid in range(numUser):
+		realVec = matrix[uid, :]
+		predictVec = predMatrix[uid, :]
+		predictVecIdx = np.argsort(-predictVec)
+		updatedPredictVec = realVec[predictVecIdx]
+		# filter out the invalid values (-1)
+		updatedPredictVec = updatedPredictVec[updatedPredictVec > 0]
+		updatedRealVec = realVec[realVec > 0]
+		updatedRealVec = sorted(updatedRealVec, reverse=True)
+		
+		dcg_k = 0
+		idcg_k = 0
+		for j in range(min(topK, len(updatedRealVec))):
+			if (j == 0):
+				dcg_k = dcg_k + updatedPredictVec[0]
+				idcg_k = idcg_k + updatedRealVec[0]
+			else:
+				dcg_k = dcg_k + updatedPredictVec[j] / np.log2(j + 1)
+				idcg_k = idcg_k + updatedRealVec[j] / np.log2(j + 1)
+		ndcg_k = dcg_k / idcg_k
+		ndcg = ndcg + ndcg_k
+	return ndcg / numUser
 ########################################################

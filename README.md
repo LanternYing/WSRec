@@ -1,37 +1,146 @@
-##A Benchmark Suite for QoS Prediction
+##WSRec Benchmark
 
-This repository contains the implementations on most of the state-of-the-art approaches for Web service QoS Prediction, including:
-	UMEAN
-	IMEAN
-	UPCC
-	IPCC
-	UIPCC
-	PMF
-	
-Most of the algorithms are implemented with Python. It is worth noting that our implementation is based on numpy, scipy, and matplotlib packages, so you need to first install these packages ([http://www.scipy.org/](http://www.scipy.org/)). 
+This repository maintains a benchmark suite of the state-of-the-art QoS prediction approaches for Web service recommendation.
 
-Meanwhile, to speed up, we make use of [Cython](http://cython.org/ "Cython's Web page") (a language to write C extensions for Python) to implement the core functions. As a consequence, Cython needs to be installed as an external package. In our repository, we download the package [here](https://github.com/cython/cython/archive/master.zip "The latest release of Cython"), and put it into the "external/" folder.
-
-You need to install Cython as follows:
-```
-vim ~/.bash_profile
-export PYTHONPATH="$PYTHONPATH:/WSRec/external/Cython-0.20.1/"
-export PATH="$PATH:/WSRec/external/Cython-0.20.1/bin/"
-```
-###Dependencies
+Read more information: [Paper][[Project page](http://wsdream.github.io/WSRec)]
 
 
-###Usage
+##Citation
 
+If YOU USE ANY BENCHMARK IN PUBLISHED RESEARCH, PLEASE KINDLY **CITE** THE FOLLOWING PAPER. 
 
-###Contributing
-
-
-###Acknowledgement
+- TBD
 
 
 
+##Links
+- Paper list: http://wsdream.github.io/WSRec/paperlist
+
+- QoS datasets: http://wsdream.github.io/dataset
+
+---
+
+##Code Archive
+Please visit [this page for a summary of evaluation results](http://wsdream.github.io/WSRec/evaluation_result.pdf) and [this page for detailed change logs](https://github.com/WS-DREAM/WSRec/releases).
+
+- Neighbourhood-based approaches and model-based approaches
+  - [UIPCC](https://github.com/WS-DREAM/WSRec/tree/master/UIPCC) (a.k.a. WSRec, including UMEAN, IMEAN, UPCC, IPCC) [*Zheng et al., [ICWS'09](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5175854&tag=1), [TSC'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5674010)*]
+  - [PMF](https://github.com/WS-DREAM/WSRec/tree/master/PMF) (a.k.a. Regularized SVD or RSVD) [*Salakhutdinov et al., NIPS'07*][*Zheng et al., [TSC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6122009)*]
+  - [NMF](https://github.com/WS-DREAM/WSRec/tree/master/NMF) [*Lee et al., NIPS'00*][*Zhang et al., [SRDS'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6076756)*]
+  - [CloudPred](https://github.com/WS-DREAM/WSRec/tree/master/CloudPred) [*Zhang et al., [SRDS'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6076756)*]
+  - [EMF](https://github.com/WS-DREAM/WSRec/tree/master/EMF) [*Lo et al., [SCC'12](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6274140)*]
+  - [ADF](https://github.com/WS-DREAM/WSRec/tree/master/ADF) [*Wu et al., [TSMC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6301755)*]
+  - [NRCF](https://github.com/WS-DREAM/WSRec/tree/master/NRCF) [*Sun et al., [TSC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6338940&tag=1)*]
+  - [NIMF](https://github.com/WS-DREAM/WSRec/tree/master/NIMF) [*Zheng et al., [TSC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6122009)*]
+  - [LN-LFM](https://github.com/WS-DREAM/WSRec/tree/master/LN-LFM) [Yu et al., SCC'14]
+
+- Location-aware
+  - [RegionKNN](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/RegionKNN) [*Chen et al., [ICWS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5552807)*]
+  - [LACF](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/LACF) [*Tang et al., [ICWS'12](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6257808)*]
+  - [LBR](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/LBR) [*Lo et al., [ICWS'12](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6257841)*]
+  - [HMF](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/HMF) [*He et al., ICWS'14*]
+  - [LoRec](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/LoRec) [*Chen et al., [TPDS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6684151)*]
+
+- Time-aware
+  - [TF](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/TF) [Zhang et al., [ISSRE'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6132969&tag=1)]
+  - [WSPred](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/WSPred) [Zhang et al., [ISSRE'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6132969&tag=1)]
+  - [NTF](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/NTF) [Zhang et al., [WWW'14](http://dl.acm.org/citation.cfm?id=2568001)]
+  - [T-WSRec](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/T-WSRec)(Time-Aware WSRec) [Hu et al., ICWS'14]
+  
+- Online-prediction
+  - [AMF](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/AMF) [Zhu et al., [ICDCS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6888908&tag=1)]
+  - [OPred](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/OPred) [Zhang et al., [TSMC'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6720144)]
+
+- Ranking-based
+  - [GreedyRank](https://github.com/WS-DREAM/WSRec/tree/master/Ranking-based/GreedyRank) [*Zheng et al., [SRDS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5623393)*]
+  - [CloudRank](https://github.com/WS-DREAM/WSRec/tree/master/Ranking-based/CloudRank) [*Zheng et al., [SRDS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5623393), [TPDS'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6320550)*]
+
+---
+
+
+##Dependencies
+- Python 2.7 (https://www.python.org)
+- Cython 0.20.1 (http://cython.org)
+- numpy 1.8.1 (http://www.scipy.org)
+- scipy 0.13.3 (http://www.scipy.org)
+
+The benchmarks are implemented with a combination of Python and C++. The framework is built on Python for simplicity, and the core functions of each algorithm are written in C++ for efficiency consideration. To achieve so, [Cython](http://cython.org/ "Cython's Web page") (a language to write C/C++ extensions for Python) has been employed to compile the C++ extensions to Python-compatible modules. In our repository, Cython (with version 0.20.1) has been set as a sub-module in the "externals/Cython" directory.
+
+>Note: Our code is directly executable on Linux platform. Re-compilation with Cython is required to execute them on Windows platform. 
 
 
 
+##Usage
+1. Download this code repository with Git:
+
+    ```
+    git clone https://github.com/WS-DREAM/WSRec.git
+    ```  
+    >The repository has maintained the common evaluation results that are ready for immediate use. If you need to further customize any approach, please go through the following steps.
+2. Install Cython (with Linux):
+    
+	```
+	# change YOUR_DIRECTORY to your working path  
+    vim ~/.bash_profile  
+    export PYTHONPATH="$PYTHONPATH:YOUR_DIRECTORY/WSRec/externals/Cython/"  
+    export PATH="$PATH:YOUR_DIRECTORY/WSRec/externals/Cython/bin/"  
+    ```  
+3. Read `"readme.txt"` for each appraoch, and execute the provided scripts (with configurable parameters):
+    
+	```
+    python run_rt.py  
+    python run_tp.py  
+    ```
+4. Check the evaluation results in "result/" directory. 
+
+---
+
+##Contributing
+
+>Your contributions are welcome!
+
+**To do list**: Some approaches to implement:
+- TNR-MF [Yu et al., [ICWS'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6649559&tag=1)]
+- TACF [Yu et al., ICWS'14]
+
+The goal of maintaining this repository is to make it simple to reproduce or modify the existing approaches. For future research on QoS prediction, you do not need to build your own program from scratch. The framework can be easily extended for new implementations. You only need to modify the following parts:
+- `run_rt.py` and `run_tp.py`: provide your model parameters in the *config* area of the scripts
+- `core/`
+  - `core.pyx`: implement the following function to wrap up the C++ implementations
+    
+    ```python
+	# input: removedMatrix (the training matrix), para (the model parameters) 
+	# output: predMatrix (the predicted QoS matrix)
+	def predict(removedMatrix, para):
+	    # TODO
+	    return predMatrix
+    ``` 
+  - `YOUR_APPROACH.h`
+  - `YOUR_APPROACH.cpp`: implement your approach in C++
+- `setup.py`: modify `src/core/YOUR_APPROACH.cpp`
+- `dataloader.py`: *optional*, if you want to add new dataset
+- `evaluator.py`: *optional*, if you want to add new metrics
+
+>Note that you can also implement your approach using only python. In this case, the `core/` folder can be deleted and only `core.py` is required.
+
+Your implementations built on our framework are welcome to host on this repository for distribution. Please provide your code with a detailed `"readme.txt"` file. Any contribution will be appreciated.
+
+
+## Contributors
+
+A big thanks to WSRec contributors:
+- [Jieming Zhu](http://jiemingzhu.github.io/), The Chinese University of Hong Kong (Project Founder)
+- [Zibin Zheng](http://www.zibinzheng.com/), The Chinese University of Hong Kong (Contribute UIPCC)
+- Pinjia He, The Chinese University of Hong Kong (Contribute HMF)
+- [Yuwen Xiong](https://github.com/Orpine), Zhejiang University (Contribute TF, NTF, WSPred, OPred, BMF, SVD++)
+- Yifei Lu, Zhejiang University (Contribute ADF, T-WSRec)
+
+---
+
+##Bugs, Discussion, Feedback
+For bugs and discussions, please post to our issue page (https://github.com/WS-DREAM/WSRec/issues). For any other enquires, please contact [Jieming Zhu](http://jiemingzhu.github.io/).
+
+##Copyright &copy;
+Permission is granted for anyone to copy, use, modify, or distribute this program and accompanying programs and documents for any purpose, provided this copyright notice is retained and prominently displayed, along with a 
+note saying that the original programs are available from our web page (https://wsdream.github.io/WSRec). The program is provided as-is, and there are no guarantees that it fits your purposes or that it is bug-free. All use of these programs is entirely at the user's own risk.
 

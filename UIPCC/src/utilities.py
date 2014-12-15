@@ -70,7 +70,12 @@ def saveResult(outfile, result, timeinfo, para):
     fileID = open(outfile, 'w')
     fileID.write('Metric: ')
     for metric in para['metrics']:
-        fileID.write('| %s\t'%metric)
+        if isinstance(metric, str):
+            fileID.write('| %s\t'%metric)
+        elif isinstance(metric, tuple):
+            if 'NDCG' == metric[0]:
+                for topK in metric[1]:
+                    fileID.write('| NDCG%s\t'%topK)
     fileID.write('\n==========================================\n')
     for i in range(5):
         fileID.write(approach[i])

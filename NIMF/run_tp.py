@@ -28,7 +28,8 @@ import dataloader
 para = {'dataType': 'tp', # set the dataType as 'rt' or 'tp'
 		'dataPath': '../data/dataset#1/',
 		'outPath': 'result/',
-		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate		
+		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE', 
+			('NDCG', [1, 5, 10, 20, 50, 100])], # delete where appropriate		
 		'density': list(np.arange(0.05, 0.31, 0.05)), # matrix density 
 		'rounds': 20, # how many runs are performed at each matrix density
 		'topK': 10, # the parameter of TopK similar users or services, the default 
@@ -40,7 +41,7 @@ para = {'dataType': 'tp', # set the dataType as 'rt' or 'tp'
 		'alpha': 0.4,  # the parameter of combination, 0.4 as in the reference paper
 		'maxIter': 300, # the max iterations
 		'saveTimeInfo': False, # whether to keep track of the running time
-		'saveLog': False, # whether to save log into file
+		'saveLog': True, # whether to save log into file
 		'debugMode': False, # whether to record the debug info
         'parallelMode': True # whether to leverage multiprocessing for speedup
 		}

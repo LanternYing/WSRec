@@ -53,6 +53,7 @@ void TF(double *removedData, double *predData, int numUser, int numService,
     
     // --- iterate by gradient descent
     for (int iter = 1; iter <= maxIter; iter++) {
+        
         calcGrad(gradU, gradS, gradT, I, Y, Y_hat, U, S, T, lmda, numUser, numService, 
         	numTimeSlice, dim);
         pair<double, pdd> out = linesearch(I, Y, Y_hat, U, S, T, gradU, gradS, gradT, 
