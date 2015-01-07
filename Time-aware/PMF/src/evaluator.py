@@ -32,7 +32,7 @@ def execute(matrix, density, para, sliceId):
 		logger.info('----------------------------------------------')
 
 		# remove the entries of data matrix to generate trainMatrix and testMatrix
-		seedID = k + sliceId * 1000
+		seedID = k + sliceId * 100
 		(trainMatrix, testMatrix) = removeEntries(matrix, density, seedID) 
 		logger.info('Removing data entries done.')
 		(testVecX, testVecY) = np.where(testMatrix)		

@@ -72,7 +72,7 @@ def removeTensor(tensor, density, round, para):
 	trainTensor = np.zeros(tensor.shape)
 	testTensor = np.zeros(tensor.shape)
 	for i in range(numTime):
-		seedID = round + i * 1000
+		seedID = round + i * 100
 		(trainMatrix, testMatrix) = removeEntries(tensor[:, :, i], density, seedID)
 		trainTensor[:, :, i] = trainMatrix
 		testTensor[:, :, i] = testMatrix

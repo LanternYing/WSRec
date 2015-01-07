@@ -90,7 +90,7 @@ def removeEntries(matrix, density, seedID):
 	idxX = (np.sum(trainMatrix, axis=1) == 0)
 	testMatrix[idxX, :] = 0
 	idxY = (np.sum(trainMatrix, axis=0) == 0)
-	testMatrix[:, idxY] = 0    
+	testMatrix[:, idxY] = 0
 	return trainMatrix, testMatrix
 ########################################################
 
@@ -153,12 +153,12 @@ def getNDCG(matrix, predMatrix, topK):
 		idcg_k = 0
 		for j in range(min(topK, len(updatedRealVec))):
 			if (j == 0):
-				dcg_k = dcg_k + updatedPredictVec[0]
-				idcg_k = idcg_k + updatedRealVec[0]
+				dcg_k += updatedPredictVec[0]
+				idcg_k += updatedRealVec[0]
 			else:
-				dcg_k = dcg_k + updatedPredictVec[j] / np.log2(j + 1)
-				idcg_k = idcg_k + updatedRealVec[j] / np.log2(j + 1)
-		ndcg_k = dcg_k / idcg_k
-		ndcg = ndcg + ndcg_k
+				dcg_k += updatedPredictVec[j] / np.log2(j + 1)
+				idcg_k += updatedRealVec[j] / np.log2(j + 1)
+		ndcg_k = dcg_k / (idcg_k + np.spacing(1))
+		ndcg += ndcg_k
 	return ndcg / numUser
 ########################################################

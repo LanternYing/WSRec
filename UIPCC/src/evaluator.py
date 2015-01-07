@@ -138,7 +138,7 @@ def errMetric(matrix, testMatrix, predMatrix, metrics):
     (testVecX, testVecY) = np.where(testMatrix)		
     testVec = testMatrix[testVecX, testVecY]
     predVec = predMatrix[testVecX, testVecY]
-    absError = np.absolute(predVec - testVec) 
+    absError = np.absolute(predVec - testVec)
     mae = np.average(absError)
     for metric in metrics:
         if isinstance(metric, tuple):
@@ -192,7 +192,7 @@ def getNDCG(matrix, predMatrix, topK):
 			else:
 				dcg_k = dcg_k + updatedPredictVec[j] / np.log2(j + 1)
 				idcg_k = idcg_k + updatedRealVec[j] / np.log2(j + 1)
-		ndcg_k = dcg_k / idcg_k
-		ndcg = ndcg + ndcg_k
+		ndcg_k = dcg_k / (idcg_k + np.spacing(1))
+		ndcg += ndcg_k
 	return ndcg / numUser
 ########################################################

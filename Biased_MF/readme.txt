@@ -1,13 +1,12 @@
 ----------------------------------------------------------------------------
-README file for PMF
+README file for Biased_MF
 ----------------------------------------------------------------------------
 
 Author: Jamie Zhu <jimzhu@GitHub><jmzhu AT cse.cuhk.edu.hk>
-Last updated: 2014/10/12.
+Last updated: 2014/12/16.
 
-This package implements a QoS prediction approach, probabilistic matrix 
-factorization (PMF), which has been employed as a baseline approach 
-for comparison in the existing work [Zheng et al., TSC'13] 
+This package implements a baseline QoS prediction approach, biased matrix 
+factorization (Biased_MF, or Biased SVD), which has been employed as a baseline approach for comparison in the existing work [Zheng et al., SCC'14] 
 
 ----------------------------------------------------------------------------
 Reference and citation

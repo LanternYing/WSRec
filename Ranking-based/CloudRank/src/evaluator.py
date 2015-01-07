@@ -125,7 +125,7 @@ def getNDCG(matrix, predRankMatrix, topK):
 			else:
 				dcg_k = dcg_k + updatedPredictVec[j] / np.log2(j + 1)
 				idcg_k = idcg_k + updatedRealVec[j] / np.log2(j + 1)
-		ndcg_k = dcg_k / idcg_k
+		ndcg_k = dcg_k / (idcg_k + np.spacing(1))
 		ndcg = ndcg + ndcg_k
 	return ndcg / numUser
 ########################################################

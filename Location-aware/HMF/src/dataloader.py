@@ -29,7 +29,7 @@ def load(para):
 def preprocess(matrix, para):
 	if para['dataType'] == 'rt':
 		matrix = np.where(matrix == 0, -1, matrix)
-		matrix = np.where(matrix >= 19.9, -1, matrix)
+		matrix = np.where(matrix >= 20, -1, matrix)
 	elif para['dataType'] == 'tp':
 		matrix = np.where(matrix == 0, -1, matrix)
 	return matrix

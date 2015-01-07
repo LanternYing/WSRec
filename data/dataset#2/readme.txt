@@ -11,15 +11,15 @@ http://wsdream.github.io/dataset/wsrec_dataset2
 List of contents of the dataset
 ----------------------------------------------------------------------------
 
-rtData      - response-time values of 4,500 Web services when invoked by 142 
+rtdata.txt  - response-time values of 4,500 Web services when invoked by 142 
               service users over 64 time slices. Data format:
               User ID | Service ID | Time Slice ID | Response Time (sec)
               e.g.: 98    4352    33    0.311
-tpData      - throughput values of 4,500 Web services when invoked by 142 
+tpdata.txt  - throughput values of 4,500 Web services when invoked by 142 
               service users in 64 time slices. Data format:
               User ID | Service ID | Time Slice ID | Throughput (kbps)
               e.g.: 91    1196    62    32.88
-readme.txt  - descriptions of the dataset.
+readme.txt  - descriptions of the dataset
 
 ----------------------------------------------------------------------------
 Reference paper
