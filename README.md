@@ -52,7 +52,7 @@ Please visit [this page for a summary of evaluation results](http://wsdream.gith
   - [T-WSRec](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/T-WSRec) [Hu et al., [ICWS'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6928878)] \(Time-Aware WSRec) (under testing, coming soon...)
   
 - Online-prediction
-  - [AMF](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/AMF) [Zhu et al., [ICDCS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6888908&tag=1)] \(under testing, coming soon...)
+  - [AMF](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/AMF) [Zhu et al., [ICDCS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6888908&tag=1)] \(under testing, coming soon...) ([an early version](https://github.com/WS-DREAM/AMF_pack))
   - [OPred](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/OPred) [Zhang et al., [TSMC'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6720144)] \(under testing, coming soon...)
 
 - Ranking-based
