@@ -25,7 +25,7 @@ Please visit [this page for a summary of evaluation results](http://wsdream.gith
 
 - Basic approaches (neighbourhood-based and model-based)
   - [UIPCC](https://github.com/WS-DREAM/WSRec/tree/master/UIPCC) [Zheng et al., [ICWS'09](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5175854&tag=1), [TSC'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5674010)] \(a.k.a. WSRec, including UMEAN, IMEAN, UPCC, IPCC)
-  - [PMF](https://github.com/WS-DREAM/WSRec/tree/master/PMF) [Salakhutdinov et al., NIPS'07][Zheng et al., [TSC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6122009)]     (a.k.a. Regularized SVD or RSVD)
+  - [PMF](https://github.com/WS-DREAM/WSRec/tree/master/PMF) [Salakhutdinov et al., NIPS'07][Zheng et al., [TSC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6122009)] \(a.k.a. Regularized SVD or RSVD)
   - [NMF](https://github.com/WS-DREAM/WSRec/tree/master/NMF) [Lee et al., NIPS'00][Zhang et al., [SRDS'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6076756)]
   - [Biased_MF](https://github.com/WS-DREAM/WSRec/tree/master/Biased_MF) [Koren et al., KDD'08][Yu et al., [SCC'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6930523)]
   - [CloudPred](https://github.com/WS-DREAM/WSRec/tree/master/CloudPred) [Zhang et al., [SRDS'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6076756)]
@@ -43,17 +43,17 @@ Please visit [this page for a summary of evaluation results](http://wsdream.gith
   - [LoRec](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/LoRec) [Chen et al., [TPDS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6684151)]
 
 - Time-aware
-  - [UIPCC](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/UIPCC) [Zheng et al., [ICWS'09](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5175854&tag=1), [TSC'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5674010)]     (a.k.a. WSRec, including UMEAN, IMEAN, UPCC, IPCC)(customized for time-aware dataset#2)
-  - [PMF](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/PMF) [Salakhutdinov et al., NIPS'07][Zheng et al., [TSC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6122009)]     (a.k.a. Regularized SVD or RSVD)(customized for time-aware dataset#2)
+  - [UIPCC](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/UIPCC) [Zheng et al., [ICWS'09](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5175854&tag=1), [TSC'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5674010)] \(a.k.a. WSRec, including UMEAN, IMEAN, UPCC, IPCC)(customized for time-aware dataset#2)
+  - [PMF](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/PMF) [Salakhutdinov et al., NIPS'07][Zheng et al., [TSC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6122009)] \(a.k.a. Regularized SVD or RSVD)(customized for time-aware dataset#2)
   - [TF](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/TF) [Zhang et al., [ISSRE'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6132969&tag=1)]
   - [WSPred](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/WSPred) [Zhang et al., [ISSRE'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6132969&tag=1)]
   - [CLUS](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/CLUS) [Silic et al., [FSE'13](http://dl.acm.org/citation.cfm?id=2491424), [TSC'15](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6874541)]  
   - [NTF](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/NTF) [Zhang et al., [WWW'14](http://dl.acm.org/citation.cfm?id=2568001)]
-  - [T-WSRec](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/T-WSRec) [Hu et al., [ICWS'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6928878)]    (Time-Aware WSRec)(under testing, coming soon...)
+  - [T-WSRec](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/T-WSRec) [Hu et al., [ICWS'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6928878)] \(Time-Aware WSRec)(under testing, coming soon...)
   
 - Online-prediction
-  - [AMF](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/AMF) [Zhu et al., [ICDCS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6888908&tag=1)]     (under testing, coming soon...)
-  - [OPred](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/OPred) [Zhang et al., [TSMC'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6720144)]     (under testing, coming soon...)
+  - [AMF](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/AMF) [Zhu et al., [ICDCS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6888908&tag=1)] \(under testing, coming soon...)
+  - [OPred](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/OPred) [Zhang et al., [TSMC'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6720144)] \(under testing, coming soon...)
 
 - Ranking-based
   - [GreedyRank](https://github.com/WS-DREAM/WSRec/tree/master/Ranking-based/GreedyRank) [Zheng et al., [SRDS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5623393)]
@@ -77,13 +77,10 @@ The benchmarks are implemented with a combination of Python and C++. The framewo
 ##Usage
 1. Download this code repository:
     
-	click the following link: [https://github.com/WS-DREAM/WSRec/archive/master.zip](https://github.com/WS-DREAM/WSRec/archive/master.zip)
+	Click the following link: [https://github.com/WS-DREAM/WSRec/archive/master.zip](https://github.com/WS-DREAM/WSRec/archive/master.zip)
 
-    or using Git, 
-
-    ```
-    git clone https://github.com/WS-DREAM/WSRec.git
-    ```  
+    or use Git: `git clone https://github.com/WS-DREAM/WSRec.git`
+  
     >The repository has maintained the common evaluation results that are ready for immediate use. If you need to further customize any approach, please go through the following steps.
 2. Install Cython (with Linux):
     
