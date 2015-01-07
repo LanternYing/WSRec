@@ -24,7 +24,7 @@ If YOU USE ANY BENCHMARK IN PUBLISHED RESEARCH, PLEASE KINDLY **CITE** THE FOLLO
 Please visit [this page for a summary of evaluation results](http://wsdream.github.io/WSRec/evaluation_result.pdf) and [this page for detailed change logs](https://github.com/WS-DREAM/WSRec/releases).
 
 - Basic approaches (neighbourhood-based and model-based)
-  - [UIPCC](https://github.com/WS-DREAM/WSRec/tree/master/UIPCC) [Zheng et al., [ICWS'09](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5175854&tag=1), [TSC'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5674010)]     (a.k.a. WSRec, including UMEAN, IMEAN, UPCC, IPCC) 
+  - [UIPCC](https://github.com/WS-DREAM/WSRec/tree/master/UIPCC) [Zheng et al., [ICWS'09](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5175854&tag=1), [TSC'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5674010)] \(a.k.a. WSRec, including UMEAN, IMEAN, UPCC, IPCC)
   - [PMF](https://github.com/WS-DREAM/WSRec/tree/master/PMF) [Salakhutdinov et al., NIPS'07][Zheng et al., [TSC'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6122009)]     (a.k.a. Regularized SVD or RSVD)
   - [NMF](https://github.com/WS-DREAM/WSRec/tree/master/NMF) [Lee et al., NIPS'00][Zhang et al., [SRDS'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6076756)]
   - [Biased_MF](https://github.com/WS-DREAM/WSRec/tree/master/Biased_MF) [Koren et al., KDD'08][Yu et al., [SCC'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6930523)]
@@ -76,10 +76,9 @@ The benchmarks are implemented with a combination of Python and C++. The framewo
 
 ##Usage
 1. Download this code repository:
-    click the following link,
-    ```
-    [https://github.com/WS-DREAM/WSRec/archive/master.zip](https://github.com/WS-DREAM/WSRec/archive/master.zip)
-    ``` 
+    
+	click the following link: [https://github.com/WS-DREAM/WSRec/archive/master.zip](https://github.com/WS-DREAM/WSRec/archive/master.zip)
+
     or using Git, 
 
     ```
@@ -114,7 +113,7 @@ The benchmarks are implemented with a combination of Python and C++. The framewo
 
 The goal of maintaining this repository is to make it simple to reproduce or modify the existing approaches. For future research on QoS prediction, you do not need to build your own program from scratch. The framework can be easily extended for new implementations.
 
-How to contribute page: [https://github.com/WS-DREAM/WSRec/wiki/How-to-contribute](https://github.com/WS-DREAM/WSRec/wiki/How-to-contribute)
+>How to contribute page: [https://github.com/WS-DREAM/WSRec/wiki/How-to-contribute](https://github.com/WS-DREAM/WSRec/wiki/How-to-contribute)
 
 Your implementations built on our framework are welcome to be hosted on this repository, or a external link can be directed to your own Github repository. Please feel free to contact us. Any contribution will be appreciated.
 
@@ -131,7 +130,7 @@ A big thanks to WSRec contributors:
 ---
 
 ##Bugs, Discussion, Feedback
-For bugs and discussions, please post to our issue page (https://github.com/WS-DREAM/WSRec/issues). For any other enquires, please contact [Jieming Zhu](http://jiemingzhu.github.io/).
+For bugs and discussions, please post to our issue page (https://github.com/WS-DREAM/WSRec/issues). For any other enquires, please contact [Mr. Jieming Zhu](http://jiemingzhu.github.io/).
 
 ##Copyright &copy;
 Permission is granted for anyone to copy, use, modify, or distribute this program and accompanying programs and documents for any purpose, provided this copyright notice is retained and prominently displayed, along with a 
