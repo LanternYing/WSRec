@@ -127,7 +127,7 @@ Subscribe to WS-DREAM mail list (wsdream.maillist@gmail.com) by filling out [the
 
 
 ##Bugs, Discussion, Feedback
-For bugs and discussions, please post to our issue page (https://github.com/WS-DREAM/WSRec/issues). For any other enquires, please contact [Mr. Jieming Zhu](http://jiemingzhu.github.io/).
+For bugs and feedback, please post to our issue page (https://github.com/WS-DREAM/WSRec/issues). For any other enquires, please drop an email to: wsdream.maillist@gmail.com.
 
 ##Copyright &copy;
 Permission is granted for anyone to copy, use, modify, or distribute this program and accompanying programs and documents for any purpose, provided this copyright notice is retained and prominently displayed, along with a 
