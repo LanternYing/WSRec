@@ -9,8 +9,7 @@ Read more information: [Paper (coming soon)][[Project page](http://wsdream.githu
 
 If YOU USE ANY BENCHMARK IN PUBLISHED RESEARCH, PLEASE KINDLY **CITE** THE FOLLOWING PAPER. THANKS!
 
-- TBD
-
+- Jieming Zhu, Pinjia He, Zibin Zheng, and Michael R. Lyu, "Benchmarking and Improving QoS Prediction Approaches for Web Service Recommendation," available at: http://wsdream.github.io/WSRec.
 
 
 ##Related Links
@@ -18,7 +17,6 @@ If YOU USE ANY BENCHMARK IN PUBLISHED RESEARCH, PLEASE KINDLY **CITE** THE FOLLO
 
 - QoS datasets: http://wsdream.github.io/dataset
 
----
 
 ##Code Archive
 Please visit [this page for a summary of evaluation results](http://wsdream.github.io/WSRec/evaluation_result.pdf) and [this page for detailed change logs](https://github.com/WS-DREAM/WSRec/releases).
@@ -49,17 +47,16 @@ Please visit [this page for a summary of evaluation results](http://wsdream.gith
   - [WSPred](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/WSPred) [Zhang et al., [ISSRE'11](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6132969&tag=1)]
   - [CLUS](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/CLUS) [Silic et al., [FSE'13](http://dl.acm.org/citation.cfm?id=2491424), [TSC'15](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6874541)]  
   - [NTF](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/NTF) [Zhang et al., [WWW'14](http://dl.acm.org/citation.cfm?id=2568001)]
-  - [T-WSRec](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/T-WSRec) [Hu et al., [ICWS'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6928878)] \(Time-Aware WSRec) (under testing, coming soon...)
+  - [TD-WSRec](https://github.com/WS-DREAM/WSRec/tree/master/Time-aware/TD-WSRec) [Hu et al., [ICWS'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6928878)] \(under testing, coming soon...now available upon request)
   
 - Online-prediction
-  - [AMF](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/AMF) [Zhu et al., [ICDCS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6888908&tag=1)] \(under testing, coming soon...) ([an early version](https://github.com/WS-DREAM/AMF_pack))
-  - [OPred](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/OPred) [Zhang et al., [TSMC'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6720144)] \(under testing, coming soon...)
+  - [AMF](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/AMF) [Zhu et al., [ICDCS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6888908&tag=1)] \(under testing, coming soon...) ([an early version in Matlab](https://github.com/WS-DREAM/AMF_pack))
+  - [OPred](https://github.com/WS-DREAM/WSRec/tree/master/Online-prediction/OPred) [Zhang et al., [TSMC'14](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6720144)] \(under testing, coming soon...now available upon request)
 
 - Ranking-based
-  - [GreedyRank](https://github.com/WS-DREAM/WSRec/tree/master/Ranking-based/GreedyRank) [Zheng et al., [SRDS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5623393)]
-  - [CloudRank](https://github.com/WS-DREAM/WSRec/tree/master/Ranking-based/CloudRank) [Zheng et al., [SRDS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5623393), [TPDS'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6320550)]
+  - [GreedyRank](https://github.com/WS-DREAM/WSRec/tree/master/Ranking-based/GreedyRank) [Zheng et al., [SRDS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5623393)] \(now available upon request)
+  - [CloudRank](https://github.com/WS-DREAM/WSRec/tree/master/Ranking-based/CloudRank) [Zheng et al., [SRDS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5623393), [TPDS'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6320550)] \(now available upon request)
 
----
 
 
 ##Dependencies
@@ -80,10 +77,11 @@ The benchmarks are implemented with a combination of Python and C++. The framewo
 	Click the following link: [https://github.com/WS-DREAM/WSRec/archive/master.zip](https://github.com/WS-DREAM/WSRec/archive/master.zip)
 
     or use Git: `git clone https://github.com/WS-DREAM/WSRec.git`
+	
+	then initialize the submodules by executing: `git submodule update --init --recursive`
   
     >The repository has maintained the common evaluation results that are ready for immediate use. If you need to further customize any approach, please go through the following steps.
 2. Install Cython (with Linux):
-    
 	```
 	# change YOUR_DIRECTORY to your working path  
     vim ~/.bash_profile  
@@ -98,7 +96,6 @@ The benchmarks are implemented with a combination of Python and C++. The framewo
     ```
 4. Check the evaluation results in "result/" directory. 
 
----
 
 ##Contributing
 
@@ -115,7 +112,7 @@ The goal of maintaining this repository is to make it simple to reproduce or mod
 Your implementations built on our framework are welcome to be hosted on this repository, or a external link can be directed to your own Github repository. Please feel free to contact us. Any contribution will be appreciated.
 
 
-## Contributors
+#### Contributors
 
 A big thanks to WSRec contributors:
 - [Jieming Zhu](http://jiemingzhu.github.io/), The Chinese University of Hong Kong (Project Founder)
@@ -124,7 +121,10 @@ A big thanks to WSRec contributors:
 - [Yuwen Xiong](https://github.com/Orpine), Zhejiang University (Contribute TF, NTF, WSPred, OPred, Biased_MF, SVD++)
 - Yifei Lu, Zhejiang University (Contribute ADF, T-WSRec)
 
----
+
+##Subscribing to WS-DREAM Mail List
+Subscribe to WS-DREAM mail list (wsdream.maillist@gmail.com) by filling out [the registration form](http://goo.gl/forms/gYR00pABub). You will receive messages about the update of the datasets and code release at the first moment. 
+
 
 ##Bugs, Discussion, Feedback
 For bugs and discussions, please post to our issue page (https://github.com/WS-DREAM/WSRec/issues). For any other enquires, please contact [Mr. Jieming Zhu](http://jiemingzhu.github.io/).

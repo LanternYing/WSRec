@@ -28,8 +28,7 @@ import dataloader
 para = {'dataType': 'rt', # set the dataType as 'rt' or 'tp'
 		'dataPath': '../data/dataset#1/',
 		'outPath': 'result/',
-		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE', 
-			('NDCG', [1, 5, 10, 20, 50, 100])], # delete where appropriate		
+		'metrics': ['MAE', 'NMAE', 'RMSE', 'MRE', 'NPRE'], # delete where appropriate		
 		'density': list(np.arange(0.05, 0.31, 0.05)), # matrix density
 		'rounds': 20, # how many runs are performed at each matrix density
 		'dimension': 10, # dimenisionality of the latent factors

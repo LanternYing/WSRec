@@ -1,3 +1,6 @@
 [submodule "externals/Cython"]
 	path = externals/Cython
 	url = https://github.com/cython/cython.git
+[submodule "Online-prediction/AMF"]
+	path = Online-prediction/AMF
+	url = https://github.com/WS-DREAM/AMF_pack

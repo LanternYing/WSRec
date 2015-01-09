@@ -2,7 +2,7 @@
 # evaluator.py
 # Author: Jamie Zhu <jimzhu@GitHub>
 # Created: 2014/2/6
-# Last updated: 2014/2/6
+# Last updated: 2015/1/7
 ########################################################
 
 import numpy as np 
@@ -48,32 +48,24 @@ def execute(matrix, density, para):
 		iterStartTime1 = time.clock()            
 		predMatrixUMEAN = core.UMEAN(trainMatrix) 	
 		timeResults[0, k] = time.clock() - iterStartTime1
-		predMatrixUMEAN[trainMatrix > 0] = trainMatrix[trainMatrix > 0]
-		evalResults[0, k, :] = errMetric(matrix, testMatrix, predMatrixUMEAN, para['metrics'])
 		logger.info('UMEAN done.')
 
 		## IMEAN
 		iterStartTime2 = time.clock()          
 		predMatrixIMEAN = core.IMEAN(trainMatrix)  	
 		timeResults[1, k] = time.clock() - iterStartTime2
-		predMatrixIMEAN[trainMatrix > 0] = trainMatrix[trainMatrix > 0]         
-		evalResults[1, k, :] = errMetric(matrix, testMatrix, predMatrixIMEAN, para['metrics'])
 		logger.info('IMEAN done.')
 
 		## UPCC
 		iterStartTime3 = time.clock()         
 		predMatrixUPCC = core.UPCC(trainMatrix, predMatrixUMEAN[:, 0], para)  
 		timeResults[2, k] = time.clock() - iterStartTime3 + timeResults[0, k]
-		predMatrixUPCC[trainMatrix > 0] = trainMatrix[trainMatrix > 0]  
-		evalResults[2, k, :] = errMetric(matrix, testMatrix, predMatrixUPCC, para['metrics'])
 		logger.info('UPCC done.')
 		
 		## IPCC
 		iterStartTime4 = time.clock()         
 		predMatrixIPCC = core.IPCC(trainMatrix, predMatrixIMEAN[0, :], para) 
 		timeResults[3, k] = time.clock() - iterStartTime4 + timeResults[1, k]
-		predMatrixIPCC[trainMatrix > 0] = trainMatrix[trainMatrix > 0]
-		evalResults[3, k, :] = errMetric(matrix, testMatrix, predMatrixIPCC, para['metrics'])
 		logger.info('IPCC done.')
 
 		## UIPCC
@@ -81,9 +73,19 @@ def execute(matrix, density, para):
 		predMatrixUIPCC = core.UIPCC(trainMatrix, predMatrixUPCC, predMatrixIPCC, para)  	
 		timeResults[4, k] = time.clock() - iterStartTime5\
 				+ timeResults[2, k] + timeResults[3, k]
+		logger.info('UIPCC done.')
+
+		## evaluation
+		predMatrixUMEAN[trainMatrix > 0] = trainMatrix[trainMatrix > 0]
+		evalResults[0, k, :] = errMetric(matrix, testMatrix, predMatrixUMEAN, para['metrics'])
+		predMatrixIMEAN[trainMatrix > 0] = trainMatrix[trainMatrix > 0]         
+		evalResults[1, k, :] = errMetric(matrix, testMatrix, predMatrixIMEAN, para['metrics'])
+		predMatrixUPCC[trainMatrix > 0] = trainMatrix[trainMatrix > 0]  
+		evalResults[2, k, :] = errMetric(matrix, testMatrix, predMatrixUPCC, para['metrics'])
+		predMatrixIPCC[trainMatrix > 0] = trainMatrix[trainMatrix > 0]
+		evalResults[3, k, :] = errMetric(matrix, testMatrix, predMatrixIPCC, para['metrics'])
 		predMatrixUIPCC[trainMatrix > 0] = trainMatrix[trainMatrix > 0]          
 		evalResults[4, k, :] = errMetric(matrix, testMatrix, predMatrixUIPCC, para['metrics'])
-		logger.info('UIPCC done.')
 
 		logger.info('%d-round done. Running time: %.2f sec'
 				%(k + 1, time.clock() - iterStartTime1))
