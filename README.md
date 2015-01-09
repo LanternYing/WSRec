@@ -101,7 +101,8 @@ The benchmarks are implemented with a combination of Python and C++. The framewo
 
 >Your contributions are welcome!
 
-**To do list**: Some approaches to implement:
+#####To do list
+Some approaches to implement:
 - TNR-MF [Yu et al., [ICWS'13](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6649559&tag=1)]
 - TACF [Yu et al., [ICWS'14](http://ieeexplore.ieee.org/xpl/abstractAuthors.jsp?reload=true&arnumber=6928907)]
 
@@ -112,8 +113,7 @@ The goal of maintaining this repository is to make it simple to reproduce or mod
 Your implementations built on our framework are welcome to be hosted on this repository, or a external link can be directed to your own Github repository. Please feel free to contact us. Any contribution will be appreciated.
 
 
-#### Contributors
-
+##### Contributors
 A big thanks to WSRec contributors:
 - [Jieming Zhu](http://jiemingzhu.github.io/), The Chinese University of Hong Kong (Project Founder)
 - [Zibin Zheng](http://www.zibinzheng.com/), The Chinese University of Hong Kong (Contribute UIPCC)
