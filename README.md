@@ -37,7 +37,7 @@ Please visit [this page for a summary of evaluation results](http://wsdream.gith
   - [RegionKNN](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/RegionKNN) [Chen et al., [ICWS'10](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5552807)]
   - [LACF](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/LACF) [Tang et al., [ICWS'12](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6257808)]
   - [LBR](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/LBR) [Lo et al., [ICWS'12](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6257841)]
-  - [HMF](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/HMF) [He et al., ICWS'14]
+  - [HMF](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/HMF) [He et al., [ICWS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6928911)]
   - [LoRec](https://github.com/WS-DREAM/WSRec/tree/master/Location-aware/LoRec) [Chen et al., [TPDS'14](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6684151)]
 
 - Time-aware
@@ -74,14 +74,15 @@ The benchmarks are implemented with a combination of Python and C++. The framewo
 ##Usage
 1. Download this code repository:
     
-	Click the following link: [https://github.com/WS-DREAM/WSRec/archive/master.zip](https://github.com/WS-DREAM/WSRec/archive/master.zip)
+	Click the following link: [https://github.com/WS-DREAM/WSRec/archive/master.zip](https://github.com/WS-DREAM/WSRec/archive/master.zip),
 
-    or use Git: `git clone https://github.com/WS-DREAM/WSRec.git`
+    or use Git: `git clone https://github.com/WS-DREAM/WSRec.git`,
 	
-	then initialize the submodules by executing: `git submodule update --init --recursive`
+	then initialize the submodules by executing: `git submodule update --init --recursive`.
   
     >The repository has maintained the common evaluation results that are ready for immediate use. If you need to further customize any approach, please go through the following steps.
 2. Install Cython (with Linux):
+
 	```
 	# change YOUR_DIRECTORY to your working path  
     vim ~/.bash_profile  
@@ -127,7 +128,7 @@ Subscribe to WS-DREAM mail list (wsdream.maillist@gmail.com) by filling out [the
 
 
 ##Bugs, Discussion, Feedback
-For bugs and feedback, please post to [our issue page](https://github.com/WS-DREAM/WSRec/issues). For any other enquires, please drop an email to: wsdream.maillist@gmail.com.
+For bugs and feedback, please post to [our issue page](https://github.com/WS-DREAM/WSRec/issues). For any other enquires, please drop an email to us (wsdream.maillist@gmail.com).
 
 ##Copyright &copy;
 Permission is granted for anyone to copy, use, modify, or distribute this program and accompanying programs and documents for any purpose, provided this copyright notice is retained and prominently displayed, along with a 
