@@ -7,7 +7,7 @@ Read more information: [Paper (coming soon)][[Project page](http://wsdream.githu
 
 ##Citation
 
-If YOU USE ANY BENCHMARK IN PUBLISHED RESEARCH, PLEASE KINDLY **CITE** THE FOLLOWING PAPER. THANKS!
+If you use any benchmark in published research, please kindly *cite* the following paper. Thanks!
 
 - Jieming Zhu, Pinjia He, Zibin Zheng, and Michael R. Lyu, "Benchmarking and Improving QoS Prediction Approaches for Web Service Recommendation," available at: http://wsdream.github.io/WSRec.
 
