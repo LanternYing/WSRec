@@ -4,3 +4,6 @@
 [submodule "Online-prediction/AMF"]
 	path = Online-prediction/AMF
 	url = https://github.com/WS-DREAM/AMF_pack
+[submodule "data"]
+	path = data
+	url = https://github.com/WS-DREAM/Dataset.git
